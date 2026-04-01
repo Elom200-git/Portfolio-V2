@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elom Samuel Toublou - Data Analyst & AI Strategist</title>
+<meta name="description" content="Elom Samuel Toublou, Data Analyst et Économiste. Spécialiste en automatisation, analyse de données et IA. Lomé, Togo.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='6' fill='%234A9EBF'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='13' fill='white'>E</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════════
+   ROOT — PALETTE CLAIRE & GAIE
+════════════════════════════════════════════ */
+:root {
+  /* Couleurs principales */
+  --blue:       #4A9EBF;
+  --blue-dark:  #2E7A9A;
+  --blue-pale:  #EBF6FB;
+  --blue-mid:   #D0EBF5;
+  --teal:       #2BBFA0;
+  --teal-pale:  #E8F8F5;
+  --coral:      #F06240;
+  --coral-pale: #FEF0ED;
+  --gold:       #E8A820;
+  --green:      #28BA7A;
+  /* Neutres */
+  --white:   #FFFFFF;
+  --off:     #FAFBFC;
+  --gray-1:  #F4F6F9;
+  --gray-2:  #E4E9EF;
+  --gray-3:  #C8D4DE;
+  --gray-4:  #8FA8BE;
+  --gray-5:  #5A7890;
+  --ink:     #0F1F2E;
+  --ink-mid: #1E3448;
+
+  /* Typographie */
+  --serif:  'Lora', Georgia, serif;
+  --sans:   'Plus Jakarta Sans', system-ui, sans-serif;
+  --mono:   'JetBrains Mono', 'Courier New', monospace;
+}
+/* MODIFICATION ICI */
+  .h-name .w-bold {
+    color: #00d4ff !important; /* Bleu électrique très visible */
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.4); /* Effet néon léger */
+  }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--sans);
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+}
+/* ══ FOND ÉTOILÉ GLOBAL ══ */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Derrière tout */
+  pointer-events: none;
+  background: #05050a; /* Couleur de l'espace */
+}
+
+/* IMPORTANT : Vos sections doivent être transparentes pour voir le fond */
+section, .hero, .portfolio-item, main {
+  background: transparent !important;
+}
+
+/* ══ CURSEUR UNIQUE — BARRE CLIGNOTANTE ══ */
+#caret {
+  position: fixed; top:0; left:0;
+  width: 2px; height: 20px;
+  background: var(--coral);
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  animation: caretBlink 1.1s ease-in-out infinite;
+  transition: height .2s, background .2s, width .2s, border-radius .2s;
+}
+body.on-link #caret {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  animation: none;
+}
+@keyframes caretBlink { 0%,100%{opacity:1} 48%,52%{opacity:0} }
+
+/* ══ NAV ══ */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:1000;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.3rem 4rem;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--gray-2);
+  transition: padding .3s, box-shadow .3s;
+}
+nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08); }
+
+.nav-logo {
+  display: flex; align-items: center; gap: .5rem;
+  text-decoration: none;
+}
+.nav-logo-mark {
+  width: 32px; height: 32px;
+  background: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: .85rem; font-weight: 700;
+  color: white; border-radius: 4px;
+}
+.nav-logo-txt {
+  font-family: var(--sans); font-size: .78rem; font-weight: 700;
+  color: var(--ink); letter-spacing: .04em;
+}
+.nav-logo-txt span { color: var(--blue); }
+
+.nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+.nav-links a {
+  font-size: .72rem; font-weight: 600; color: var(--gray-5);
+  text-decoration: none; letter-spacing: .06em; text-transform: uppercase;
+  transition: color .2s; position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -3px; left: 0;
+  width: 0; height: 1.5px; background: var(--coral); transition: width .3s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  padding: .55rem 1.5rem;
+  background: var(--blue); color: white !important;
+  font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  text-decoration: none; border-radius: 3px; border: 2px solid var(--blue);
+  transition: background .2s, border-color .2s !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--blue-dark) !important; border-color: var(--blue-dark) !important; }
+
+/* ══ HERO ══ */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1.1fr .9fr;
+  position: relative; overflow: hidden;
+  padding-top: 5.5rem;
+  background: var(--white);
+}
+
+/* Formes décoratives légères */
+.hero::before {
+  content: '';
+  position: absolute; top: -100px; right: -100px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,158,191,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -80px; left: 20%;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(43,191,160,.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-left {
+  padding: 4rem 4rem 4rem 4.5rem;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; z-index: 2;
+}
+
+.h-eyebrow {
+  display: inline-flex; align-items: center; gap: .7rem;
+  margin-bottom: 2rem;
+  opacity: 0; animation: up .8s .1s ease both;
+}
+.h-eyebrow-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--coral); flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.3)} }
+.h-eyebrow-txt {
+  font-family: var(--mono); font-size: .62rem; font-weight: 400;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--blue-dark);
+}
+
+.h-name {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(3.5rem, 6vw, 6.5rem);
+  line-height: .93; letter-spacing: -.02em;
+  margin-bottom: .8rem; color: var(--ink);
+  opacity: 0; animation: up .9s .25s ease both;
+}
+.h-name .w-bold { font-weight: 700; }
+.h-name .w-italic { font-style: italic; color: var(--blue); }
+.h-name .w-outline {
+  font-weight: 700;
+  -webkit-text-stroke: 1.5px var(--gray-3);
+  color: transparent;
+}
+
+.h-bar {
+  width: 56px; height: 3px;
+  background: linear-gradient(90deg, var(--coral), var(--teal));
+  margin-bottom: 1.8rem; border-radius: 2px;
+  opacity: 0; animation: up .7s .4s ease both;
+}
+
+.h-sub { margin-bottom: 2.6rem; opacity: 0; animation: up .8s .5s ease both; }
+.h-role {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  color: var(--gray-4); margin-bottom: .8rem;
+}
+.h-desc { font-size: .9rem; color: var(--gray-5); line-height: 1.85; max-width: 440px; }
+.h-desc strong { color: var(--ink); font-weight: 600; }
+
+.h-stats {
+  display: flex; gap: 0; margin-bottom: 2.8rem;
+  border: 1.5px solid var(--gray-2); border-radius: 4px;
+  width: fit-content; overflow: hidden;
+  opacity: 0; animation: up .8s .65s ease both;
+  background: var(--gray-1);
+}
+.stat {
+  padding: 1rem 1.8rem; border-right: 1.5px solid var(--gray-2); text-align: center;
+}
+.stat:last-child { border-right: none; }
+.stat-n {
+  font-family: var(--serif); font-size: 2rem; font-weight: 700;
+  color: var(--blue); line-height: 1; margin-bottom: .2rem;
+}
+.stat-l { font-family: var(--mono); font-size: .56rem; color: var(--gray-4); letter-spacing: .1em; text-transform: uppercase; }
+
+.h-btns { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: up .8s .8s ease both; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: var(--sans); font-size: .72rem; font-weight: 700;
+  letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
+  padding: .9rem 1.9rem; transition: all .25s; border-radius: 3px; cursor: none;
+}
+.btn-solid { background: var(--blue); color: white; border: 2px solid var(--blue); }
+.btn-solid:hover { background: var(--blue-dark); border-color: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74,158,191,.3); }
+.btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--gray-2); }
+.btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+@keyframes up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+/* HERO RIGHT */
+.hero-right {
+  position: relative; display: flex;
+  align-items: center; justify-content: center;
+  padding: 6rem 4rem 3rem 2rem; z-index: 2;
+  background: var(--blue-pale);
+  border-left: 1.5px solid var(--blue-mid);
+}
+
+.photo-frame {
+  position: relative; width: 300px; max-width: 100%;
+  opacity: 0; animation: up 1s .35s ease both;
+}
+.photo-wrap {
+  width: 100%; aspect-ratio: 3/4;
+  background: var(--gray-2);
+  border: 1.5px solid var(--blue-mid);
+  overflow: hidden; position: relative;
+  box-shadow: 12px 12px 0 var(--blue-mid);
+}
+.photo-wrap img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block; transition: transform .6s;
+}
+.photo-wrap:hover img { transform: scale(1.04); }
+.photo-ph {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .5rem; color: var(--gray-4);
+  font-family: var(--mono); font-size: .65rem;
+}
+
+/* Corner accents */
+.corner-tl, .corner-br {
+  position: absolute; width: 22px; height: 22px;
+  pointer-events: none;
+}
+.corner-tl { top: -8px; left: -8px; border-top: 2px solid var(--coral); border-left: 2px solid var(--coral); }
+.corner-br { bottom: -8px; right: -8px; border-bottom: 2px solid var(--coral); border-right: 2px solid var(--coral); }
+
+/* Badges flottants */
+.badge {
+  position: absolute; background: white;
+  border: 1.5px solid var(--gray-2); border-radius: 4px;
+  padding: .7rem 1rem; min-width: 130px;
+  box-shadow: 0 4px 18px rgba(74,158,191,.12);
+}
+.badge-1 { bottom: 54%; left: -140px; animation: floatY 5s ease-in-out infinite; }
+.badge-2 { bottom: 38%; right: -120px; animation: floatY 6.5s ease-in-out infinite 1.5s; }
+.badge-3 { bottom: -70px; left:50%; transform:translateX(-50%); min-width:165px; animation:floatC 5s ease-in-out infinite .8s; }
+@keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+@keyframes floatC { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-7px)} }
+
+.badge-lbl { font-family: var(--mono); font-size: .5rem; color: var(--coral); letter-spacing: .14em; text-transform: uppercase; margin-bottom: .2rem; font-weight: 500; }
+.badge-val { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+.badge-sub { font-family: var(--mono); font-size: .52rem; color: var(--gray-4); margin-top: .1rem; }
+
+/* ══ TICKER ══ */
+.ticker {
+  overflow: hidden; padding: .8rem 0;
+  background: var(--ink);
+}
+.ticker-track { display: flex; gap: 3rem; width: max-content; animation: tick 30s linear infinite; }
+.ti { display: flex; align-items: center; gap: .8rem; white-space: nowrap; font-family: var(--mono); font-size: .6rem; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.35); }
+.tdot { width: 3px; height: 3px; background: var(--coral); border-radius: 50%; flex-shrink: 0; }
+@keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ══ SECTION BASE ══ */
+.section { padding: 7rem 4.5rem; max-width: 1300px; margin: 0 auto; }
+
+.sec-label { display: flex; align-items: center; gap: .8rem; margin-bottom: .7rem; }
+.sec-num { font-family: var(--mono); font-size: .56rem; font-weight: 500; color: var(--coral); letter-spacing: .2em; }
+.sec-dash { width: 28px; height: 1.5px; background: var(--coral); opacity: .5; border-radius: 1px; }
+
+.sec-title {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  line-height: .96; letter-spacing: -.02em; margin-bottom: .8rem; color: var(--ink);
+}
+.sec-title .w-bold { font-weight: 700; }
+.sec-title .w-italic { font-style: italic; color: var(--blue); }
+.sec-sub { font-size: .88rem; color: var(--gray-4); max-width: 460px; line-height: 1.8; margin-bottom: 4rem; }
+
+/* ══ MODALS VIDÉO ══
+   ─────────────────────────────────────────
+   COMMENT AJOUTER UNE NOUVELLE VIDÉO :
+   1. Duplique le bloc ".modal-overlay" ci-dessous
+   2. Donne-lui un id unique ex: "modal-demo4"
+   3. Change src de la balise <source> vers ta vidéo ex: "demo-4.mp4"
+   4. Duplique le bouton .pf-link dans le projet concerné
+   5. Change son data-modal="modal-demo4"
+   6. C'est tout — le JavaScript gère le reste automatiquement.
+   ─────────────────────────────────────────── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9000;
+  background: rgba(15,31,46,.9); backdrop-filter: blur(10px);
+  align-items: center; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal-box { position: relative; width: 90%; max-width: 920px; }
+.modal-close {
+  position: absolute; top: -38px; right: 0;
+  font-family: var(--mono); font-size: .65rem; color: rgba(255,255,255,.45);
+  cursor: none; letter-spacing: .12em; text-transform: uppercase; transition: color .2s;
+}
+.modal-close:hover { color: white; }
+.modal-video { width: 100%; aspect-ratio: 16/9; display: block; background: #000; border-radius: 2px; }
+
+/* ══ PROJETS ══ */
+#projects { background: var(--white); }
+#projects .section { border-top: 1.5px solid var(--gray-2); }
+
+/* Featured card */
+.pf-card {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1.5px solid var(--gray-2); border-radius: 4px;
+  margin-bottom: 2px; overflow: hidden;
+  transition: box-shadow .3s, border-color .3s;
+}
+.pf-card:hover { box-shadow: 0 8px 40px rgba(74,158,191,.15); border-color: var(--blue); }
+
+.pf-visual {
+  position: relative; background: var(--gray-1);
+  min-height: 420px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Carrousel featured */
+.pf-car { position: relative; width: 88%; aspect-ratio: 16/10; box-shadow: 0 16px 50px rgba(0,0,0,.12); }
+.pf-car .cs { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease; }
+.pf-car .cs.on { opacity: 1; z-index: 1; }
+.pf-car .cs img { width: 100%; height: 100%; object-fit: cover; display: block; border: 1.5px solid var(--gray-2); border-radius: 2px; }
+.pf-car .cs-fb { width: 100%; height: 100%; background: white; border: 1.5px solid var(--gray-2); border-radius: 2px; display: flex; flex-direction: column; overflow: hidden; }
+
+/* Carrousel projets grille */
+.proj-visual {
+  width: 100%; height: 165px;
+  background: var(--gray-1); border: 1.5px solid var(--gray-2); border-radius: 3px;
+  margin-bottom: 1.4rem; position: relative; overflow: hidden;
+}
+.proj-visual .cs { position: absolute; inset: 0; opacity: 0; transition: opacity .8s ease; }
+.proj-visual .cs.on { opacity: 1; z-index: 1; }
+.proj-visual .cs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.proj-visual .cs-fb { position: absolute; inset: 0; }
+
+/* Dots carrousel */
+.cs-dots { position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 5; }
+.csdot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.45); border: 1px solid rgba(0,0,0,.1); transition: background .3s; cursor: none; }
+.csdot.on { background: var(--coral); border-color: var(--coral); }
+.proj-visual .csdot { background: rgba(0,0,0,.15); }
+.proj-visual .csdot.on { background: var(--blue); }
+
+/* Fallback screen éléments */
+.fb-bar { height: 22px; background: var(--gray-1); display: flex; align-items: center; gap: 5px; padding: 0 8px; flex-shrink: 0; border-bottom: 1px solid var(--gray-2); }
+.fb-d { width: 7px; height: 7px; border-radius: 50%; }
+.fb-d-r{background:#ff5f56} .fb-d-y{background:#ffbd2e} .fb-d-g{background:#27c93f}
+.fb-body { flex: 1; padding: .7rem; display: flex; flex-direction: column; gap: .4rem; background: var(--white); }
+.fb-row { height: 7px; background: var(--gray-2); border-radius: 2px; }
+.fb-hi {
+  height: 48px; margin-top: .3rem;
+  background: linear-gradient(135deg, var(--blue-pale), var(--teal-pale));
+  border: 1px solid var(--blue-mid); border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+}
+.fb-hi span { font-family: var(--mono); font-size: 5.5px; color: var(--blue-dark); letter-spacing: .1em; text-transform: uppercase; font-weight: 500; }
+.fb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .3rem; margin-top: auto; }
+.fb-cell {
+  height: 34px; background: var(--gray-1); border: 1px solid var(--gray-2); border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: .55rem; font-weight: 500; color: var(--blue-dark); letter-spacing: .06em;
+}
+
+/* Info carte featured */
+.pf-info { padding: 3rem; display: flex; flex-direction: column; justify-content: center; background: var(--white); }
+.pf-tag {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: var(--mono); font-size: .58rem; font-weight: 500;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--coral); margin-bottom: 1.4rem;
+}
+.pf-tag::before { content: ''; display: block; width: 16px; height: 1.5px; background: var(--coral); }
+.pf-title {
+  font-family: var(--serif); font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 1rem; color: var(--ink);
+}
+.pf-desc { font-size: .85rem; color: var(--gray-5); line-height: 1.85; margin-bottom: 1.6rem; }
+
+.pf-metrics {
+  display: flex; gap: 2rem; padding: 1rem 0;
+  border-top: 1.5px solid var(--gray-2); border-bottom: 1.5px solid var(--gray-2); margin-bottom: 1.6rem;
+}
+.mn { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--teal); line-height: 1; }
+.ml { font-family: var(--mono); font-size: .55rem; color: var(--gray-4); letter-spacing: .08em; text-transform: uppercase; margin-top: .15rem; }
+
+.pf-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.6rem; }
+.tag {
+  padding: .22rem .7rem; border: 1.5px solid var(--gray-2); border-radius: 2px;
+  font-family: var(--mono); font-size: .57rem; font-weight: 400;
+  letter-spacing: .05em; color: var(--gray-5); text-transform: uppercase;
+  transition: border-color .2s, color .2s;
+}
+.tag:hover { border-color: var(--blue); color: var(--blue); }
+
+.pf-link {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: var(--mono); font-size: .65rem; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--blue);
+  text-decoration: none; transition: gap .2s, color .2s; cursor: none;
+}
+.pf-link:hover { gap: .9rem; color: var(--blue-dark); }
+
+/* Grille projets */
+.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--gray-2); border-radius: 4px; overflow: hidden; }
+.proj-card {
+  background: var(--white); padding: 2.2rem; cursor: none;
+  position: relative; overflow: hidden; transition: background .3s;
+  border-left: 2.5px solid transparent;
+}
+.proj-card:hover { background: var(--blue-pale); border-left-color: var(--blue); }
+.proj-card:hover .proj-arr { background: var(--coral); color: white; border-color: var(--coral); transform: rotate(45deg); }
+
+.proj-num { font-family: var(--mono); font-size: .5rem; font-weight: 500; color: var(--coral); opacity: .5; letter-spacing: .15em; margin-bottom: 1.2rem; }
+.proj-type { font-family: var(--mono); font-size: .57rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); margin-bottom: .6rem; }
+.proj-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; line-height: 1.2; letter-spacing: -.01em; margin-bottom: .6rem; color: var(--ink); }
+.proj-desc { font-size: .78rem; color: var(--gray-5); line-height: 1.75; margin-bottom: 1rem; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
+.proj-tag { font-family: var(--mono); font-size: .53rem; letter-spacing: .04em; text-transform: uppercase; color: var(--gray-4); padding: .15rem .5rem; border: 1px solid var(--gray-2); border-radius: 2px; }
+.proj-arr {
+  position: absolute; top: 1.8rem; right: 1.8rem;
+  width: 26px; height: 26px; border: 1.5px solid var(--gray-2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .65rem; color: var(--gray-4); transition: all .3s; border-radius: 50%;
+}
+
+/* Fallbacks décoratifs projets (même logique pour tous) */
+.fb-mini { width: 100%; height: 100%; background: var(--white); padding: 8px; display: flex; flex-direction: column; gap: 4px; }
+.fb-mini-kpi { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
+.fb-kpi { padding: 4px; text-align: center; border-radius: 2px; }
+.fb-kpi-n { font-size: 9px; font-weight: 700; line-height: 1.2; }
+.fb-kpi-l { font-family: var(--mono); font-size: 4.5px; color: var(--gray-4); text-transform: uppercase; margin-top: 1px; }
+.fb-bars { flex: 1; display: flex; align-items: flex-end; gap: 2px; padding: 0 2px; }
+.fb-bar-item { flex: 1; border-radius: 1px 1px 0 0; }
+
+/* ══ SKILLS ══ */
+#skills { background: var(--gray-1); }
+.skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.sk-title { font-family: var(--mono); font-size: .6rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--coral); margin-bottom: 1.4rem; }
+
+.skill-row { display: flex; justify-content: space-between; align-items: center; padding: .8rem 0; border-bottom: 1px solid var(--gray-2); }
+.skill-nm { font-size: .84rem; font-weight: 500; color: var(--ink); }
+.skill-track { width: 120px; height: 2px; background: var(--gray-2); position: relative; overflow: hidden; border-radius: 1px; }
+.skill-fill { position: absolute; top: 0; left: 0; bottom: 0; background: linear-gradient(90deg, var(--blue), var(--teal)); width: 0; transition: width 1.6s cubic-bezier(.22,1,.36,1); border-radius: 1px; }
+.skill-pct { font-family: var(--mono); font-size: .58rem; font-weight: 500; color: var(--gray-4); width: 28px; text-align: right; }
+
+.certs-stack { display: flex; flex-direction: column; gap: 1px; }
+.cert { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.2rem; background: var(--white); border-left: 2.5px solid transparent; border-radius: 0; transition: border-color .25s, background .25s; }
+.cert:hover { background: var(--blue-pale); border-left-color: var(--blue); }
+.cert-badge { width: 38px; height: 38px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: .46rem; font-weight: 500; border-radius: 3px; }
+.cb-blue  { background: var(--blue-pale); color: var(--blue-dark); border: 1.5px solid var(--blue-mid); }
+.cb-coral { background: var(--coral-pale); color: var(--coral); border: 1.5px solid rgba(240,98,64,.25); }
+.cb-teal  { background: var(--teal-pale); color: var(--teal); border: 1.5px solid rgba(43,191,160,.25); }
+.cert-info { flex: 1; }
+.cert-nm { font-size: .82rem; font-weight: 700; color: var(--ink); margin-bottom: .15rem; }
+.cert-org { font-family: var(--mono); font-size: .58rem; color: var(--gray-4); }
+.cpill { font-family: var(--mono); font-size: .52rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; padding: .18rem .65rem; border-radius: 20px; white-space: nowrap; }
+.cp-done { background: rgba(40,186,122,.1); color: var(--green); border: 1px solid rgba(40,186,122,.25); }
+.cp-prog { background: rgba(232,168,32,.1); color: var(--gold); border: 1px solid rgba(232,168,32,.25); }
+.cp-plan { background: var(--gray-2); color: var(--gray-4); border: 1px solid var(--gray-3); }
+
+/* ══ ABOUT ══ */
+#about { background: var(--white); }
+.about-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: center; }
+.about-photo-wrap { position: relative; }
+.about-photo { width: 100%; aspect-ratio: 3/4; background: var(--gray-2); border: 1.5px solid var(--blue-mid); overflow: hidden; position: relative; box-shadow: 14px 14px 0 var(--blue-pale); }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s; }
+.about-photo:hover img { transform: scale(1.03); }
+.about-photo-ph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: .5rem; color: var(--gray-4); font-family: var(--mono); font-size: .65rem; }
+.photo-deco { position: absolute; bottom: -16px; right: -16px; width: 88px; height: 88px; border: 2px solid var(--coral); z-index: -1; opacity: .35; border-radius: 2px; }
+.about-exp-bar { display: flex; gap: 0; margin-top: 1.4rem; border: 1.5px solid var(--gray-2); border-radius: 4px; overflow: hidden; background: var(--gray-1); }
+.exp-item { flex: 1; padding: .9rem; text-align: center; border-right: 1.5px solid var(--gray-2); }
+.exp-item:last-child { border-right: none; }
+.exp-n { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--blue); }
+.exp-l { font-family: var(--mono); font-size: .52rem; color: var(--gray-4); letter-spacing: .08em; text-transform: uppercase; }
+
+.about-tag { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--mono); font-size: .6rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--coral); margin-bottom: 1.4rem; }
+.about-heading { font-family: var(--serif); font-size: clamp(2rem, 3.2vw, 2.8rem); font-weight: 400; line-height: 1.05; letter-spacing: -.02em; margin-bottom: 1.8rem; color: var(--ink); }
+.about-heading .w-bold { font-weight: 700; }
+.about-heading .w-italic { font-style: italic; color: var(--blue); }
+.ap { font-size: .88rem; color: var(--gray-5); line-height: 1.88; margin-bottom: 1rem; }
+.ap strong { color: var(--ink); font-weight: 600; }
+.about-list { list-style: none; display: flex; flex-direction: column; gap: .45rem; margin: 1.4rem 0 1.8rem; }
+.about-list li { display: flex; align-items: flex-start; gap: .65rem; font-size: .8rem; color: var(--gray-5); }
+.about-list li::before { content: '→'; color: var(--blue); flex-shrink: 0; }
+
+/* ══ CONTACT ══ */
+#contact { background: var(--ink-mid); }
+.contact-wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start; }
+.contact-big { font-family: var(--serif); font-size: clamp(3rem, 5.5vw, 5.2rem); font-weight: 400; line-height: .93; letter-spacing: -.02em; margin-bottom: 1.8rem; color: var(--white); }
+.contact-big .w-bold { font-weight: 700; }
+.contact-big .w-italic { font-style: italic; color: var(--blue); }
+.contact-big .w-coral { color: var(--coral); }
+.contact-sub { font-size: .86rem; color: rgba(255,255,255,.45); line-height: 1.85; max-width: 400px; margin-bottom: 2rem; }
+.avail { display: flex; align-items: center; gap: .6rem; padding: .9rem 1.3rem; border: 1px solid rgba(43,191,160,.3); background: rgba(43,191,160,.08); border-radius: 3px; }
+.avail-dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; }
+.avail-txt { font-family: var(--mono); font-size: .68rem; color: var(--teal); font-weight: 400; letter-spacing: .05em; }
+.contact-cards { display: flex; flex-direction: column; gap: 1px; }
+.contact-card { display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.3rem; background: rgba(255,255,255,.04); text-decoration: none; color: var(--white); border-left: 2.5px solid transparent; transition: background .25s, padding-left .25s; }
+.contact-card:hover { background: rgba(255,255,255,.09); padding-left: 1.8rem; border-left-color: var(--coral); }
+.cc-icon { width: 34px; height: 34px; background: rgba(74,158,191,.15); border: 1px solid rgba(74,158,191,.25); display: flex; align-items: center; justify-content: center; font-size: .75rem; flex-shrink: 0; border-radius: 50%; }
+.cc-label { font-family: var(--mono); font-size: .55rem; color: rgba(255,255,255,.35); letter-spacing: .1em; text-transform: uppercase; margin-bottom: .15rem; }
+.cc-value { font-size: .8rem; font-weight: 500; color: var(--white); }
+.cc-arr { margin-left: auto; font-size: .72rem; color: rgba(255,255,255,.25); transition: transform .25s, color .25s; }
+.contact-card:hover .cc-arr { transform: translateX(4px); color: var(--coral); }
+
+/* ══ FOOTER ══ */
+footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,.06); padding: 1.6rem 4.5rem; display: flex; justify-content: space-between; align-items: center; }
+footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,.28); letter-spacing: .06em; }
+.footer-links { display: flex; gap: 1.8rem; }
+.footer-links a { font-family: var(--mono); font-size: .56rem; color: rgba(255,255,255,.28); text-decoration: none; letter-spacing: .08em; text-transform: uppercase; transition: color .2s; }
+.footer-links a:hover { color: var(--blue); }
+
+/* ══ REVEAL ══ */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.rd1{transition-delay:.08s} .rd2{transition-delay:.16s} .rd3{transition-delay:.24s}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem} .nav-links{display:none}
+  .hero{grid-template-columns:1fr} .hero-right{display:none} .hero-left{padding:7rem 1.5rem 4rem}
+  .section{padding:4rem 1.5rem}
+  .pf-card{grid-template-columns:1fr} .pf-visual{min-height:240px}
+  .proj-grid{grid-template-columns:1fr}
+  .skills-layout,.about-layout,.contact-wrap{grid-template-columns:1fr;gap:2.5rem}
+  footer{flex-direction:column;gap:1rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- Curseur -->
+<div id="caret"></div>
+
+<!-- ══════════════════════════════════════════
+   MODALS VIDÉO
+   Pour ajouter une nouvelle vidéo :
+   1. Duplique un bloc modal-overlay
+   2. Change son id ex: id="modal-demo4"
+   3. Change le src vers ta vidéo ex: "demo-4.mp4"
+   4. Sur le bouton du projet, ajoute data-modal="modal-demo4"
+══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-demo1">
+  <div class="modal-box">
+    <div class="modal-close">✕ Fermer</div>
+    <video class="modal-video" controls preload="none">
+      <source src="demo-1.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-demo2">
+  <div class="modal-box">
+    <div class="modal-close">✕ Fermer</div>
+    <video class="modal-video" controls preload="none">
+      <source src="demo-2.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-demo3">
+  <div class="modal-box">
+    <div class="modal-close">✕ Fermer</div>
+    <video class="modal-video" controls preload="none">
+      <source src="demo-3.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-demo4">
+  <div class="modal-box">
+    <div class="modal-close">✕ Fermer</div>
+    <video class="modal-video" controls preload="none">
+      <source src="demo-4.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">E</div>
+    <span class="nav-logo-txt">Elom Samuel <span>Toublou</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+<canvas id="starfield"></canvas>
+  <div class="hero-left">
+    <div class="h-eyebrow">
+      <span class="h-eyebrow-dot"></span>
+      <span class="h-eyebrow-txt">Data Analyst · AI Strategist · Économiste</span>
+    </div>
+    <h1 class="h-name">
+      <span class="w-bold">Elom</span><br>
+      <span class="w-italic">Samuel</span><br>
+      <span class="w-outline">TOUBLOU</span>
+    </h1>
+    <div class="h-bar"></div>
+    <div class="h-sub">
+      <p class="h-role">Transforming raw data into strategic decisions</p>
+      <p class="h-desc">Je construis des outils d'analyse avancés et des systèmes intelligents à l'intersection de l'économie, de l'IA et de l'ingénierie des données.Je suis Basé à Lomé au Togo.</p>
+    </div>
+    <div class="h-stats">
+      <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Étudiants formés</div></div>
+      <div class="stat"><div class="stat-n">5</div><div class="stat-l">Projets déployés</div></div>
+      <div class="stat"><div class="stat-n">2+</div><div class="stat-l">Ans d'expérience</div></div>
+    </div>
+    <div class="h-btns">
+      <a href="#projects" class="btn btn-solid">Voir mes projets ↓</a>
+      <a href="mailto:toublousamuel@gmail.com" class="btn btn-ghost">Me contacter</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="photo-frame">
+      <div class="corner-tl"></div>
+      <div class="corner-br"></div>
+      <div class="photo-wrap" id="hero-photo-wrap">
+        <img src="photo-profil.jpg" alt="Elom Samuel Toublou"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-ph" style="display:none">
+          <span style="font-size:2.8rem">👤</span>
+          <span>photo-profil.jpg</span>
+        </div>
+      </div>
+      <div class="badge badge-1">
+        <div class="badge-lbl">Certification</div>
+        <div class="badge-val">Google</div>
+        <div class="badge-sub">Data Analytics</div>
+      </div>
+      <div class="badge badge-2">
+        <div class="badge-lbl">Outil phare</div>
+        <div class="badge-val">Excel / VBA</div>
+        <div class="badge-sub">Niveau avancé</div>
+      </div>
+      <div class="badge badge-3">
+        <div class="badge-lbl">Disponible</div>
+        <div class="badge-val">Worldwide</div>
+        <div class="badge-sub">Remote & On-site</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ti"><span class="tdot"></span>Python</div>
+    <div class="ti"><span class="tdot"></span>Excel / VBA</div>
+    <div class="ti"><span class="tdot"></span>Power BI</div>
+    <div class="ti"><span class="tdot"></span>SQL</div>
+    <div class="ti"><span class="tdot"></span>Automatisation</div>
+    <div class="ti"><span class="tdot"></span>Économétrie</div>
+    <div class="ti"><span class="tdot"></span>Machine Learning</div>
+    <div class="ti"><span class="tdot"></span>Finance Quantitative</div>
+    <div class="ti"><span class="tdot"></span>Data Visualisation</div>
+    <div class="ti"><span class="tdot"></span>Politique Fiscale</div>
+    <div class="ti"><span class="tdot"></span>Python</div>
+    <div class="ti"><span class="tdot"></span>Excel / VBA</div>
+    <div class="ti"><span class="tdot"></span>Power BI</div>
+    <div class="ti"><span class="tdot"></span>SQL</div>
+    <div class="ti"><span class="tdot"></span>Automatisation</div>
+    <div class="ti"><span class="tdot"></span>Économétrie</div>
+    <div class="ti"><span class="tdot"></span>Machine Learning</div>
+    <div class="ti"><span class="tdot"></span>Finance Quantitative</div>
+    <div class="ti"><span class="tdot"></span>Data Visualisation</div>
+    <div class="ti"><span class="tdot"></span>Politique Fiscale</div>
+  </div>
+</div>
+
+<!-- ══ PROJETS ══ -->
+<div id="projects" style="background:var(--white)">
+<div class="section">
+  <div class="sec-label reveal"><span class="sec-num"></span><span class="sec-dash"></span></div>
+  <h2 class="sec-title reveal"><span class="w-bold">Projets</span> & <span class="w-italic">Réalisations</span></h2>
+  <p class="sec-sub reveal">Des outils réels, déployés, qui fonctionnent. Pas des exercices académiques.</p>
+
+  <!-- BOUTIQUE MANAGER — vidéo: demo-1.mp4 -->
+  <div class="pf-card reveal" style="margin-bottom:2px">
+    <div class="pf-visual">
+      <div class="pf-car" id="car-boutique">
+        <div class="cs on"><img src="boutique-1.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="boutique-2.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="boutique-3.jpg" alt="" onerror="this.style.display='none'"></div>
+        <!-- Fallback décoratif si aucune image -->
+        <div class="cs cs-fb" id="fb-boutique" style="display:none">
+          <div class="cs-fb" style="display:flex;flex-direction:column;width:100%;height:100%">
+            <div class="fb-bar"><div class="fb-d fb-d-r"></div><div class="fb-d fb-d-y"></div><div class="fb-d fb-d-g"></div></div>
+            <div class="fb-body">
+              <div style="display:grid;grid-template-columns:72px 1fr;flex:1;height:100%;gap:0">
+                <div style="background:var(--blue-pale);padding:6px;display:flex;flex-direction:column;gap:3px;border-right:1px solid var(--blue-mid)">
+                  <div style="font-family:var(--mono);font-size:4.5px;color:var(--coral);letter-spacing:.1em;margin-bottom:4px">MODULES</div>
+                  <div style="height:5px;background:var(--blue);opacity:.7;border-radius:1px"></div>
+                  <div style="height:5px;background:var(--gray-2);border-radius:1px"></div>
+                  <div style="height:5px;background:var(--gray-2);border-radius:1px"></div>
+                  <div style="height:5px;background:rgba(43,191,160,.4);border-radius:1px"></div>
+                  <div style="height:5px;background:var(--gray-2);border-radius:1px"></div>
+                </div>
+                <div style="padding:8px;display:flex;flex-direction:column;gap:4px">
+                  <div class="fb-hi"><span>✓ SUPER ADMIN ACCESS</span></div>
+                  <div class="fb-grid">
+                    <div class="fb-cell">VENTES</div><div class="fb-cell">STOCKS</div>
+                    <div class="fb-cell">CLIENTS</div><div class="fb-cell">RAPPORT</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-dots"><span class="csdot on"></span><span class="csdot"></span><span class="csdot"></span></div>
+      </div>
+    </div>
+    <div class="pf-info">
+      <div class="pf-tag">Projet phare · Application déployable</div>
+      <h3 class="pf-title">Boutique Manager Plateforme de gestion commerciale complète</h3>
+      <p class="pf-desc">Application Excel/VBA multi-utilisateurs avec authentification par rôles (vendeur, gérant, caissier, administrateur, super-admin), gestion des ventes, stocks, clients et inventaire. Système de licence par clé d'activation et synchronisation via Google Drive.</p>
+      <div class="pf-metrics">
+        <div><div class="mn">5</div><div class="ml">Niveaux d'accès</div></div>
+        <div><div class="mn">100%</div><div class="ml">VBA from scratch</div></div>
+        <div><div class="mn">∞</div><div class="ml">Boutiques déployables</div></div>
+      </div>
+      <div class="pf-tags">
+        <span class="tag">Excel VBA</span><span class="tag">Authentification</span>
+        <span class="tag">Drive Sync</span><span class="tag">Licences</span><span class="tag">UI/UX Forms</span>
+      </div>
+      <!-- Bouton vidéo — data-modal pointe vers l'id du modal -->
+      <a href="#" class="pf-link" data-modal="modal-demo1">▶ Voir la démo vidéo</a>
+    </div>
+  </div>
+
+  <!-- GRILLE 3 PROJETS -->
+  <div class="proj-grid">
+
+    <!-- Inventaire -->
+    <div class="proj-card reveal rd1">
+      <div class="proj-arr">↗</div>
+      <div class="proj-num"></div>
+      <div class="proj-visual">
+        <div class="cs on"><img src="inventaire-1.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="inventaire-2.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="inventaire-3.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs cs-fb" style="display:none">
+          <div class="cs-fb fb-mini">
+            <div class="fb-mini-kpi">
+              <div class="fb-kpi" style="background:var(--blue-pale);border:1px solid var(--blue-mid)">
+                <div class="fb-kpi-n" style="color:var(--blue)">247</div><div class="fb-kpi-l">Articles</div>
+              </div>
+              <div class="fb-kpi" style="background:var(--teal-pale);border:1px solid rgba(43,191,160,.25)">
+                <div class="fb-kpi-n" style="color:var(--teal)">6</div><div class="fb-kpi-l">Zones</div>
+              </div>
+              <div class="fb-kpi" style="background:rgba(40,186,122,.08);border:1px solid rgba(40,186,122,.2)">
+                <div class="fb-kpi-n" style="color:var(--green)">98%</div><div class="fb-kpi-l">Précision</div>
+              </div>
+            </div>
+            <div class="fb-bars">
+              <div class="fb-bar-item" style="height:60%;background:rgba(74,158,191,.35);border-top:1px solid var(--blue)"></div>
+              <div class="fb-bar-item" style="height:80%;background:rgba(74,158,191,.35);border-top:1px solid var(--blue)"></div>
+              <div class="fb-bar-item" style="height:45%;background:rgba(74,158,191,.35);border-top:1px solid var(--blue)"></div>
+              <div class="fb-bar-item" style="height:90%;background:rgba(74,158,191,.55);border-top:2px solid var(--blue)"></div>
+              <div class="fb-bar-item" style="height:65%;background:rgba(74,158,191,.35);border-top:1px solid var(--blue)"></div>
+              <div class="fb-bar-item" style="height:50%;background:rgba(74,158,191,.35);border-top:1px solid var(--blue)"></div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-dots"><span class="csdot on"></span><span class="csdot"></span><span class="csdot"></span></div>
+      </div>
+      <div class="proj-type">Automatisation · VBA</div>
+      <h3 class="proj-title">Plateforme d'Inventaire Intelligente</h3>
+      <p class="proj-desc">Système Excel/VBA — 6 modules (Dashboard, Inventaire, Localisation, Maintenance, Données), enregistrement par emplacement et état, synthèse automatique et tableau de bord intégré.</p>
+      <div class="proj-tags"><span class="proj-tag">Excel VBA</span><span class="proj-tag">Macros</span><span class="proj-tag">Dashboard</span><span class="proj-tag">6 modules</span></div>
+    </div>
+
+    <!-- Générateur de messages -->
+    <div class="proj-card reveal rd2">
+      <div class="proj-arr">↗</div>
+      <div class="proj-num"></div>
+      <div class="proj-visual">
+        <div class="cs on"><img src="message-1.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="message-2.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="message-3.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs cs-fb" style="display:none">
+          <div class="cs-fb" style="position:absolute;inset:0;background:var(--ink);padding:10px;font-family:var(--mono);font-size:7px;line-height:1.55;color:#c9d1d9;overflow:hidden">
+            <span style="color:rgba(255,255,255,.3)"># Générateur VBA</span><br>
+            <span style="color:#79c0ff">Sub</span> <span style="color:var(--teal)">GenererMessages</span>()<br>
+            &nbsp;&nbsp;<span style="color:#79c0ff">Dim</span> i <span style="color:#79c0ff">As Integer</span><br>
+            &nbsp;&nbsp;lastRow = Cells(<span style="color:var(--coral)">Rows.Count</span>,1).End(xlUp).Row<br>
+            &nbsp;&nbsp;<span style="color:#79c0ff">For</span> i = <span style="color:var(--coral)">2</span> <span style="color:#79c0ff">To</span> lastRow<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;nom = Cells(i,1).Value<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;msg = <span style="color:var(--teal)">"Cher(e) " & nom</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgba(255,255,255,.3)">' → 100+ messages auto</span><br>
+            &nbsp;&nbsp;<span style="color:#79c0ff">Next</span> i<br>
+            <span style="color:#79c0ff">End Sub</span>
+          </div>
+        </div>
+        <div class="cs-dots"><span class="csdot on"></span><span class="csdot"></span><span class="csdot"></span></div>
+      </div>
+      <div class="proj-type">Automatisation · VBA</div>
+      <h3 class="proj-title">Générateur de Messages Personnalisés</h3>
+      <p class="proj-desc">Outil VBA générant 100+ messages personnalisés en un clic. Données collées → génération instantanée → affichage et structuration automatique sur feuilles dédiées.</p>
+      <div class="proj-tags"><span class="proj-tag">Excel VBA</span><span class="proj-tag">100+ lignes</span><span class="proj-tag">Templates</span><span class="proj-tag">Automation</span></div>
+    </div>
+
+    <!-- OTR -->
+    <div class="proj-card reveal rd3">
+      <div class="proj-arr">↗</div>
+      <div class="proj-num"></div>
+      <div class="proj-visual">
+        <div class="cs on"><img src="otr-1.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="otr-2.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="otr-3.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="otr-4.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs cs-fb" style="display:none">
+          <div class="cs-fb fb-mini">
+            <div class="fb-mini-kpi">
+              <div class="fb-kpi" style="background:var(--blue-pale);border:1px solid var(--blue-mid)">
+                <div class="fb-kpi-n" style="color:var(--blue)">2.4B</div><div class="fb-kpi-l">FCFA</div>
+              </div>
+              <div class="fb-kpi" style="background:var(--teal-pale);border:1px solid rgba(43,191,160,.25)">
+                <div class="fb-kpi-n" style="color:var(--teal)">+12%</div><div class="fb-kpi-l">Croissance</div>
+              </div>
+              <div class="fb-kpi" style="background:rgba(40,186,122,.08);border:1px solid rgba(40,186,122,.2)">
+                <div class="fb-kpi-n" style="color:var(--green)">88%</div><div class="fb-kpi-l">Recouvr.</div>
+              </div>
+            </div>
+            <div class="fb-bars">
+              <div class="fb-bar-item" style="height:40%;background:rgba(74,158,191,.3);border-top:1px solid var(--blue)"></div>
+              <div class="fb-bar-item" style="height:65%;background:rgba(74,158,191,.3);border-top:1px solid var(--blue)"></div>
+              <div class="fb-bar-item" style="height:50%;background:rgba(74,158,191,.3);border-top:1px solid var(--blue)"></div>
+              <div class="fb-bar-item" style="height:85%;background:rgba(74,158,191,.55);border-top:2px solid var(--blue)"></div>
+              <div class="fb-bar-item" style="height:70%;background:rgba(74,158,191,.3);border-top:1px solid var(--blue)"></div>
+              <div class="fb-bar-item" style="height:90%;background:rgba(74,158,191,.55);border-top:2px solid var(--blue)"></div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-dots"><span class="csdot on"></span><span class="csdot"></span><span class="csdot"></span><span class="csdot"></span></div>
+      </div>
+      <div class="proj-type">Analyse économique · Python · Power BI</div>
+      <h3 class="proj-title">Analyse des Recettes Fiscales — OTR Togo</h3>
+      <p class="proj-desc">Rapport trimestriel complet simulant l'analyse des recettes de l'OTR. Génération Python (5 000+ lignes), nettoyage, tableau de bord Power BI dynamique. Initiative personnelle.</p>
+      <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">pandas</span><span class="proj-tag">Power BI</span><span class="proj-tag">5 000+ lignes</span></div>
+    </div>
+  </div>
+
+  <!-- DATACO — vidéo: demo-2.mp4 et demo-3.mp4 -->
+  <div class="pf-card reveal" style="margin-top:2px">
+    <div class="pf-visual">
+      <div class="pf-car" id="car-dataco">
+        <div class="cs on"><img src="data-1.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="data-2.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="data-3.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="data-4.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs cs-fb" id="fb-dataco" style="display:none">
+          <div class="cs-fb" style="display:flex;flex-direction:column;width:100%;height:100%">
+            <div class="fb-bar"><div class="fb-d fb-d-r"></div><div class="fb-d fb-d-y"></div><div class="fb-d fb-d-g"></div></div>
+            <div class="fb-body">
+              <div style="display:flex;align-items:flex-end;gap:3px;flex:1;padding:4px 2px 0">
+                <div class="fb-bar-item" style="height:55%;background:rgba(74,158,191,.3);border-top:1.5px solid var(--blue)"></div>
+                <div class="fb-bar-item" style="height:80%;background:rgba(74,158,191,.3);border-top:1.5px solid var(--blue)"></div>
+                <div class="fb-bar-item" style="height:40%;background:rgba(74,158,191,.3);border-top:1.5px solid var(--blue)"></div>
+                <div class="fb-bar-item" style="height:95%;background:rgba(74,158,191,.55);border-top:2px solid var(--blue)"></div>
+                <div class="fb-bar-item" style="height:65%;background:rgba(74,158,191,.3);border-top:1.5px solid var(--blue)"></div>
+                <div class="fb-bar-item" style="height:50%;background:rgba(240,98,64,.25);border-top:1.5px solid var(--coral)"></div>
+                <div class="fb-bar-item" style="height:75%;background:rgba(240,98,64,.25);border-top:1.5px solid var(--coral)"></div>
+                <div class="fb-bar-item" style="height:60%;background:rgba(240,98,64,.25);border-top:1.5px solid var(--coral)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-dots"><span class="csdot on"></span><span class="csdot"></span><span class="csdot"></span><span class="csdot"></span></div>
+      </div>
+    </div>
+    <div class="pf-info">
+      <div class="pf-tag">Challenges publics · Excel · Data Visualisation</div>
+      <h3 class="pf-title">Tableaux de Bord Ventes + DATACO Togo Challenges</h3>
+      <p class="pf-desc">Dashboard Excel complet d'analyse des ventes (5 000+ lignes) avec KPIs, carte interactive, top 5 clients et commerciaux. Participation aux challenges DATACO Togo (octobre & novembre 2025) sur LinkedIn — analyse de données fournies et production de dashboards compétitifs.</p>
+      <div class="pf-tags">
+        <span class="tag">Excel Avancé</span><span class="tag">TCD</span>
+        <span class="tag">Carte interactive</span><span class="tag">DATACO</span><span class="tag">Compétition</span>
+      </div>
+      <!-- Deux boutons vidéo pour les deux démos DATACO -->
+      <div style="display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem">
+        <a href="#" class="pf-link" data-modal="modal-demo3">▶ Démo Dashboard — Challenge Oct. 2025</a>
+        <a href="#" class="pf-link" data-modal="modal-demo4">▶ Démo Dashboard — Challenge Nov. 2025</a>
+        <a href="#" class="pf-link" data-modal="modal-demo2">▶ Démo Tableau de bord de vente</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══ COMPÉTENCES ══ -->
+<div id="skills" style="background:var(--gray-1)">
+<div class="section">
+  <div class="sec-label reveal"><span class="sec-num"></span><span class="sec-dash"></span></div>
+  <h2 class="sec-title reveal"><span class="w-bold">Compétences</span> & <span class="w-italic">Certifications</span></h2>
+  <p class="sec-sub reveal">Des outils maîtrisés, prouvés par des projets en production.</p>
+
+  <div class="skills-layout">
+    <div>
+      <p class="sk-title reveal">Niveau de maîtrise</p>
+      <div class="skill-row reveal"><span class="skill-nm">Excel / VBA</span><div class="skill-track"><div class="skill-fill" data-w="93"></div></div><span class="skill-pct">93%</span></div>
+      <div class="skill-row reveal rd1"><span class="skill-nm">Python (pandas, numpy, matplotlib)</span><div class="skill-track"><div class="skill-fill" data-w="78"></div></div><span class="skill-pct">78%</span></div>
+      <div class="skill-row reveal rd2"><span class="skill-nm">SQL</span><div class="skill-track"><div class="skill-fill" data-w="72"></div></div><span class="skill-pct">72%</span></div>
+      <div class="skill-row reveal rd3"><span class="skill-nm">Power BI</span><div class="skill-track"><div class="skill-fill" data-w="70"></div></div><span class="skill-pct">70%</span></div>
+      <div class="skill-row reveal"><span class="skill-nm">Analyse économique & fiscale</span><div class="skill-track"><div class="skill-fill" data-w="85"></div></div><span class="skill-pct">85%</span></div>
+      <div class="skill-row reveal rd1"><span class="skill-nm">Data Visualisation</span><div class="skill-track"><div class="skill-fill" data-w="80"></div></div><span class="skill-pct">80%</span></div>
+      <div class="skill-row reveal rd2"><span class="skill-nm">Économétrie & Statistiques</span><div class="skill-track"><div class="skill-fill" data-w="65"></div></div><span class="skill-pct">65%</span></div>
+      <div class="skill-row reveal rd3"><span class="skill-nm">R (base)</span><div class="skill-track"><div class="skill-fill" data-w="45"></div></div><span class="skill-pct">45%</span></div>
+    </div>
+    <div>
+      <p class="sk-title reveal">Certifications</p>
+      <div class="certs-stack">
+        <div class="cert reveal"><div class="cert-badge cb-blue">GDA</div><div class="cert-info"><div class="cert-nm">Google Data Analytics</div><div class="cert-org">Google / Coursera — 2025</div></div><div class="cpill cp-done">Obtenu</div></div>
+        <div class="cert reveal rd1"><div class="cert-badge cb-coral">OIF</div><div class="cert-info"><div class="cert-nm">Formateur D-CLIC Certifié</div><div class="cert-org">Organisation Internationale de la Francophonie</div></div><div class="cpill cp-done">Obtenu</div></div>
+        <div class="cert reveal rd2"><div class="cert-badge cb-blue">ENG</div><div class="cert-info"><div class="cert-nm">English for Developers — B1</div><div class="cert-org">freeCodeCamp — 2026</div></div><div class="cpill cp-prog">En cours</div></div>
+        <div class="cert reveal rd3"><div class="cert-badge cb-teal">FN</div><div class="cert-info"><div class="cert-nm">Data Analysis Certification</div><div class="cert-org">Force N / Mastercard Foundation</div></div><div class="cpill cp-prog">En cours</div></div>
+        <div class="cert reveal"><div class="cert-badge cb-blue">PBI</div><div class="cert-info"><div class="cert-nm">Microsoft PL-300 — Power BI Analyst</div><div class="cert-org">Microsoft — Objectif 2026</div></div><div class="cpill cp-plan">Planifié</div></div>
+        <div class="cert reveal rd1"><div class="cert-badge cb-teal">AI</div><div class="cert-info"><div class="cert-nm">CAIP — Certified AI Professional</div><div class="cert-org">PECB — Objectif 2027</div></div><div class="cpill cp-plan">Planifié</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══ À PROPOS ══ -->
+<div id="about" style="background:var(--white)">
+<div class="section">
+  <div class="sec-label reveal"><span class="sec-num"></span><span class="sec-dash"></span></div>
+  <div class="about-layout">
+    <div class="about-photo-wrap reveal">
+      <div class="about-photo">
+        <img src="ma-photo.jpg" alt="Elom Samuel Toublou"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="about-photo-ph" style="display:none">
+          <span style="font-size:2.8rem">👤</span>
+          <span>ma-photo.jpg</span>
+        </div>
+      </div>
+      <div class="photo-deco"></div>
+      <div class="about-exp-bar">
+        <div class="exp-item"><div class="exp-n">100+</div><div class="exp-l">Étudiants</div></div>
+        <div class="exp-item"><div class="exp-n">5</div><div class="exp-l">Projets</div></div>
+        <div class="exp-item"><div class="exp-n">2+</div><div class="exp-l">Ans d'exp.</div></div>
+      </div>
+    </div>
+    <div class="reveal rd2">
+      <div class="about-tag">
+        <span style="width:16px;height:1.5px;background:var(--coral);display:inline-block"></span>
+        À propos
+      </div>
+      <h3 class="about-heading">
+        <span class="w-bold">Économiste.</span><br>
+        <span class="w-italic">Bâtisseur</span><br>
+        <span class="w-bold">d'outils.</span>
+      </h3>
+      <p class="ap">Je suis <strong>TOUBLOU Elom Samuel</strong>, data analyst et économiste basé à Lomé au Togo. Titulaire d'une Licence en Économie Internationale de l'Université de Lomé, je me suis spécialisé dans la construction d'outils analytiques réels, des systèmes qui fonctionnent en production.</p>
+      <p class="ap">Mon approche : Je crée des outils de décisions fiable. J'ai développé des plateformes Excel/VBA déployées, analysé des données pour des PME locales, et formé plus de <strong>100 étudiants</strong> aux métiers de la data.</p>
+      <ul class="about-list">
+        <li>Formateur certifié OIF - Programme D-CLIC</li>
+        <li>Certification Google Data Analytics - 2025</li>
+        <li>Challenges DATACO Togo - octobre & novembre 2025</li>
+        <li>Candidat actif aux programmes de Master Internationaux</li>
+      </ul>
+      <p class="ap">Objectif : devenir un <strong>spécialiste mondial de l'analyse avancée des données économiques et financières</strong>, à la frontière entre IA, finance quantitative et politiques mondiales.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
+        <a href="mailto:toublousamuel@gmail.com" class="btn btn-solid">Collaborer ↗</a>
+        <a href="https://www.linkedin.com/in/elom-samuel-toublou-056446346/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<div id="contact">
+<div class="section">
+  <div class="contact-wrap">
+    <div class="reveal">
+      <div class="contact-big">
+        <span class="w-italic">Parlons</span><br>
+        <span class="w-bold">données</span><br>
+        <span class="w-coral">ensemble.</span>
+      </div>
+      <p class="contact-sub">Disponible pour des missions freelance, des stages, des collaborations académiques et des opportunités internationales. Chaque grand projet commence par une conversation.</p>
+      <div class="avail"><span class="avail-dot"></span><span class="avail-txt">Disponible — ouvert aux opportunités mondiales</span></div>
+    </div>
+    <div class="contact-cards reveal rd2">
+      <a href="mailto:toublousamuel@gmail.com" class="contact-card"><div class="cc-icon">✉</div><div><div class="cc-label">Email</div><div class="cc-value">toublousamuel@gmail.com</div></div><div class="cc-arr">→</div></a>
+      <a href="tel:+22893879493" class="contact-card"><div class="cc-icon">☎</div><div><div class="cc-label">Téléphone</div><div class="cc-value">+228 93 87 94 93</div></div><div class="cc-arr">→</div></a>
+      <a href="https://www.linkedin.com/in/elom-samuel-toublou-056446346/" target="_blank" class="contact-card"><div class="cc-icon">in</div><div><div class="cc-label">LinkedIn</div><div class="cc-value">elom-samuel-toublou</div></div><div class="cc-arr">→</div></a>
+      <a href="https://github.com/toublou-samuel" target="_blank" class="contact-card"><div class="cc-icon">⌥</div><div><div class="cc-label">GitHub</div><div class="cc-value">github.com/toublou-samuel</div></div><div class="cc-arr">→</div></a>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+  <p>© 2026 Elom Samuel Toublou - Lomé, Togo</p>
+  <div class="footer-links">
+    <a href="#projects">Projets</a>
+    <a href="#skills">Compétences</a>
+    <a href="#about">À propos</a>
+    <a href="mailto:toublousamuel@gmail.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+  let W, H, stars = [];
+  const mouse = { x: -1000, y: -1000 };
+
+  const STAR_COUNT = 150;
+  const COLORS = ['#4A9EBF','#2BBFA0','#F06240','#ffffff','#D0EBF5'];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function createStars() {
+    stars = [];
+    for (let i = 0; i < STAR_COUNT; i++) {
+      stars.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        ox: 0, oy: 0, // Position d'origine pour l'interaction
+        r: Math.random() * 1.5 + 0.5,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        alpha: Math.random(),
+        dalpha: Math.random() * 0.02,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)]
+      });
+      stars[i].ox = stars[i].x;
+      stars[i].oy = stars[i].y;
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    stars.forEach(s => {
+      // Pulsation
+      s.alpha += Math.sin(Date.now() * 0.001 + s.x) * 0.01;
+      
+      // Mouvement de base
+      s.ox += s.vx;
+      s.oy += s.vy;
+
+      // Interaction Souris (Répulsion)
+      let dx = mouse.x - s.ox;
+      let dy = mouse.y - s.oy;
+      let dist = Math.sqrt(dx*dx + dy*dy);
+      let force = 0;
+      
+      if (dist < 100) {
+        force = (100 - dist) / 100;
+        s.x = s.ox - (dx / dist) * force * 50;
+        s.y = s.oy - (dy / dist) * force * 50;
+      } else {
+        s.x = s.ox;
+        s.y = s.oy;
+      }
+
+      // Sortie d'écran
+      if (s.ox < 0) s.ox = W; if (s.ox > W) s.ox = 0;
+      if (s.oy < 0) s.oy = H; if (s.oy > H) s.oy = 0;
+
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = s.color;
+      ctx.globalAlpha = Math.max(0.2, Math.min(1, s.alpha));
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('mousemove', e => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  window.addEventListener('resize', () => { resize(); createStars(); });
+  
+  resize();
+  createStars();
+  draw();
+})();
+
+/* ── CURSEUR BARRE ── */
+const caret = document.getElementById('caret');
+document.addEventListener('mousemove', e => {
+  caret.style.left = e.clientX + 'px';
+  caret.style.top  = e.clientY + 'px';
+});
+document.querySelectorAll('a, button, .proj-card, .pf-card, .cert').forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('on-link'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('on-link'));
+});
+
+/* ── NAV SCROLL ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', scrollY > 60);
+});
+
+/* ── MODALS VIDÉO ──
+   Le système lit l'attribut data-modal sur le bouton
+   et ouvre le modal correspondant.
+   Pour ajouter une vidéo : voir commentaire dans le HTML. */
+document.querySelectorAll('[data-modal]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const modal = document.getElementById(btn.dataset.modal);
+    if (!modal) return;
+    modal.classList.add('open');
+    modal.querySelector('video')?.play();
+  });
+});
+document.querySelectorAll('.modal-overlay').forEach(modal => {
+  modal.querySelector('.modal-close')?.addEventListener('click', () => closeModal(modal));
+  modal.addEventListener('click', e => { if(e.target === modal) closeModal(modal); });
+});
+function closeModal(modal) {
+  modal.classList.remove('open');
+  const v = modal.querySelector('video');
+  if(v) { v.pause(); v.currentTime = 0; }
+}
+
+/* ── CARROUSEL ENGINE ──
+   Fonctionne pour tous les .pf-car et .proj-visual.
+   Vérifie si les images existent avant de démarrer. */
+function initCar(container, ms) {
+  const slides = Array.from(container.querySelectorAll('.cs:not(.cs-fb)'));
+  const fbs    = Array.from(container.querySelectorAll('.cs-fb'));
+  const dots   = Array.from(container.querySelectorAll('.csdot'));
+
+  if (!slides.length) {
+    fbs.forEach(f => { f.style.display = ''; f.classList.add('on'); });
+    return;
+  }
+
+  let loaded = 0, checked = 0;
+
+  function onCheck() {
+    checked++;
+    if (checked < slides.length) return;
+    if (!loaded) {
+      slides.forEach(s => { s.classList.remove('on'); s.style.display = 'none'; });
+      fbs.forEach(f => { f.style.display = ''; f.classList.add('on'); });
+      dots.forEach(d => { if(d.parentElement) d.parentElement.style.display = 'none'; });
+    } else {
+      fbs.forEach(f => { f.style.display = 'none'; f.classList.remove('on'); });
+      startRotation();
+    }
+  }
+
+  slides.forEach(s => {
+    const img = s.querySelector('img');
+    if (!img) { onCheck(); return; }
+    if (img.complete) {
+      if (img.naturalWidth > 0) loaded++;
+      else s.style.display = 'none';
+      onCheck();
+    } else {
+      img.addEventListener('load',  () => { loaded++; onCheck(); });
+      img.addEventListener('error', () => { s.style.display = 'none'; onCheck(); });
+    }
+  });
+
+  let cur = 0;
+  function startRotation() {
+    const vis  = slides.filter(s => s.style.display !== 'none');
+    const vdot = dots.slice(0, vis.length);
+    if (vis.length <= 1) { vdot.forEach(d => d.style.display = 'none'); return; }
+    vis.forEach((s, i) => s.classList.toggle('on', i === 0));
+    vdot.forEach((d, i) => d.classList.toggle('on', i === 0));
+    setInterval(() => {
+      vis[cur].classList.remove('on');
+      vdot[cur]?.classList.remove('on');
+      cur = (cur + 1) % vis.length;
+      vis[cur].classList.add('on');
+      vdot[cur]?.classList.add('on');
+    }, ms);
+  }
+}
+
+document.querySelectorAll('.pf-car').forEach(c => initCar(c, 3800));
+document.querySelectorAll('.proj-visual').forEach(c => initCar(c, 3200));
+
+/* ── SCROLL REVEAL ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── BARRES DE COMPÉTENCES ── */
+const skObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    document.querySelectorAll('.skill-fill').forEach(f => f.style.width = f.dataset.w + '%');
+    skObs.disconnect();
+  }
+}, { threshold: .2 });
+const sk = document.getElementById('skills');
+if (sk) skObs.observe(sk);
+</script>
+</body>
+</html>
