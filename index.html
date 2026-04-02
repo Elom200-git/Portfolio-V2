@@ -8,12 +8,13 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='6' fill='%234A9EBF'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='13' fill='white'>E</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- ✅ MODIFICATION 4 : Icônes SVG professionnelles via Lucide -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.383.0/lucide.min.js" defer></script>
 <style>
 /* ════════════════════════════════════════════
    ROOT — PALETTE CLAIRE & GAIE
 ════════════════════════════════════════════ */
 :root {
-  /* Couleurs principales */
   --blue:       #4A9EBF;
   --blue-dark:  #2E7A9A;
   --blue-pale:  #EBF6FB;
@@ -24,7 +25,6 @@
   --coral-pale: #FEF0ED;
   --gold:       #E8A820;
   --green:      #28BA7A;
-  /* Neutres */
   --white:   #FFFFFF;
   --off:     #FAFBFC;
   --gray-1:  #F4F6F9;
@@ -34,17 +34,16 @@
   --gray-5:  #5A7890;
   --ink:     #0F1F2E;
   --ink-mid: #1E3448;
-
-  /* Typographie */
   --serif:  'Lora', Georgia, serif;
   --sans:   'Plus Jakarta Sans', system-ui, sans-serif;
   --mono:   'JetBrains Mono', 'Courier New', monospace;
 }
-/* MODIFICATION ICI */
-  .h-name .w-bold {
-    color: #00d4ff !important; /* Bleu électrique très visible */
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.4); /* Effet néon léger */
-  }
+
+.h-name .w-bold {
+  color: #00d4ff !important;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+}
+
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 
@@ -56,24 +55,21 @@ body {
   cursor: none;
   -webkit-font-smoothing: antialiased;
 }
-/* ══ FOND ÉTOILÉ GLOBAL ══ */
+
 #starfield {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1; /* Derrière tout */
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: -1;
   pointer-events: none;
-  background: #05050a; /* Couleur de l'espace */
+  background: #05050a;
 }
 
-/* IMPORTANT : Vos sections doivent être transparentes pour voir le fond */
 section, .hero, .portfolio-item, main {
   background: transparent !important;
 }
 
-/* ══ CURSEUR UNIQUE — BARRE CLIGNOTANTE ══ */
+/* ══ CURSEUR ══ */
 #caret {
   position: fixed; top:0; left:0;
   width: 2px; height: 20px;
@@ -121,6 +117,7 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
 }
 .nav-logo-txt span { color: var(--blue); }
 
+/* ✅ MODIFICATION 1 : Nav hamburger mobile */
 .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
 .nav-links a {
   font-size: .72rem; font-weight: 600; color: var(--gray-5);
@@ -144,6 +141,51 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { background: var(--blue-dark) !important; border-color: var(--blue-dark) !important; }
 
+/* Hamburger menu */
+.nav-hamburger {
+  display: none;
+  flex-direction: column; gap: 5px;
+  cursor: none; padding: 4px;
+  background: none; border: none;
+}
+.nav-hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--ink); border-radius: 2px;
+  transition: all .3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Menu mobile déroulant */
+.nav-mobile {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(5, 5, 10, 0.97);
+  z-index: 999;
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 2.5rem;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  font-family: var(--serif); font-size: 2rem; font-weight: 700;
+  color: white; text-decoration: none; letter-spacing: -.01em;
+  transition: color .2s;
+}
+.nav-mobile a:hover { color: var(--coral); }
+.nav-mobile .nav-mobile-cta {
+  padding: .9rem 2.5rem;
+  background: var(--blue); color: white !important;
+  font-family: var(--sans); font-size: .85rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  border-radius: 3px; margin-top: .5rem;
+}
+.nav-mobile-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  font-family: var(--mono); font-size: .7rem; color: rgba(255,255,255,.4);
+  cursor: none; letter-spacing: .1em;
+}
+
 /* ══ HERO ══ */
 .hero {
   min-height: 100vh;
@@ -153,7 +195,6 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
   background: var(--white);
 }
 
-/* Formes décoratives légères */
 .hero::before {
   content: '';
   position: absolute; top: -100px; right: -100px;
@@ -251,8 +292,22 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
 }
 .btn-solid { background: var(--blue); color: white; border: 2px solid var(--blue); }
 .btn-solid:hover { background: var(--blue-dark); border-color: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74,158,191,.3); }
-.btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--gray-2); }
-.btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+/* ✅ MODIFICATION 3 : Bouton "Me contacter" bien visible sur fond étoilé */
+.btn-ghost {
+  background: rgba(255,255,255,0.15);
+  color: white !important;
+  border: 2px solid rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.28);
+  border-color: white;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,255,255,0.15);
+}
 
 @keyframes up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
@@ -288,7 +343,6 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
   font-family: var(--mono); font-size: .65rem;
 }
 
-/* Corner accents */
 .corner-tl, .corner-br {
   position: absolute; width: 22px; height: 22px;
   pointer-events: none;
@@ -296,7 +350,6 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
 .corner-tl { top: -8px; left: -8px; border-top: 2px solid var(--coral); border-left: 2px solid var(--coral); }
 .corner-br { bottom: -8px; right: -8px; border-bottom: 2px solid var(--coral); border-right: 2px solid var(--coral); }
 
-/* Badges flottants */
 .badge {
   position: absolute; background: white;
   border: 1.5px solid var(--gray-2); border-radius: 4px;
@@ -339,16 +392,7 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
 .sec-title .w-italic { font-style: italic; color: var(--blue); }
 .sec-sub { font-size: .88rem; color: var(--gray-4); max-width: 460px; line-height: 1.8; margin-bottom: 4rem; }
 
-/* ══ MODALS VIDÉO ══
-   ─────────────────────────────────────────
-   COMMENT AJOUTER UNE NOUVELLE VIDÉO :
-   1. Duplique le bloc ".modal-overlay" ci-dessous
-   2. Donne-lui un id unique ex: "modal-demo4"
-   3. Change src de la balise <source> vers ta vidéo ex: "demo-4.mp4"
-   4. Duplique le bouton .pf-link dans le projet concerné
-   5. Change son data-modal="modal-demo4"
-   6. C'est tout — le JavaScript gère le reste automatiquement.
-   ─────────────────────────────────────────── */
+/* ══ MODALS VIDÉO ══ */
 .modal-overlay {
   display: none; position: fixed; inset: 0; z-index: 9000;
   background: rgba(15,31,46,.9); backdrop-filter: blur(10px);
@@ -364,11 +408,56 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
 .modal-close:hover { color: white; }
 .modal-video { width: 100%; aspect-ratio: 16/9; display: block; background: #000; border-radius: 2px; }
 
+/* ✅ MODIFICATION 2 : Lightbox pour photos de projets */
+.lightbox-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9500;
+  background: rgba(5,5,10,.96); backdrop-filter: blur(12px);
+  align-items: center; justify-content: center;
+}
+.lightbox-overlay.open { display: flex; }
+.lightbox-box {
+  position: relative; max-width: 92vw; max-height: 88vh;
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.lightbox-img {
+  max-width: 100%; max-height: 80vh;
+  object-fit: contain; border-radius: 3px;
+  box-shadow: 0 24px 80px rgba(0,0,0,.6);
+}
+.lightbox-close {
+  position: absolute; top: -42px; right: 0;
+  font-family: var(--mono); font-size: .65rem; color: rgba(255,255,255,.45);
+  cursor: none; letter-spacing: .12em; text-transform: uppercase;
+  transition: color .2s; background: none; border: none;
+}
+.lightbox-close:hover { color: white; }
+.lightbox-nav {
+  display: flex; gap: 1rem; align-items: center;
+}
+.lightbox-btn {
+  font-family: var(--mono); font-size: .65rem; letter-spacing: .1em;
+  text-transform: uppercase; color: rgba(255,255,255,.45);
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+  padding: .5rem 1.2rem; border-radius: 2px; cursor: none;
+  transition: all .2s;
+}
+.lightbox-btn:hover { color: white; background: rgba(255,255,255,.15); }
+.lightbox-caption {
+  font-family: var(--mono); font-size: .58rem;
+  color: rgba(255,255,255,.3); letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* Curseur "zoom" sur les images de projets */
+.pf-car .cs img,
+.proj-visual .cs img {
+  cursor: zoom-in;
+}
+
 /* ══ PROJETS ══ */
 #projects { background: var(--white); }
 #projects .section { border-top: 1.5px solid var(--gray-2); }
 
-/* Featured card */
 .pf-card {
   display: grid; grid-template-columns: 1fr 1fr; gap: 0;
   border: 1.5px solid var(--gray-2); border-radius: 4px;
@@ -383,14 +472,12 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
   display: flex; align-items: center; justify-content: center;
 }
 
-/* Carrousel featured */
 .pf-car { position: relative; width: 88%; aspect-ratio: 16/10; box-shadow: 0 16px 50px rgba(0,0,0,.12); }
 .pf-car .cs { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease; }
 .pf-car .cs.on { opacity: 1; z-index: 1; }
 .pf-car .cs img { width: 100%; height: 100%; object-fit: cover; display: block; border: 1.5px solid var(--gray-2); border-radius: 2px; }
 .pf-car .cs-fb { width: 100%; height: 100%; background: white; border: 1.5px solid var(--gray-2); border-radius: 2px; display: flex; flex-direction: column; overflow: hidden; }
 
-/* Carrousel projets grille */
 .proj-visual {
   width: 100%; height: 165px;
   background: var(--gray-1); border: 1.5px solid var(--gray-2); border-radius: 3px;
@@ -401,14 +488,12 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
 .proj-visual .cs img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .proj-visual .cs-fb { position: absolute; inset: 0; }
 
-/* Dots carrousel */
 .cs-dots { position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 5; }
 .csdot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.45); border: 1px solid rgba(0,0,0,.1); transition: background .3s; cursor: none; }
 .csdot.on { background: var(--coral); border-color: var(--coral); }
 .proj-visual .csdot { background: rgba(0,0,0,.15); }
 .proj-visual .csdot.on { background: var(--blue); }
 
-/* Fallback screen éléments */
 .fb-bar { height: 22px; background: var(--gray-1); display: flex; align-items: center; gap: 5px; padding: 0 8px; flex-shrink: 0; border-bottom: 1px solid var(--gray-2); }
 .fb-d { width: 7px; height: 7px; border-radius: 50%; }
 .fb-d-r{background:#ff5f56} .fb-d-y{background:#ffbd2e} .fb-d-g{background:#27c93f}
@@ -428,7 +513,6 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
   font-family: var(--mono); font-size: .55rem; font-weight: 500; color: var(--blue-dark); letter-spacing: .06em;
 }
 
-/* Info carte featured */
 .pf-info { padding: 3rem; display: flex; flex-direction: column; justify-content: center; background: var(--white); }
 .pf-tag {
   display: inline-flex; align-items: center; gap: .5rem;
@@ -466,7 +550,6 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
 }
 .pf-link:hover { gap: .9rem; color: var(--blue-dark); }
 
-/* Grille projets */
 .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--gray-2); border-radius: 4px; overflow: hidden; }
 .proj-card {
   background: var(--white); padding: 2.2rem; cursor: none;
@@ -489,7 +572,6 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
   font-size: .65rem; color: var(--gray-4); transition: all .3s; border-radius: 50%;
 }
 
-/* Fallbacks décoratifs projets (même logique pour tous) */
 .fb-mini { width: 100%; height: 100%; background: var(--white); padding: 8px; display: flex; flex-direction: column; gap: 4px; }
 .fb-mini-kpi { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
 .fb-kpi { padding: 4px; text-align: center; border-radius: 2px; }
@@ -563,7 +645,23 @@ nav.scrolled { padding: .9rem 4rem; box-shadow: 0 2px 24px rgba(74,158,191,.08);
 .contact-cards { display: flex; flex-direction: column; gap: 1px; }
 .contact-card { display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.3rem; background: rgba(255,255,255,.04); text-decoration: none; color: var(--white); border-left: 2.5px solid transparent; transition: background .25s, padding-left .25s; }
 .contact-card:hover { background: rgba(255,255,255,.09); padding-left: 1.8rem; border-left-color: var(--coral); }
-.cc-icon { width: 34px; height: 34px; background: rgba(74,158,191,.15); border: 1px solid rgba(74,158,191,.25); display: flex; align-items: center; justify-content: center; font-size: .75rem; flex-shrink: 0; border-radius: 50%; }
+
+/* ✅ MODIFICATION 4 : Icônes contact SVG professionnelles */
+.cc-icon {
+  width: 34px; height: 34px;
+  background: rgba(74,158,191,.15); border: 1px solid rgba(74,158,191,.25);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; border-radius: 50%;
+}
+.cc-icon svg {
+  width: 16px; height: 16px;
+  stroke: var(--blue); fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+/* LinkedIn et GitHub ont un fill spécifique */
+.cc-icon svg.icon-linkedin,
+.cc-icon svg.icon-github { stroke: none; fill: var(--blue); }
+
 .cc-label { font-family: var(--mono); font-size: .55rem; color: rgba(255,255,255,.35); letter-spacing: .1em; text-transform: uppercase; margin-bottom: .15rem; }
 .cc-value { font-size: .8rem; font-weight: 500; color: var(--white); }
 .cc-arr { margin-left: auto; font-size: .72rem; color: rgba(255,255,255,.25); transition: transform .25s, color .25s; }
@@ -581,31 +679,131 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .rd1{transition-delay:.08s} .rd2{transition-delay:.16s} .rd3{transition-delay:.24s}
 
-/* ══ RESPONSIVE ══ */
+/* ══════════════════════════════════════════
+   ✅ MODIFICATION 1 : RESPONSIVE COMPLET
+══════════════════════════════════════════ */
 @media(max-width:900px){
-  nav{padding:1rem 1.5rem} .nav-links{display:none}
-  .hero{grid-template-columns:1fr} .hero-right{display:none} .hero-left{padding:7rem 1.5rem 4rem}
-  .section{padding:4rem 1.5rem}
-  .pf-card{grid-template-columns:1fr} .pf-visual{min-height:240px}
-  .proj-grid{grid-template-columns:1fr}
-  .skills-layout,.about-layout,.contact-wrap{grid-template-columns:1fr;gap:2.5rem}
-  footer{flex-direction:column;gap:1rem;text-align:center}
+  /* Nav */
+  nav { padding: 1rem 1.2rem; }
+  nav.scrolled { padding: .8rem 1.2rem; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* Hero — colonne unique, photo visible */
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: auto;
+    padding-top: 5rem;
+  }
+  .hero-left {
+    padding: 2.5rem 1.4rem 2rem;
+    order: 1;
+  }
+  .hero-right {
+    display: flex;
+    order: 2;
+    padding: 2rem 1.4rem 5rem;
+    border-left: none;
+    border-top: 1.5px solid var(--blue-mid);
+    background: var(--blue-pale);
+    justify-content: center;
+  }
+  .photo-frame { width: 220px; }
+  /* Masquer les badges flottants sur mobile (hors écran) */
+  .badge-1, .badge-2 { display: none; }
+  .badge-3 { bottom: -55px; }
+
+  /* Nom : taille adaptée */
+  .h-name { font-size: clamp(2.8rem, 11vw, 4rem); }
+
+  /* Stats : flex wrap */
+  .h-stats { width: 100%; }
+  .stat { padding: .8rem 1rem; flex: 1; }
+  .stat-n { font-size: 1.5rem; }
+
+  /* Boutons hero */
+  .h-btns { flex-direction: column; gap: .8rem; }
+  .btn { width: 100%; justify-content: center; }
+
+  /* Eyebrow : évite la coupure */
+  .h-eyebrow-txt { font-size: .55rem; letter-spacing: .1em; }
+
+  /* Sections */
+  .section { padding: 3.5rem 1.2rem; }
+
+  /* Projets */
+  .pf-card { grid-template-columns: 1fr; }
+  .pf-visual { min-height: 230px; }
+  .pf-info { padding: 1.6rem; }
+  .pf-metrics { gap: 1.2rem; flex-wrap: wrap; }
+  .proj-grid { grid-template-columns: 1fr; }
+
+  /* Skills */
+  .skills-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .skill-row { flex-wrap: wrap; gap: .5rem; }
+  .skill-track { width: 100%; order: 3; }
+  .skill-nm { flex: 1; }
+
+  /* About */
+  .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-photo { max-width: 260px; margin: 0 auto; }
+  .about-photo-wrap { display: flex; flex-direction: column; align-items: center; }
+  .about-exp-bar { width: 100%; max-width: 320px; }
+
+  /* Contact */
+  .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-big { font-size: clamp(2.4rem, 9vw, 3.5rem); }
+
+  /* Footer */
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.4rem 1.2rem; }
+}
+
+@media(max-width:480px){
+  .h-name { font-size: clamp(2.4rem, 12vw, 3.2rem); }
+  .h-desc { font-size: .82rem; }
+  .h-role { font-size: .95rem; }
+  .stat { padding: .65rem .7rem; }
+  .stat-n { font-size: 1.3rem; }
+  .stat-l { font-size: .48rem; }
+  .pf-car { width: 94%; }
+  .photo-frame { width: 180px; }
+  .sec-title { font-size: clamp(1.9rem, 8vw, 2.6rem); }
+  .pf-title { font-size: 1.2rem; }
+  .cert { flex-wrap: wrap; gap: .6rem; }
+  .cpill { align-self: flex-start; }
+  .cc-value { font-size: .74rem; }
+  .contact-card { padding: 1rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- Curseur -->
 <div id="caret"></div>
 
-<!-- ══════════════════════════════════════════
-   MODALS VIDÉO
-   Pour ajouter une nouvelle vidéo :
-   1. Duplique un bloc modal-overlay
-   2. Change son id ex: id="modal-demo4"
-   3. Change le src vers ta vidéo ex: "demo-4.mp4"
-   4. Sur le bouton du projet, ajoute data-modal="modal-demo4"
-══════════════════════════════════════════ -->
+<!-- ══ LIGHTBOX PHOTOS ══ -->
+<div class="lightbox-overlay" id="lightbox">
+  <div class="lightbox-box">
+    <button class="lightbox-close" id="lightbox-close">✕ Fermer</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <div class="lightbox-nav">
+      <button class="lightbox-btn" id="lightbox-prev">← Précédente</button>
+      <span class="lightbox-caption" id="lightbox-caption"></span>
+      <button class="lightbox-btn" id="lightbox-next">Suivante →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MENU MOBILE ══ -->
+<div class="nav-mobile" id="nav-mobile">
+  <button class="nav-mobile-close" id="nav-mobile-close">✕ Fermer</button>
+  <a href="#projects" class="nav-mobile-link">Projets</a>
+  <a href="#skills" class="nav-mobile-link">Compétences</a>
+  <a href="#about" class="nav-mobile-link">À propos</a>
+  <a href="#contact" class="nav-mobile-link nav-mobile-cta">Me contacter</a>
+</div>
+
+<!-- MODALS VIDÉO -->
 <div class="modal-overlay" id="modal-demo1">
   <div class="modal-box">
     <div class="modal-close">✕ Fermer</div>
@@ -614,7 +812,6 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
     </video>
   </div>
 </div>
-
 <div class="modal-overlay" id="modal-demo2">
   <div class="modal-box">
     <div class="modal-close">✕ Fermer</div>
@@ -623,7 +820,6 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
     </video>
   </div>
 </div>
-
 <div class="modal-overlay" id="modal-demo3">
   <div class="modal-box">
     <div class="modal-close">✕ Fermer</div>
@@ -632,7 +828,6 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
     </video>
   </div>
 </div>
-
 <div class="modal-overlay" id="modal-demo4">
   <div class="modal-box">
     <div class="modal-close">✕ Fermer</div>
@@ -654,6 +849,10 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
     <li><a href="#about">À propos</a></li>
     <li><a href="#contact" class="nav-cta">Me contacter</a></li>
   </ul>
+  <!-- Hamburger mobile -->
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- ══ HERO ══ -->
@@ -672,7 +871,7 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
     <div class="h-bar"></div>
     <div class="h-sub">
       <p class="h-role">Transforming raw data into strategic decisions</p>
-      <p class="h-desc">Je construis des outils d'analyse avancés et des systèmes intelligents à l'intersection de l'économie, de l'IA et de l'ingénierie des données.Je suis Basé à Lomé au Togo.</p>
+      <p class="h-desc">Je construis des outils d'analyse avancés et des systèmes intelligents à l'intersection de l'économie, de l'IA et de l'ingénierie des données. Je suis Basé à Lomé au Togo.</p>
     </div>
     <div class="h-stats">
       <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Étudiants formés</div></div>
@@ -681,6 +880,7 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
     </div>
     <div class="h-btns">
       <a href="#projects" class="btn btn-solid">Voir mes projets ↓</a>
+      <!-- ✅ MODIFICATION 3 : bouton Me contacter bien visible -->
       <a href="mailto:toublousamuel@gmail.com" class="btn btn-ghost">Me contacter</a>
     </div>
   </div>
@@ -749,14 +949,13 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
   <h2 class="sec-title reveal"><span class="w-bold">Projets</span> & <span class="w-italic">Réalisations</span></h2>
   <p class="sec-sub reveal">Des outils réels, déployés, qui fonctionnent. Pas des exercices académiques.</p>
 
-  <!-- BOUTIQUE MANAGER — vidéo: demo-1.mp4 -->
+  <!-- BOUTIQUE MANAGER -->
   <div class="pf-card reveal" style="margin-bottom:2px">
     <div class="pf-visual">
       <div class="pf-car" id="car-boutique">
-        <div class="cs on"><img src="boutique-1.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="boutique-2.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="boutique-3.jpg" alt="" onerror="this.style.display='none'"></div>
-        <!-- Fallback décoratif si aucune image -->
+        <div class="cs on"><img src="boutique-1.jpg" alt="Boutique Manager" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="boutique-2.jpg" alt="Boutique Manager" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="boutique-3.jpg" alt="Boutique Manager" onerror="this.style.display='none'"></div>
         <div class="cs cs-fb" id="fb-boutique" style="display:none">
           <div class="cs-fb" style="display:flex;flex-direction:column;width:100%;height:100%">
             <div class="fb-bar"><div class="fb-d fb-d-r"></div><div class="fb-d fb-d-y"></div><div class="fb-d fb-d-g"></div></div>
@@ -786,7 +985,7 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
     </div>
     <div class="pf-info">
       <div class="pf-tag">Projet phare · Application déployable</div>
-      <h3 class="pf-title">Boutique Manager Plateforme de gestion commerciale complète</h3>
+      <h3 class="pf-title">Boutique Manager — Plateforme de gestion commerciale complète</h3>
       <p class="pf-desc">Application Excel/VBA multi-utilisateurs avec authentification par rôles (vendeur, gérant, caissier, administrateur, super-admin), gestion des ventes, stocks, clients et inventaire. Système de licence par clé d'activation et synchronisation via Google Drive.</p>
       <div class="pf-metrics">
         <div><div class="mn">5</div><div class="ml">Niveaux d'accès</div></div>
@@ -797,7 +996,6 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
         <span class="tag">Excel VBA</span><span class="tag">Authentification</span>
         <span class="tag">Drive Sync</span><span class="tag">Licences</span><span class="tag">UI/UX Forms</span>
       </div>
-      <!-- Bouton vidéo — data-modal pointe vers l'id du modal -->
       <a href="#" class="pf-link" data-modal="modal-demo1">▶ Voir la démo vidéo</a>
     </div>
   </div>
@@ -810,21 +1008,15 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
       <div class="proj-arr">↗</div>
       <div class="proj-num"></div>
       <div class="proj-visual">
-        <div class="cs on"><img src="inventaire-1.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="inventaire-2.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="inventaire-3.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs on"><img src="inventaire-1.jpg" alt="Inventaire" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="inventaire-2.jpg" alt="Inventaire" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="inventaire-3.jpg" alt="Inventaire" onerror="this.style.display='none'"></div>
         <div class="cs cs-fb" style="display:none">
           <div class="cs-fb fb-mini">
             <div class="fb-mini-kpi">
-              <div class="fb-kpi" style="background:var(--blue-pale);border:1px solid var(--blue-mid)">
-                <div class="fb-kpi-n" style="color:var(--blue)">247</div><div class="fb-kpi-l">Articles</div>
-              </div>
-              <div class="fb-kpi" style="background:var(--teal-pale);border:1px solid rgba(43,191,160,.25)">
-                <div class="fb-kpi-n" style="color:var(--teal)">6</div><div class="fb-kpi-l">Zones</div>
-              </div>
-              <div class="fb-kpi" style="background:rgba(40,186,122,.08);border:1px solid rgba(40,186,122,.2)">
-                <div class="fb-kpi-n" style="color:var(--green)">98%</div><div class="fb-kpi-l">Précision</div>
-              </div>
+              <div class="fb-kpi" style="background:var(--blue-pale);border:1px solid var(--blue-mid)"><div class="fb-kpi-n" style="color:var(--blue)">247</div><div class="fb-kpi-l">Articles</div></div>
+              <div class="fb-kpi" style="background:var(--teal-pale);border:1px solid rgba(43,191,160,.25)"><div class="fb-kpi-n" style="color:var(--teal)">6</div><div class="fb-kpi-l">Zones</div></div>
+              <div class="fb-kpi" style="background:rgba(40,186,122,.08);border:1px solid rgba(40,186,122,.2)"><div class="fb-kpi-n" style="color:var(--green)">98%</div><div class="fb-kpi-l">Précision</div></div>
             </div>
             <div class="fb-bars">
               <div class="fb-bar-item" style="height:60%;background:rgba(74,158,191,.35);border-top:1px solid var(--blue)"></div>
@@ -849,9 +1041,9 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
       <div class="proj-arr">↗</div>
       <div class="proj-num"></div>
       <div class="proj-visual">
-        <div class="cs on"><img src="message-1.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="message-2.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="message-3.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs on"><img src="message-1.jpg" alt="Messages" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="message-2.jpg" alt="Messages" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="message-3.jpg" alt="Messages" onerror="this.style.display='none'"></div>
         <div class="cs cs-fb" style="display:none">
           <div class="cs-fb" style="position:absolute;inset:0;background:var(--ink);padding:10px;font-family:var(--mono);font-size:7px;line-height:1.55;color:#c9d1d9;overflow:hidden">
             <span style="color:rgba(255,255,255,.3)"># Générateur VBA</span><br>
@@ -879,22 +1071,16 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
       <div class="proj-arr">↗</div>
       <div class="proj-num"></div>
       <div class="proj-visual">
-        <div class="cs on"><img src="otr-1.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="otr-2.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="otr-3.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="otr-4.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs on"><img src="otr-1.jpg" alt="OTR" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="otr-2.jpg" alt="OTR" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="otr-3.jpg" alt="OTR" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="otr-4.jpg" alt="OTR" onerror="this.style.display='none'"></div>
         <div class="cs cs-fb" style="display:none">
           <div class="cs-fb fb-mini">
             <div class="fb-mini-kpi">
-              <div class="fb-kpi" style="background:var(--blue-pale);border:1px solid var(--blue-mid)">
-                <div class="fb-kpi-n" style="color:var(--blue)">2.4B</div><div class="fb-kpi-l">FCFA</div>
-              </div>
-              <div class="fb-kpi" style="background:var(--teal-pale);border:1px solid rgba(43,191,160,.25)">
-                <div class="fb-kpi-n" style="color:var(--teal)">+12%</div><div class="fb-kpi-l">Croissance</div>
-              </div>
-              <div class="fb-kpi" style="background:rgba(40,186,122,.08);border:1px solid rgba(40,186,122,.2)">
-                <div class="fb-kpi-n" style="color:var(--green)">88%</div><div class="fb-kpi-l">Recouvr.</div>
-              </div>
+              <div class="fb-kpi" style="background:var(--blue-pale);border:1px solid var(--blue-mid)"><div class="fb-kpi-n" style="color:var(--blue)">2.4B</div><div class="fb-kpi-l">FCFA</div></div>
+              <div class="fb-kpi" style="background:var(--teal-pale);border:1px solid rgba(43,191,160,.25)"><div class="fb-kpi-n" style="color:var(--teal)">+12%</div><div class="fb-kpi-l">Croissance</div></div>
+              <div class="fb-kpi" style="background:rgba(40,186,122,.08);border:1px solid rgba(40,186,122,.2)"><div class="fb-kpi-n" style="color:var(--green)">88%</div><div class="fb-kpi-l">Recouvr.</div></div>
             </div>
             <div class="fb-bars">
               <div class="fb-bar-item" style="height:40%;background:rgba(74,158,191,.3);border-top:1px solid var(--blue)"></div>
@@ -915,14 +1101,14 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
     </div>
   </div>
 
-  <!-- DATACO — vidéo: demo-2.mp4 et demo-3.mp4 -->
+  <!-- DATACO -->
   <div class="pf-card reveal" style="margin-top:2px">
     <div class="pf-visual">
       <div class="pf-car" id="car-dataco">
-        <div class="cs on"><img src="data-1.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="data-2.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="data-3.jpg" alt="" onerror="this.style.display='none'"></div>
-        <div class="cs"><img src="data-4.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="cs on"><img src="data-1.jpg" alt="DATACO" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="data-2.jpg" alt="DATACO" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="data-3.jpg" alt="DATACO" onerror="this.style.display='none'"></div>
+        <div class="cs"><img src="data-4.jpg" alt="DATACO" onerror="this.style.display='none'"></div>
         <div class="cs cs-fb" id="fb-dataco" style="display:none">
           <div class="cs-fb" style="display:flex;flex-direction:column;width:100%;height:100%">
             <div class="fb-bar"><div class="fb-d fb-d-r"></div><div class="fb-d fb-d-y"></div><div class="fb-d fb-d-g"></div></div>
@@ -951,7 +1137,6 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
         <span class="tag">Excel Avancé</span><span class="tag">TCD</span>
         <span class="tag">Carte interactive</span><span class="tag">DATACO</span><span class="tag">Compétition</span>
       </div>
-      <!-- Deux boutons vidéo pour les deux démos DATACO -->
       <div style="display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem">
         <a href="#" class="pf-link" data-modal="modal-demo3">▶ Démo Dashboard — Challenge Oct. 2025</a>
         <a href="#" class="pf-link" data-modal="modal-demo4">▶ Démo Dashboard — Challenge Nov. 2025</a>
@@ -1011,9 +1196,10 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
         </div>
       </div>
       <div class="photo-deco"></div>
+      <!-- ✅ MODIFICATION 5 : Libellés avec + et unité explicite -->
       <div class="about-exp-bar">
-        <div class="exp-item"><div class="exp-n">100+</div><div class="exp-l">Étudiants</div></div>
-        <div class="exp-item"><div class="exp-n">5</div><div class="exp-l">Projets</div></div>
+        <div class="exp-item"><div class="exp-n">+100</div><div class="exp-l">Étudiants formés</div></div>
+        <div class="exp-item"><div class="exp-n">5</div><div class="exp-l">Projets déployés</div></div>
         <div class="exp-item"><div class="exp-n">2+</div><div class="exp-l">Ans d'exp.</div></div>
       </div>
     </div>
@@ -1038,7 +1224,7 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
       <p class="ap">Objectif : devenir un <strong>spécialiste mondial de l'analyse avancée des données économiques et financières</strong>, à la frontière entre IA, finance quantitative et politiques mondiales.</p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
         <a href="mailto:toublousamuel@gmail.com" class="btn btn-solid">Collaborer ↗</a>
-        <a href="https://www.linkedin.com/in/elom-samuel-toublou-056446346/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/elom-samuel-toublou-056446346/" target="_blank" class="btn btn-ghost" style="background:rgba(74,158,191,0.1);color:var(--blue)!important;border-color:var(--blue);">LinkedIn</a>
       </div>
     </div>
   </div>
@@ -1058,11 +1244,53 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
       <p class="contact-sub">Disponible pour des missions freelance, des stages, des collaborations académiques et des opportunités internationales. Chaque grand projet commence par une conversation.</p>
       <div class="avail"><span class="avail-dot"></span><span class="avail-txt">Disponible — ouvert aux opportunités mondiales</span></div>
     </div>
+
+    <!-- ✅ MODIFICATION 4 : Icônes SVG professionnelles -->
     <div class="contact-cards reveal rd2">
-      <a href="mailto:toublousamuel@gmail.com" class="contact-card"><div class="cc-icon">✉</div><div><div class="cc-label">Email</div><div class="cc-value">toublousamuel@gmail.com</div></div><div class="cc-arr">→</div></a>
-      <a href="tel:+22893879493" class="contact-card"><div class="cc-icon">☎</div><div><div class="cc-label">Téléphone</div><div class="cc-value">+228 93 87 94 93</div></div><div class="cc-arr">→</div></a>
-      <a href="https://www.linkedin.com/in/elom-samuel-toublou-056446346/" target="_blank" class="contact-card"><div class="cc-icon">in</div><div><div class="cc-label">LinkedIn</div><div class="cc-value">elom-samuel-toublou</div></div><div class="cc-arr">→</div></a>
-      <a href="https://github.com/toublou-samuel" target="_blank" class="contact-card"><div class="cc-icon">⌥</div><div><div class="cc-label">GitHub</div><div class="cc-value">github.com/toublou-samuel</div></div><div class="cc-arr">→</div></a>
+      <a href="mailto:toublousamuel@gmail.com" class="contact-card">
+        <div class="cc-icon">
+          <!-- Email -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+        </div>
+        <div><div class="cc-label">Email</div><div class="cc-value">toublousamuel@gmail.com</div></div>
+        <div class="cc-arr">→</div>
+      </a>
+
+      <a href="tel:+22893879493" class="contact-card">
+        <div class="cc-icon">
+          <!-- Téléphone -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div><div class="cc-label">Téléphone</div><div class="cc-value">+228 93 87 94 93</div></div>
+        <div class="cc-arr">→</div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/elom-samuel-toublou-056446346/" target="_blank" class="contact-card">
+        <div class="cc-icon">
+          <!-- LinkedIn logo SVG -->
+          <svg class="icon-linkedin" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </div>
+        <div><div class="cc-label">LinkedIn</div><div class="cc-value">elom-samuel-toublou</div></div>
+        <div class="cc-arr">→</div>
+      </a>
+
+      <a href="https://github.com/toublou-samuel" target="_blank" class="contact-card">
+        <div class="cc-icon">
+          <!-- GitHub logo SVG -->
+          <svg class="icon-github" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </div>
+        <div><div class="cc-label">GitHub</div><div class="cc-value">github.com/toublou-samuel</div></div>
+        <div class="cc-arr">→</div>
+      </a>
     </div>
   </div>
 </div>
@@ -1079,109 +1307,65 @@ footer p { font-family: var(--mono); font-size: .58rem; color: rgba(255,255,255,
 </footer>
 
 <script>
+/* ══ FOND ÉTOILÉ ══ */
 (function() {
   const canvas = document.getElementById('starfield');
   const ctx = canvas.getContext('2d');
   let W, H, stars = [];
   const mouse = { x: -1000, y: -1000 };
-
   const STAR_COUNT = 150;
   const COLORS = ['#4A9EBF','#2BBFA0','#F06240','#ffffff','#D0EBF5'];
 
-  function resize() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-
+  function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
   function createStars() {
     stars = [];
     for (let i = 0; i < STAR_COUNT; i++) {
-      stars.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        ox: 0, oy: 0, // Position d'origine pour l'interaction
-        r: Math.random() * 1.5 + 0.5,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        alpha: Math.random(),
-        dalpha: Math.random() * 0.02,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)]
-      });
-      stars[i].ox = stars[i].x;
-      stars[i].oy = stars[i].y;
+      stars.push({ x: Math.random()*W, y: Math.random()*H, ox:0, oy:0, r: Math.random()*1.5+.5, vx: (Math.random()-.5)*.3, vy: (Math.random()-.5)*.3, alpha: Math.random(), dalpha: Math.random()*.02, color: COLORS[Math.floor(Math.random()*COLORS.length)] });
+      stars[i].ox = stars[i].x; stars[i].oy = stars[i].y;
     }
   }
-
   function draw() {
-    ctx.clearRect(0, 0, W, H);
+    ctx.clearRect(0,0,W,H);
     stars.forEach(s => {
-      // Pulsation
-      s.alpha += Math.sin(Date.now() * 0.001 + s.x) * 0.01;
-      
-      // Mouvement de base
-      s.ox += s.vx;
-      s.oy += s.vy;
-
-      // Interaction Souris (Répulsion)
-      let dx = mouse.x - s.ox;
-      let dy = mouse.y - s.oy;
-      let dist = Math.sqrt(dx*dx + dy*dy);
-      let force = 0;
-      
-      if (dist < 100) {
-        force = (100 - dist) / 100;
-        s.x = s.ox - (dx / dist) * force * 50;
-        s.y = s.oy - (dy / dist) * force * 50;
-      } else {
-        s.x = s.ox;
-        s.y = s.oy;
-      }
-
-      // Sortie d'écran
-      if (s.ox < 0) s.ox = W; if (s.ox > W) s.ox = 0;
-      if (s.oy < 0) s.oy = H; if (s.oy > H) s.oy = 0;
-
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = s.color;
-      ctx.globalAlpha = Math.max(0.2, Math.min(1, s.alpha));
-      ctx.fill();
+      s.alpha += Math.sin(Date.now()*.001+s.x)*.01;
+      s.ox += s.vx; s.oy += s.vy;
+      let dx = mouse.x-s.ox, dy = mouse.y-s.oy, dist = Math.sqrt(dx*dx+dy*dy);
+      if (dist < 100) { let f=(100-dist)/100; s.x=s.ox-(dx/dist)*f*50; s.y=s.oy-(dy/dist)*f*50; } else { s.x=s.ox; s.y=s.oy; }
+      if (s.ox<0) s.ox=W; if (s.ox>W) s.ox=0; if (s.oy<0) s.oy=H; if (s.oy>H) s.oy=0;
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle=s.color; ctx.globalAlpha=Math.max(.2,Math.min(1,s.alpha)); ctx.fill();
     });
     requestAnimationFrame(draw);
   }
-
-  window.addEventListener('mousemove', e => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
+  window.addEventListener('mousemove', e => { mouse.x=e.clientX; mouse.y=e.clientY; });
   window.addEventListener('resize', () => { resize(); createStars(); });
-  
-  resize();
-  createStars();
-  draw();
+  resize(); createStars(); draw();
 })();
 
-/* ── CURSEUR BARRE ── */
+/* ══ CURSEUR ══ */
 const caret = document.getElementById('caret');
-document.addEventListener('mousemove', e => {
-  caret.style.left = e.clientX + 'px';
-  caret.style.top  = e.clientY + 'px';
-});
+document.addEventListener('mousemove', e => { caret.style.left=e.clientX+'px'; caret.style.top=e.clientY+'px'; });
 document.querySelectorAll('a, button, .proj-card, .pf-card, .cert').forEach(el => {
   el.addEventListener('mouseenter', () => document.body.classList.add('on-link'));
   el.addEventListener('mouseleave', () => document.body.classList.remove('on-link'));
 });
 
-/* ── NAV SCROLL ── */
-window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('scrolled', scrollY > 60);
-});
+/* ══ NAV SCROLL ══ */
+window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('scrolled', scrollY>60); });
 
-/* ── MODALS VIDÉO ──
-   Le système lit l'attribut data-modal sur le bouton
-   et ouvre le modal correspondant.
-   Pour ajouter une vidéo : voir commentaire dans le HTML. */
+/* ══ HAMBURGER MENU MOBILE ══ */
+const hamburger = document.getElementById('nav-hamburger');
+const mobileMenu = document.getElementById('nav-mobile');
+const mobileClose = document.getElementById('nav-mobile-close');
+
+function openMobileMenu() { mobileMenu.classList.add('open'); hamburger.classList.add('open'); document.body.style.overflow='hidden'; }
+function closeMobileMenu() { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow=''; }
+
+hamburger.addEventListener('click', openMobileMenu);
+mobileClose.addEventListener('click', closeMobileMenu);
+document.querySelectorAll('.nav-mobile-link').forEach(link => link.addEventListener('click', closeMobileMenu));
+
+/* ══ MODALS VIDÉO ══ */
 document.querySelectorAll('[data-modal]').forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();
@@ -1193,88 +1377,124 @@ document.querySelectorAll('[data-modal]').forEach(btn => {
 });
 document.querySelectorAll('.modal-overlay').forEach(modal => {
   modal.querySelector('.modal-close')?.addEventListener('click', () => closeModal(modal));
-  modal.addEventListener('click', e => { if(e.target === modal) closeModal(modal); });
+  modal.addEventListener('click', e => { if(e.target===modal) closeModal(modal); });
 });
-function closeModal(modal) {
-  modal.classList.remove('open');
-  const v = modal.querySelector('video');
-  if(v) { v.pause(); v.currentTime = 0; }
+function closeModal(modal) { modal.classList.remove('open'); const v=modal.querySelector('video'); if(v){v.pause();v.currentTime=0;} }
+
+/* ✅ MODIFICATION 2 : LIGHTBOX PHOTOS ══ */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+let lightboxImages = [];
+let lightboxIndex = 0;
+
+function openLightbox(imgs, index, projectName) {
+  lightboxImages = imgs;
+  lightboxIndex = index;
+  lightboxImg.src = imgs[index];
+  lightboxImg.alt = projectName;
+  lightboxCaption.textContent = (index+1) + ' / ' + imgs.length;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function lightboxNav(dir) {
+  lightboxIndex = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+  lightboxImg.src = lightboxImages[lightboxIndex];
+  lightboxCaption.textContent = (lightboxIndex+1) + ' / ' + lightboxImages.length;
 }
 
-/* ── CARROUSEL ENGINE ──
-   Fonctionne pour tous les .pf-car et .proj-visual.
-   Vérifie si les images existent avant de démarrer. */
-function initCar(container, ms) {
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox-prev').addEventListener('click', () => lightboxNav(-1));
+document.getElementById('lightbox-next').addEventListener('click', () => lightboxNav(1));
+lightbox.addEventListener('click', e => { if(e.target===lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') lightboxNav(-1);
+  if (e.key === 'ArrowRight') lightboxNav(1);
+});
+
+// Attacher le clic sur chaque image de carrousel
+function attachLightbox(container, projectName) {
+  const slides = Array.from(container.querySelectorAll('.cs:not(.cs-fb)'));
+  const imgs = slides.map(s => s.querySelector('img')).filter(img => img && img.naturalWidth > 0).map(img => img.src);
+  slides.forEach((slide, i) => {
+    const img = slide.querySelector('img');
+    if (!img) return;
+    img.addEventListener('click', () => {
+      const validImgs = slides.map(s => s.querySelector('img')).filter(im => im && im.naturalWidth > 0).map(im => im.src);
+      const clickedSrc = img.src;
+      const clickedIdx = validImgs.indexOf(clickedSrc);
+      if (validImgs.length > 0) openLightbox(validImgs, Math.max(0,clickedIdx), projectName);
+    });
+  });
+}
+
+/* ══ CARROUSEL ENGINE ══ */
+function initCar(container, ms, projectName) {
   const slides = Array.from(container.querySelectorAll('.cs:not(.cs-fb)'));
   const fbs    = Array.from(container.querySelectorAll('.cs-fb'));
   const dots   = Array.from(container.querySelectorAll('.csdot'));
-
-  if (!slides.length) {
-    fbs.forEach(f => { f.style.display = ''; f.classList.add('on'); });
-    return;
-  }
-
-  let loaded = 0, checked = 0;
-
+  if (!slides.length) { fbs.forEach(f=>{f.style.display='';f.classList.add('on');}); return; }
+  let loaded=0, checked=0;
   function onCheck() {
     checked++;
     if (checked < slides.length) return;
     if (!loaded) {
-      slides.forEach(s => { s.classList.remove('on'); s.style.display = 'none'; });
-      fbs.forEach(f => { f.style.display = ''; f.classList.add('on'); });
-      dots.forEach(d => { if(d.parentElement) d.parentElement.style.display = 'none'; });
+      slides.forEach(s=>{s.classList.remove('on');s.style.display='none';});
+      fbs.forEach(f=>{f.style.display='';f.classList.add('on');});
+      dots.forEach(d=>{if(d.parentElement)d.parentElement.style.display='none';});
     } else {
-      fbs.forEach(f => { f.style.display = 'none'; f.classList.remove('on'); });
+      fbs.forEach(f=>{f.style.display='none';f.classList.remove('on');});
+      // Attacher lightbox après chargement
+      if (projectName) attachLightbox(container, projectName);
       startRotation();
     }
   }
-
   slides.forEach(s => {
     const img = s.querySelector('img');
     if (!img) { onCheck(); return; }
-    if (img.complete) {
-      if (img.naturalWidth > 0) loaded++;
-      else s.style.display = 'none';
-      onCheck();
-    } else {
-      img.addEventListener('load',  () => { loaded++; onCheck(); });
-      img.addEventListener('error', () => { s.style.display = 'none'; onCheck(); });
-    }
+    if (img.complete) { if(img.naturalWidth>0)loaded++; else s.style.display='none'; onCheck(); }
+    else { img.addEventListener('load',()=>{loaded++;onCheck();}); img.addEventListener('error',()=>{s.style.display='none';onCheck();}); }
   });
-
-  let cur = 0;
+  let cur=0;
   function startRotation() {
-    const vis  = slides.filter(s => s.style.display !== 'none');
+    const vis  = slides.filter(s=>s.style.display!=='none');
     const vdot = dots.slice(0, vis.length);
-    if (vis.length <= 1) { vdot.forEach(d => d.style.display = 'none'); return; }
-    vis.forEach((s, i) => s.classList.toggle('on', i === 0));
-    vdot.forEach((d, i) => d.classList.toggle('on', i === 0));
+    if (vis.length<=1) { vdot.forEach(d=>d.style.display='none'); return; }
+    vis.forEach((s,i)=>s.classList.toggle('on',i===0));
+    vdot.forEach((d,i)=>d.classList.toggle('on',i===0));
     setInterval(() => {
-      vis[cur].classList.remove('on');
-      vdot[cur]?.classList.remove('on');
-      cur = (cur + 1) % vis.length;
-      vis[cur].classList.add('on');
-      vdot[cur]?.classList.add('on');
+      vis[cur].classList.remove('on'); vdot[cur]?.classList.remove('on');
+      cur=(cur+1)%vis.length;
+      vis[cur].classList.add('on'); vdot[cur]?.classList.add('on');
     }, ms);
   }
 }
 
-document.querySelectorAll('.pf-car').forEach(c => initCar(c, 3800));
-document.querySelectorAll('.proj-visual').forEach(c => initCar(c, 3200));
+document.querySelectorAll('.pf-car').forEach((c,i) => {
+  const names = ['Boutique Manager','DATACO / Dashboards'];
+  initCar(c, 3800, names[i] || 'Projet');
+});
+document.querySelectorAll('.proj-visual').forEach((c,i) => {
+  const names = ['Inventaire Intelligent','Générateur de Messages','Analyse OTR Togo'];
+  initCar(c, 3200, names[i] || 'Projet');
+});
 
-/* ── SCROLL REVEAL ── */
+/* ══ SCROLL REVEAL ══ */
 const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: .08, rootMargin: '0px 0px -40px 0px' });
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold:.08, rootMargin:'0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-/* ── BARRES DE COMPÉTENCES ── */
+/* ══ BARRES COMPÉTENCES ══ */
 const skObs = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) {
-    document.querySelectorAll('.skill-fill').forEach(f => f.style.width = f.dataset.w + '%');
-    skObs.disconnect();
-  }
-}, { threshold: .2 });
+  if (entries[0].isIntersecting) { document.querySelectorAll('.skill-fill').forEach(f=>f.style.width=f.dataset.w+'%'); skObs.disconnect(); }
+}, { threshold:.2 });
 const sk = document.getElementById('skills');
 if (sk) skObs.observe(sk);
 </script>
