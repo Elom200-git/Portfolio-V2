@@ -221,11 +221,24 @@
 
     /* ══ FIN MODEL TABS ══ */
     const fmImg = document.getElementById('fm-img');
+    const fmCap = document.getElementById('fm-cap');
     if (fmImg) {
-      const fmAlts = {
-        1: 'Financial model — Modele financier tab',
-        2: 'Financial model — Data tab',
-        3: 'Financial model — Hypothèses tab'
+      const FM_TABS = {
+        'assumptions': {
+          src: 'assets/images/finmodel/zoom-assumptions.webp',
+          alt: 'Financial model — assumptions panel: growth rate, cost ratios, tax and working-capital drivers',
+          cap: 'finmodel.capAssumptions'
+        },
+        'pnl': {
+          src: 'assets/images/finmodel/zoom-pnl.webp',
+          alt: 'Financial model — income statement: from revenue to net income',
+          cap: 'finmodel.capPnl'
+        },
+        'forecast': {
+          src: 'assets/images/finmodel/zoom-forecast.webp',
+          alt: 'Financial model — forecast: income statement and cash-flow projections',
+          cap: 'finmodel.capForecast'
+        }
       };
       document.querySelectorAll('.fm-tab').forEach(tab => {
         tab.addEventListener('click', () => {
@@ -233,10 +246,20 @@
             t.classList.toggle('on', t === tab);
             t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
           });
-          const n = tab.dataset.fm;
-          fmImg.src = `assets/images/finmodel/finmodel-${n}.webp`;
-          fmImg.alt = fmAlts[n] || 'Financial model';
+          const cfg = FM_TABS[tab.dataset.fm];
+          if (!cfg) return;
+          fmImg.src = cfg.src;
+          fmImg.alt = cfg.alt;
+          if (fmCap && window.I18N) fmCap.textContent = window.I18N.t(cfg.cap);
         });
+      });
+      // re-apply caption if language changes while a non-default tab is open
+      document.addEventListener('i18n:changed', () => {
+        const on = document.querySelector('.fm-tab.on');
+        if (on && fmCap) {
+          const cfg = FM_TABS[on.dataset.fm];
+          if (cfg && window.I18N) fmCap.textContent = window.I18N.t(cfg.cap);
+        }
       });
     }
   });

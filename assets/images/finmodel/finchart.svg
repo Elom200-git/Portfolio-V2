@@ -1,0 +1,56 @@
+<svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Revenue and net income projection, 2022 to 2026: revenue grows from 3,150 to about 3,829; net income from 339 to about 416" font-family="'JetBrains Mono', monospace">
+  <!-- grid -->
+  <g stroke="#E4E9EF" stroke-width="1">
+    <line x1="64" y1="20" x2="540" y2="20"/>
+    <line x1="64" y1="60" x2="540" y2="60"/>
+    <line x1="64" y1="100" x2="540" y2="100"/>
+    <line x1="64" y1="140" x2="540" y2="140"/>
+    <line x1="64" y1="180" x2="540" y2="180"/>
+  </g>
+  <!-- forecast zone marker -->
+  <rect x="324" y="14" width="216" height="172" fill="#0F4C5C" opacity="0.04"/>
+  <text x="432" y="30" text-anchor="middle" font-size="8.5" letter-spacing="1.5" fill="#5A7890">FORECAST</text>
+  <!-- axis labels -->
+  <g font-size="9" fill="#8FA8BE" text-anchor="end">
+    <text x="58" y="184">0</text>
+    <text x="58" y="144">1K</text>
+    <text x="58" y="104">2K</text>
+    <text x="58" y="64">3K</text>
+    <text x="58" y="24">4K</text>
+  </g>
+  <!-- revenue line: 2022..2026 = 3150, 3307.5, 3472.9, 3646.5, 3828.8 ; scale: y = 180 - v*0.04 -->
+  <path d="M 84 54 156 47.7 228 41.1 300 34.14 372 26.85 444 19.3 516 11.4"
+        fill="none" stroke="#2E7A9A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- net income line: 339.4, 359.2, 377.2, 396.0, 415.8 ; y = 180 - v*0.04 -->
+  <path d="M 84 166.4 156 165.6 228 164.9 300 164.2 372 163.4 444 162.6 516 161.8"
+        fill="none" stroke="#2BBFA0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 0"/>
+  <!-- points -->
+  <g fill="#2E7A9A">
+    <circle cx="84" cy="54" r="3.2"/><circle cx="156" cy="47.7" r="3.2"/><circle cx="228" cy="41.1" r="3.2"/>
+    <circle cx="300" cy="34.14" r="3.2"/><circle cx="372" cy="26.85" r="3.2"/><circle cx="444" cy="19.3" r="3.2"/><circle cx="516" cy="11.4" r="3.2"/>
+  </g>
+  <g fill="#2BBFA0">
+    <circle cx="84" cy="166.4" r="3.2"/><circle cx="156" cy="165.6" r="3.2"/><circle cx="228" cy="164.9" r="3.2"/>
+    <circle cx="300" cy="164.2" r="3.2"/><circle cx="372" cy="163.4" r="3.2"/><circle cx="444" cy="162.6" r="3.2"/><circle cx="516" cy="161.8" r="3.2"/>
+  </g>
+  <!-- value labels on first & last -->
+  <g font-size="9.5" font-weight="500">
+    <text x="84" y="44" text-anchor="middle" fill="#2E7A9A">3,150</text>
+    <text x="516" y="7" text-anchor="middle" fill="#2E7A9A">3,829</text>
+    <text x="88" y="157" text-anchor="middle" fill="#1FA98A">339</text>
+    <text x="520" y="153" text-anchor="middle" fill="#1FA98A">416</text>
+  </g>
+  <!-- x labels -->
+  <g font-size="9.5" fill="#5A7890" text-anchor="middle">
+    <text x="84" y="198">2022</text><text x="156" y="198">2023</text><text x="228" y="198">2024</text>
+    <text x="300" y="198">2025</text><text x="372" y="198">2026</text><text x="444" y="198">2027</text><text x="516" y="198">2028</text>
+  </g>
+  <!-- legend -->
+  <g font-size="9.5">
+    <line x1="120" y1="222" x2="142" y2="222" stroke="#2E7A9A" stroke-width="2.5"/>
+    <text x="148" y="225.5" fill="#5A7890">Revenue</text>
+    <line x1="210" y1="222" x2="232" y2="222" stroke="#2BBFA0" stroke-width="2.5"/>
+    <text x="238" y="225.5" fill="#5A7890">Net income</text>
+    <text x="380" y="225.5" fill="#8FA8BE">same 5% growth &amp; margin assumptions as the model</text>
+  </g>
+</svg>

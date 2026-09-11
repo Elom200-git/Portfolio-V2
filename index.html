@@ -127,6 +127,10 @@
       <span class="w-outline" data-i18n="hero.name3">TOUBLOU</span>
     </h1>
     <div class="h-bar"></div>
+    <div class="h-proof">
+      <span class="h-proof-dot"></span>
+      <span class="h-proof-txt" data-i18n="hero.proof">Google-certified data analyst · 7 tools in production · <strong>1,000+ people reached through training &amp; analysis</strong></span>
+    </div>
     <div class="h-sub">
       <p class="h-role" data-i18n="hero.role">I turn raw data into decisions that move businesses forward</p>
       <p class="h-desc" data-i18n="hero.desc">I build analysis tools that run in production — Excel/VBA systems, Python dashboards and financial models for SMEs, startups and institutions. Based in Lomé, Togo. Working with clients worldwide.</p>
@@ -205,27 +209,27 @@
 
   <div class="svc-grid">
     <div class="svc-card reveal rd1">
-      <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 3 5-6"/></svg></div>
+      <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3v17h17"/><path d="M8 16v-5"/><path d="M12 16v-9"/><path d="M16 16v-3"/><path d="M20 16V7"/></svg></div>
       <h3 class="svc-title" data-i18n="services.s1t">Data Analysis &amp; Dashboards</h3>
       <p class="svc-desc" data-i18n="services.s1d">Excel/Power BI/Python analysis that ends in decisions: KPIs, trends, gap analysis — not just charts.</p>
     </div>
     <div class="svc-card reveal rd2">
-      <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 9h4M7 13h10"/></svg></div>
+      <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M9 9v9"/><path d="M8 21h8"/></svg></div>
       <h3 class="svc-title" data-i18n="services.s2t">BI App Development</h3>
       <p class="svc-desc" data-i18n="services.s2d">Multi-page interactive analytics apps in Streamlit, deployed and usable by non-technical teams.</p>
     </div>
     <div class="svc-card reveal rd3">
-      <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+      <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M7.2 10.8L16.8 6.8"/><path d="M7.2 13.2l9.6 4"/></svg></div>
       <h3 class="svc-title" data-i18n="services.s3t">Process Automation</h3>
       <p class="svc-desc" data-i18n="services.s3d">Excel/VBA and Python automation that has cut reporting time by up to 80% for real businesses.</p>
     </div>
     <div class="svc-card reveal rd1">
-      <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h16"/><path d="M4 12h16"/><path d="M9 4v16"/><path d="M16 4v8"/><path d="M16 15l1.8 1.8L21 13.5"/></svg></div>
       <h3 class="svc-title" data-i18n="services.s4t">Financial Modeling &amp; Forecasting</h3>
       <p class="svc-desc" data-i18n="services.s4d">Assumption-driven 3-statement models: growth, margins, tax, working capital, financing scenarios.</p>
     </div>
     <div class="svc-card reveal rd2">
-      <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10L13 2v6H8a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h5v6l9-8z" transform="translate(0 0)"/><path d="M2 12v4"/></svg></div>
+      <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="17" r="2.5"/><circle cx="19" cy="17" r="2.5"/><path d="M12 7.5v5"/><path d="M12 12.5L6.8 15.2"/><path d="M12 12.5l5.2 2.7"/></svg></div>
       <h3 class="svc-title" data-i18n="services.s5t">Corporate Data &amp; BI Training</h3>
       <p class="svc-desc" data-i18n="services.s5d">Hands-on training for teams — 100+ learners trained for OIF's D-CLIC program, plus corporate engagements.</p>
     </div>
@@ -404,15 +408,34 @@
   <h2 class="sec-title reveal" id="finmodel-title"><span class="w-bold" data-i18n="finmodel.title1">Financial Modeling</span> <span class="w-italic" data-i18n="finmodel.title2">&amp; Corporate Finance</span></h2>
   <p class="sec-sub reveal" data-i18n="finmodel.sub">A 3-statement-style model built in Excel — the same discipline I bring to every client engagement, and the foundation for my upcoming Master's in Financial Engineering.</p>
 
+  <!-- plain-language framing -->
+  <div class="fm-intro reveal">
+    <p class="fm-plain" data-i18n="finmodel.plain">In plain terms: this tool projects a company's revenue, costs and profitability several years ahead, starting from a handful of adjustable business assumptions — how fast sales grow, what costs eat into them, how the company is financed and taxed. It's the kind of model used for budgeting, fundraising and investment decisions.</p>
+    <p class="fm-plain" data-i18n="finmodel.plain2">Change one assumption — say, growth from 5% to 8% — and the entire forecast recalculates instantly.</p>
+  </div>
+
+  <!-- stat callouts -->
+  <div class="fm-stats reveal rd1">
+    <div class="fm-stat"><div class="mn">5%/yr</div><div class="ml" data-i18n="finmodel.stat1l">Configurable revenue growth</div></div>
+    <div class="fm-stat"><div class="mn">3</div><div class="ml" data-i18n="finmodel.stat2l">Linked statement blocks</div></div>
+    <div class="fm-stat"><div class="mn">12+</div><div class="ml" data-i18n="finmodel.stat3l">Adjustable assumption drivers</div></div>
+    <div class="fm-stat"><div class="mn">2028</div><div class="ml" data-i18n="finmodel.stat4l">Forecast horizon</div></div>
+  </div>
+
+  <!-- rendered chart (model's own outputs) -->
+  <figure class="fm-chart reveal rd2">
+    <img src="assets/images/finmodel/finchart.svg" alt="Line chart: revenue grows from 3,150 to 3,829 and net income from 339 to 416 between 2022 and 2028, following the model's 5% growth assumptions" width="560" height="240">
+    <figcaption class="fm-caption" data-i18n="finmodel.chartCaption">Model output — revenue and net income trajectory at the model's own 5% growth assumption</figcaption>
+  </figure>
+
   <div class="fm-grid">
     <div class="fm-copy">
-      <p class="reveal" data-i18n="finmodel.p1">I build assumption-driven financial models where every output is driven by a single, clearly documented Hypotheses tab. Change a growth rate, a margin or a working-capital assumption and the whole model — income statement, cash flows, balance-sheet effects — recalculates instantly.</p>
-      <p class="reveal rd1" data-i18n="finmodel.p2">The model below computes operating income, net income and multi-year projections from drivers including: revenue growth (5%), COGS as % of revenue (45%), SG&amp;A as % of revenue (30%), depreciation of tangible &amp; intangible assets, interest on credit lines and borrowings (6%), a 40% effective tax rate, minority interests, and working-capital days (receivables 72, inventory 100, payables 50).</p>
-      <p class="reveal rd2" data-i18n="finmodel.p3">This is the toolkit behind my freelance financial analysis, budgeting and SME financial planning work — and the direct foundation for my Master's in Financial Engineering.</p>
+      <p class="reveal" data-i18n="finmodel.p1">Every output is driven by a single, clearly documented Hypotheses tab: revenue growth, COGS as % of revenue, SG&amp;A as % of revenue, depreciation, interest on credit lines and borrowings, the effective tax rate, minority interests, and working-capital days (receivables, inventory, payables).</p>
+      <p class="reveal rd1" data-i18n="finmodel.p2">The model computes operating income, net income and forward projections — the numbers a lender, investor or budget owner actually makes decisions with.</p>
 
       <div class="fm-features">
         <div class="fm-feat reveal"><div class="fm-feat-t" data-i18n="finmodel.f1t">Income Statement build</div><div class="fm-feat-d" data-i18n="finmodel.f1d">Full P&amp;L from revenue to net income, with minority interests and equity-method income.</div></div>
-        <div class="fm-feat reveal rd1"><div class="fm-feat-t" data-i18n="finmodel.f2t">Assumptions engine</div><div class="fm-feat-d" data-i18n="finmodel.f2d">The Hypothèses tab: growth, margins, tax, working capital and financing drivers — all configurable.</div></div>
+        <div class="fm-feat reveal rd1"><div class="fm-feat-t" data-i18n="finmodel.f2t">Assumptions engine</div><div class="fm-feat-d" data-i18n="finmodel.f2d">Growth, margins, tax, working capital and financing drivers — all configurable in one tab.</div></div>
         <div class="fm-feat reveal rd2"><div class="fm-feat-t" data-i18n="finmodel.f3t">Multi-year forecast</div><div class="fm-feat-d" data-i18n="finmodel.f3d">Forward projections with period-over-period evolution of every line item.</div></div>
       </div>
       <!-- TODO: CONFIRM WITH ELOM — the underlying .xlsx financial model is NOT downloadable from the site (screenshots only), as a protection default. Say the word if you want it downloadable. -->
@@ -421,12 +444,16 @@
     <div class="fm-shot reveal rd1">
       <div class="fm-shot-frame">
         <div class="fm-shot-tabs" role="tablist" aria-label="Financial model tabs">
-          <button class="fm-tab on" data-fm="1" role="tab" aria-selected="true">Modele financier</button>
-          <button class="fm-tab" data-fm="2" role="tab" aria-selected="false">Data</button>
-          <button class="fm-tab" data-fm="3" role="tab" aria-selected="false">Hypothèses</button>
+          <button class="fm-tab on" data-fm="assumptions" role="tab" aria-selected="true" data-i18n="finmodel.tab1">Assumptions</button>
+          <button class="fm-tab" data-fm="pnl" role="tab" aria-selected="false" data-i18n="finmodel.tab2">P&amp;L</button>
+          <button class="fm-tab" data-fm="forecast" role="tab" aria-selected="false" data-i18n="finmodel.tab3">Forecast</button>
         </div>
-        <img id="fm-img" src="assets/images/finmodel/finmodel-1.webp" alt="Financial model — Modele financier tab" width="1204" height="1386">
-        <p class="fm-caption" data-i18n="finmodel.shotsTitle">Model tabs</p>
+        <div class="fm-anno-wrap">
+          <img id="fm-img" src="assets/images/finmodel/zoom-assumptions.webp" alt="Financial model — assumptions panel: growth rate, cost ratios, tax and working-capital drivers" width="1881" height="608" loading="lazy">
+          <div class="fm-callout" style="--cx:14%;--cy:20%" aria-hidden="true"><span data-i18n="finmodel.anno1">Growth &amp; margin assumptions</span></div>
+          <div class="fm-callout fm-c2" style="--cx:14%;--cy:78%" aria-hidden="true"><span data-i18n="finmodel.anno2">Working-capital days</span></div>
+        </div>
+        <p class="fm-caption" id="fm-cap" data-i18n="finmodel.capAssumptions">The Hypothèses tab — one place to steer the whole model</p>
       </div>
     </div>
   </div>
