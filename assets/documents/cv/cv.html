@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Elom Samuel Toublou | Data Analyst</title>
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A4;
+    margin: 10mm 14mm 10mm 14mm;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0b131a;
+    color: #111;
+    font-family: "Times New Roman", Times, Georgia, serif;
+    font-size: 10pt;
+    line-height: 1.34;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Barre d'action supérieure */
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .75rem 1.5rem;
+    background: rgba(15, 31, 46, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #fff;
+  }
+  .toolbar-brand {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    font-size: .9rem;
+    font-weight: 600;
+  }
+  .toolbar-brand .mark {
+    width: 28px;
+    height: 28px;
+    background: #0E5F4F;
+    color: #2BBFA0;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: .85rem;
+  }
+  .toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+  }
+  .lang-seg {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 2px;
+  }
+  .lang-seg button {
+    background: none;
+    border: none;
+    color: #94A3B8;
+    padding: .35rem .75rem;
+    font-size: .78rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .lang-seg button.active {
+    background: #2BBFA0;
+    color: #0F1F2E;
+  }
+  .btn-tool {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .45rem .9rem;
+    font-size: .82rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all .2s;
+  }
+  .btn-print {
+    background: #2BBFA0;
+    color: #0F1F2E;
+  }
+  .btn-print:hover {
+    background: #38d4b3;
+  }
+  .btn-back {
+    background: rgba(255, 255, 255, 0.08);
+    color: #E2E8F0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .btn-back:hover {
+    background: rgba(255, 255, 255, 0.14);
+  }
+
+  /* Feuille A4 */
+  .page-wrap {
+    padding: 2rem 1rem 4rem;
+    display: flex;
+    justify-content: center;
+  }
+  .cv-sheet {
+    width: 210mm;
+    min-height: 297mm;
+    background: #fff;
+    padding: 14mm 16mm 14mm 16mm;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+    border-radius: 2px;
+    color: #000;
+  }
+
+  /* Typographie CV */
+  h1.name {
+    font-size: 19pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .3px;
+    margin-bottom: 2px;
+  }
+  .headline {
+    text-align: center;
+    font-size: 10.5pt;
+    font-style: italic;
+    color: #222;
+    margin-bottom: 3px;
+  }
+  .contact {
+    text-align: center;
+    font-size: 9.5pt;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  .contact a {
+    color: #0563c1;
+    text-decoration: none;
+  }
+  hr.sep {
+    border: none;
+    border-top: 1.1pt solid #000;
+    margin: 6px 0 10px;
+  }
+
+  h2 {
+    font-size: 11.5pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 11px 0 4px;
+    letter-spacing: .2px;
+  }
+
+  .profile {
+    text-align: justify;
+    font-size: 10pt;
+    line-height: 1.34;
+  }
+
+  ul.b {
+    list-style: none;
+    margin-top: 2px;
+  }
+  ul.b > li {
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+    text-align: justify;
+    font-size: 9.8pt;
+  }
+  ul.b > li::before {
+    content: "●";
+    position: absolute;
+    left: 0;
+    font-size: 7.5pt;
+    top: 1px;
+  }
+
+  .job {
+    margin-bottom: 9px;
+  }
+  .job-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .job-head {
+    font-weight: bold;
+    font-size: 10.2pt;
+  }
+  .job-org {
+    font-style: italic;
+    font-weight: normal;
+  }
+  .job-dates {
+    font-family: Arial, sans-serif;
+    font-size: 9.5pt;
+    font-style: italic;
+    white-space: nowrap;
+    padding-left: 10px;
+  }
+  .role-sub {
+    font-style: italic;
+    font-size: 9.8pt;
+    margin-top: 1px;
+    font-weight: 600;
+  }
+
+  ul.sub {
+    list-style: none;
+    margin-top: 2px;
+  }
+  ul.sub > li {
+    padding-left: 15px;
+    position: relative;
+    margin-bottom: 2.5px;
+    font-size: 9.6pt;
+    text-align: justify;
+  }
+  ul.sub > li::before {
+    content: "–";
+    position: absolute;
+    left: 2px;
+  }
+
+  .loading-msg {
+    text-align: center;
+    padding: 3rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #94A3B8;
+  }
+
+  /* Mode impression natif A4 */
+  @media print {
+    body {
+      background: #fff;
+    }
+    .toolbar {
+      display: none !important;
+    }
+    .page-wrap {
+      padding: 0;
+      margin: 0;
+    }
+    .cv-sheet {
+      box-shadow: none;
+      border-radius: 0;
+      width: 100%;
+      min-height: auto;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  @media (max-width: 820px) {
+    .cv-sheet {
+      width: 100%;
+      min-height: auto;
+      padding: 1rem;
+    }
+    .toolbar {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="toolbar">
+  <div class="toolbar-brand">
+    <div class="mark">E</div>
+    <span>Elom Samuel Toublou · CV dynamique</span>
+  </div>
+  <div class="toolbar-actions">
+    <div class="lang-seg" role="group" aria-label="Langue du CV">
+      <button id="btn-fr" class="active">FR</button>
+      <button id="btn-en">EN</button>
+    </div>
+    <button id="btn-print" class="btn-tool btn-print" onclick="window.print()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+      <span>Imprimer / PDF</span>
+    </button>
+    <a href="index.html" class="btn-tool btn-back">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span>Portfolio</span>
+    </a>
+  </div>
+</header>
+
+<main class="page-wrap">
+  <article class="cv-sheet" id="cv-content">
+    <div class="loading-msg">Chargement du CV…</div>
+  </article>
+</main>
+
+<script>
+(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  let currentLang = urlParams.get('lang') || localStorage.getItem('elom-lang') || 'fr';
+  if (currentLang !== 'en' && currentLang !== 'fr') currentLang = 'fr';
+
+  const DRAFT_KEY = 'elom_cms_draft';
+  let siteData = null;
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function deepMerge(base, over) {
+    if (Array.isArray(over)) return over;
+    if (over && typeof over === 'object' && base && typeof base === 'object' && !Array.isArray(base)) {
+      const out = Object.assign({}, base);
+      for (const k of Object.keys(over)) out[k] = deepMerge(base[k], over[k]);
+      return out;
+    }
+    return over === undefined ? base : over;
+  }
+
+  function renderCV() {
+    if (!siteData) return;
+    const isFr = currentLang === 'fr';
+    const p = siteData.profile || {};
+    const cv = siteData.cv || {};
+    const name = [p.firstName, p.middleName, p.lastName].filter(Boolean).join(' ') || 'TOUBLOU ELOM SAMUEL';
+    const headline = (cv.title && cv.title[currentLang]) || (isFr ? 'Data Analyst · Développeur BI · Modélisateur Financier' : 'Data Analyst · BI Developer · Financial Modeler');
+    const summary = (cv.summary && cv.summary[currentLang]) || '';
+
+    const phone = p.phone || '+228 93 87 94 93';
+    const email = p.email || 'toublousamuel@gmail.com';
+    const loc = p.location || 'Lomé, Togo';
+    const linkedin = p.linkedin || 'https://www.linkedin.com/in/elom-samuel-toublou-056446346/';
+    const siteUrl = 'https://elom-toublou.vercel.app/';
+
+    // Compétences clés
+    const skills = (cv.keySkills || []).map(function(s) {
+      const txt = isFr ? (s.fr || s.en || '') : (s.en || s.fr || '');
+      return txt ? '<li>' + esc(txt) + '</li>' : '';
+    }).filter(Boolean).join('');
+
+    // Expériences
+    const exps = (cv.experiences || []).map(function(e) {
+      const role = isFr ? (e.role_fr || e.role_en || '') : (e.role_en || e.role_fr || '');
+      const period = isFr ? (e.period_fr || e.period_en || '') : (e.period_en || e.period_fr || '');
+      const bullets = isFr ? (e.bullets_fr || e.bullets_en || []) : (e.bullets_en || e.bullets_fr || []);
+      const bHtml = bullets.map(function(b) { return '<li>' + esc(b) + '</li>'; }).join('');
+      return '<div class="job">' +
+        '<div class="job-line">' +
+          '<span class="job-head">' + esc(e.company) + (e.location ? ' : <span class="job-org">' + esc(e.location) + '</span>' : '') + '</span>' +
+          '<span class="job-dates">' + esc(period) + '</span>' +
+        '</div>' +
+        (role ? '<p class="role-sub">' + esc(role) + '</p>' : '') +
+        (bHtml ? '<ul class="sub">' + bHtml + '</ul>' : '') +
+      '</div>';
+    }).join('');
+
+    // Projets pertinents (synchronisés avec site.json)
+    const projects = (cv.cvProjects && cv.cvProjects.length ? cv.cvProjects : (siteData.projects && siteData.projects.items ? siteData.projects.items.slice(0, 4) : [])).map(function(pr) {
+      const title = isFr ? (pr.title_fr || pr.title_en || '') : (pr.title_en || pr.title_fr || '');
+      const desc = isFr ? (pr.desc_fr || pr.desc_en || '') : (pr.desc_en || pr.desc_fr || '');
+      return '<li><strong>' + esc(title) + '</strong> : ' + esc(desc) + '</li>';
+    }).join('');
+
+    // Formation & Certifications
+    const edu = (cv.education || []).map(function(ed) {
+      const deg = isFr ? (ed.degree_fr || ed.degree_en || '') : (ed.degree_en || ed.degree_fr || '');
+      const school = isFr ? (ed.school_fr || ed.school_en || ed.school || '') : (ed.school_en || ed.school_fr || ed.school || '');
+      const det = isFr ? (ed.details_fr || ed.details_en || '') : (ed.details_en || ed.details_fr || '');
+      return '<li><strong>' + esc(deg) + '</strong> : ' + esc(school) + (ed.year ? ', ' + esc(ed.year) : '') + (det ? ' (' + esc(det) + ')' : '') + '</li>';
+    }).join('');
+
+    // Certifications synchronisées en direct depuis la liste globale
+    const certs = ((siteData.certifications && siteData.certifications.items) || []).map(function(c) {
+      const cTitle = isFr ? (c.title_fr || c.title_en || '') : (c.title_en || c.title_fr || '');
+      const cOrg = isFr ? (c.org_fr || c.org_en || '') : (c.org_en || c.org_fr || '');
+      if (c.id === 'c1' || cTitle.toLowerCase().indexOf('licence en économie') !== -1) return '';
+      return '<li><strong>' + esc(cTitle) + '</strong> : ' + esc(cOrg) + '</li>';
+    }).filter(Boolean).join('');
+
+    // Références
+    const refs = (cv.references || []).map(function(r) {
+      const rTitle = isFr ? (r.title_fr || r.title_en || '') : (r.title_en || r.title_fr || '');
+      return '<li><strong>' + esc(r.name) + '</strong> : ' + esc(rTitle) + (r.phone ? ' / ' + esc(r.phone) : '') + '</li>';
+    }).join('');
+
+    const html =
+      '<h1 class="name">' + esc(name) + '</h1>' +
+      '<p class="headline">' + esc(headline) + '</p>' +
+      '<p class="contact">' +
+        esc(loc) + ' • <a href="mailto:' + esc(email) + '">' + esc(email) + '</a> • <a href="tel:' + esc(phone.replace(/\s+/g,'')) + '">' + esc(phone) + '</a> • ' +
+        '<a href="' + esc(linkedin) + '" target="_blank" rel="noopener">linkedin</a> • ' +
+        '<a href="' + esc(siteUrl) + '" target="_blank" rel="noopener">' + esc(siteUrl.replace(/^https?:\/\//, '')) + '</a>' +
+      '</p>' +
+      '<hr class="sep">' +
+      (summary ? '<h2>' + (isFr ? 'PROFIL' : 'PROFILE') + '</h2><p class="profile">' + esc(summary) + '</p>' : '') +
+      (skills ? '<h2>' + (isFr ? 'COMPÉTENCES CLÉS' : 'KEY SKILLS') + '</h2><ul class="b">' + skills + '</ul>' : '') +
+      (exps ? '<h2>' + (isFr ? 'EXPÉRIENCE PROFESSIONNELLE' : 'PROFESSIONAL EXPERIENCE') + '</h2>' + exps : '') +
+      (projects ? '<h2>' + (isFr ? 'PROJETS PERTINENTS' : 'RELEVANT PROJECTS') + '</h2><ul class="b">' + projects + '</ul>' : '') +
+      ((edu || certs) ? '<h2>' + (isFr ? 'FORMATION & CERTIFICATIONS' : 'EDUCATION & CERTIFICATIONS') + '</h2><ul class="b">' + edu + certs + '</ul>' : '') +
+      (refs ? '<h2>' + (isFr ? 'RÉFÉRENCES' : 'REFERENCES') + '</h2><ul class="b">' + refs + '</ul>' : '');
+
+    document.getElementById('cv-content').innerHTML = html;
+    document.title = 'CV — ' + name + ' | ' + (isFr ? 'Data Analyst' : 'Data Analyst');
+  }
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+    renderCV();
+  }
+
+  document.getElementById('btn-fr').addEventListener('click', () => setLang('fr'));
+  document.getElementById('btn-en').addEventListener('click', () => setLang('en'));
+
+  // Chargement des données
+  fetch('data/site.json', { cache: 'no-store' })
+    .then(r => r.json())
+    .then(data => {
+      try {
+        const rawDraft = localStorage.getItem(DRAFT_KEY);
+        if (rawDraft) {
+          const draft = JSON.parse(rawDraft);
+          siteData = deepMerge(data, draft);
+        } else {
+          siteData = data;
+        }
+      } catch (e) {
+        siteData = data;
+      }
+      setLang(currentLang);
+      if (urlParams.get('print') === '1') {
+        setTimeout(() => window.print(), 400);
+      }
+    })
+    .catch(err => {
+      document.getElementById('cv-content').innerHTML = '<div class="loading-msg">Erreur de chargement des données du CV.</div>';
+    });
+})();
+</script>
+</body>
+</html>

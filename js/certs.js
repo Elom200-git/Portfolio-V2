@@ -49,10 +49,14 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    // delegated handler so CMS-rendered cards work too
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest ? e.target.closest('.cert[data-cert]') : null;
+      if (!btn || btn.disabled) return;
+      open(btn.dataset.cert, btn.querySelector('.cert-nm')?.textContent);
+    });
     document.querySelectorAll('.cert[data-cert]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        open(btn.dataset.cert, btn.querySelector('.cert-nm')?.textContent);
-      });
+      // handled by delegation above (CMS-compatible)
     });
     closeBtn.addEventListener('click', close);
     viewer.addEventListener('click', e => { if (e.target === viewer) close(); });

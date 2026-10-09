@@ -3,14 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="meta.title">Elom Samuel Toublou — Freelance Data Analyst & BI Developer | Lomé, Togo</title>
+<title data-i18n="meta.title">Elom Samuel Toublou - Freelance Data Analyst & BI Developer | Lomé, Togo</title>
 <meta name="description" data-i18n-content="meta.description" content="Freelance data analyst, Power BI developer and financial modeling consultant based in Lomé, Togo. Excel/VBA automation, Python dashboards, Streamlit BI apps. Available remotely worldwide.">
 <meta name="author" content="Elom Samuel Toublou">
 <meta name="theme-color" content="#0F1F2E">
 
+<!-- Structured data (SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Elom Samuel Toublou",
+  "jobTitle": "Data Analyst & BI Developer",
+  "email": "mailto:toublousamuel@gmail.com",
+  "telephone": "+22893879493",
+  "url": "https://elom-toublou.vercel.app/",
+  "sameAs": [
+    "https://www.linkedin.com/in/elom-samuel-toublou-056446346/",
+    "https://github.com/toublou-samuel"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lomé",
+    "addressCountry": "TG"
+  },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Université de Lomé" }
+}
+</script>
+
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" data-i18n-content="meta.ogTitle" content="Elom Samuel Toublou — Freelance Data Analyst & BI Developer">
+<meta property="og:title" data-i18n-content="meta.ogTitle" content="Elom Samuel Toublou - Freelance Data Analyst & BI Developer">
 <meta property="og:description" data-i18n-content="meta.ogDesc" content="Real tools, deployed and working: Excel/VBA systems, Python & Streamlit BI apps, Power BI dashboards, financial models. Based in Togo, available worldwide.">
 <meta property="og:url" content="https://elom-toublou.vercel.app/">
 <meta property="og:image" content="https://elom-toublou.vercel.app/assets/images/projects/transport-1.webp">
@@ -19,14 +42,15 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='6' fill='%234A9EBF'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='13' fill='white'>E</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/images/projects/profile.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
+<div class="scroll-progress" aria-hidden="true"></div>
+
 <a class="skip-link" href="#main" data-i18n="nav.skipToContent">Skip to main content</a>
-<canvas id="starfield" aria-hidden="true"></canvas>
-<div id="caret" aria-hidden="true"></div>
 
 <!-- ══ CERTIFICATE PROTECTED VIEWER ══ -->
 <div class="cert-viewer" id="cert-viewer" role="dialog" aria-modal="true" aria-label="Certificate viewer" data-viewer-title="Certificate viewer">
@@ -35,10 +59,9 @@
     <p class="cv-title" id="cert-viewer-title" data-i18n="certifications.viewerTitle">Certificate viewer</p>
     <div class="cv-img-wrap">
       <img id="cert-viewer-img" src="" alt="" draggable="false">
-      <div class="cv-watermark" aria-hidden="true"><span data-i18n="certifications.viewerNote">Portfolio Preview — Elom Samuel Toublou</span></div>
+      <div class="cv-watermark" aria-hidden="true"><span data-i18n="certifications.viewerNote">Aperçu portfolio · Elom Samuel Toublou</span></div>
     </div>
-  </div>
-  <p class="cv-hint" data-i18n="certifications.viewerNote">Portfolio Preview — Elom Samuel Toublou</p>
+  </div>  <p class="cv-hint" data-i18n="certifications.viewerNote">Aperçu portfolio · Elom Samuel Toublou</p>
 </div>
 
 <!-- ══ LIGHTBOX ══ -->
@@ -122,30 +145,24 @@
       <span class="h-eyebrow-txt" data-i18n="hero.eyebrow">Data Analyst · BI Developer · Financial Modeler</span>
     </div>
     <h1 class="h-name">
-      <span class="w-bold" data-i18n="hero.name">Elom</span><br>
-      <span class="w-italic" data-i18n="hero.name2">Samuel</span><br>
+      <span class="w-bold" data-i18n="hero.name">Elom</span> <span class="w-bold" data-i18n="hero.name2">Samuel</span><br>
       <span class="w-outline" data-i18n="hero.name3">TOUBLOU</span>
     </h1>
     <div class="h-bar"></div>
-    <div class="h-proof">
-      <span class="h-proof-dot"></span>
-      <span class="h-proof-txt" data-i18n="hero.proof">Google-certified data analyst · 7 tools in production · <strong>1,000+ people reached through training &amp; analysis</strong></span>
-    </div>
     <div class="h-sub">
-      <p class="h-role" data-i18n="hero.role">I turn raw data into decisions that move businesses forward</p>
-      <p class="h-desc" data-i18n="hero.desc">I build analysis tools that run in production — Excel/VBA systems, Python dashboards and financial models for SMEs, startups and institutions. Based in Lomé, Togo. Working with clients worldwide.</p>
+      <p class="h-desc" data-i18n="hero.desc">I build analysis tools that run in production, Excel/VBA systems, Python dashboards and financial models for SMEs, startups and institutions.</p>
     </div>
+    <p class="h-loc" data-i18n="hero.loc">Google-certified data analyst · 7 tools in production</p>
     <div class="h-stats">
       <div class="stat"><div class="stat-n" data-i18n="hero.stat1n">100+</div><div class="stat-l" data-i18n="hero.stat1l">Learners trained</div></div>
       <div class="stat"><div class="stat-n" data-i18n="hero.stat2n">7</div><div class="stat-l" data-i18n="hero.stat2l">Projects delivered</div></div>
       <div class="stat"><div class="stat-n" data-i18n="hero.stat3n">2+</div><div class="stat-l" data-i18n="hero.stat3l">Years of experience</div></div>
     </div>
     <div class="h-btns">
-      <a href="#projects" class="btn btn-solid" data-i18n="hero.btnProjects">View my work ↓</a>
-      <a href="assets/documents/cv/Elom_Toublou_CV_Professional_EN.pdf" class="btn btn-ghost" download data-i18n="hero.btnCv">Download CV</a>
+      <a href="#projects" class="btn btn-solid" data-i18n="hero.btnProjects">View my work</a>
       <a href="mailto:toublousamuel@gmail.com" class="btn btn-ghost" data-i18n="hero.btnContact">Hire me</a>
+      <a href="cv.html" class="btn btn-text" target="_blank" rel="noopener" data-i18n="hero.btnCv">Download CV</a>
     </div>
-    <p class="cv-note" data-i18n="hero.cvNote">PDF — Professional & Academic versions</p>
   </div>
 
   <div class="hero-right">
@@ -153,65 +170,24 @@
       <div class="corner-tl"></div>
       <div class="corner-br"></div>
       <div class="photo-wrap">
-        <img src="assets/images/projects/profile.webp" alt="Elom Samuel Toublou" width="864" height="1080" fetchpriority="high">
-      </div>
-      <div class="badge badge-1">
-        <div class="badge-lbl" data-i18n="hero.badge1l">Certification</div>
-        <div class="badge-val" data-i18n="hero.badge1v">Google</div>
-        <div class="badge-sub" data-i18n="hero.badge1s">Data Analytics</div>
-      </div>
-      <div class="badge badge-2">
-        <div class="badge-lbl" data-i18n="hero.badge2l">Core stack</div>
-        <div class="badge-val" data-i18n="hero.badge2v">Excel / VBA</div>
-        <div class="badge-sub" data-i18n="hero.badge2s">Advanced level</div>
-      </div>
-      <div class="badge badge-3">
-        <div class="badge-lbl" data-i18n="hero.badge3l">Available</div>
-        <div class="badge-val" data-i18n="hero.badge3v">Worldwide</div>
-        <div class="badge-sub" data-i18n="hero.badge3s">Remote & on-site</div>
+        <img src="assets/images/projects/profile.webp" alt="Elom Samuel Toublou, data analyst" width="864" height="1080" fetchpriority="high">
       </div>
     </div>
   </div>
 </header>
 
-<!-- ══ TICKER ══ -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track" id="ticker-track">
-    <div class="ti"><span class="tdot"></span>Python</div>
-    <div class="ti"><span class="tdot"></span>Excel / VBA</div>
-    <div class="ti"><span class="tdot"></span>Power BI</div>
-    <div class="ti"><span class="tdot"></span>SQL</div>
-    <div class="ti"><span class="tdot"></span>Streamlit</div>
-    <div class="ti"><span class="tdot"></span>DuckDB</div>
-    <div class="ti"><span class="tdot"></span>Financial Modeling</div>
-    <div class="ti"><span class="tdot"></span>Automation</div>
-    <div class="ti"><span class="tdot"></span>Econometrics</div>
-    <div class="ti"><span class="tdot"></span>Data Visualization</div>
-    <div class="ti"><span class="tdot"></span>Python</div>
-    <div class="ti"><span class="tdot"></span>Excel / VBA</div>
-    <div class="ti"><span class="tdot"></span>Power BI</div>
-    <div class="ti"><span class="tdot"></span>SQL</div>
-    <div class="ti"><span class="tdot"></span>Streamlit</div>
-    <div class="ti"><span class="tdot"></span>DuckDB</div>
-    <div class="ti"><span class="tdot"></span>Financial Modeling</div>
-    <div class="ti"><span class="tdot"></span>Automation</div>
-    <div class="ti"><span class="tdot"></span>Econometrics</div>
-    <div class="ti"><span class="tdot"></span>Data Visualization</div>
-  </div>
-</div>
-
 <!-- ══ SERVICES ══ -->
 <section id="services" aria-labelledby="services-title">
 <div class="section">
-  <div class="sec-label reveal"><span class="sec-num" data-i18n="services.label">01 — Services</span><span class="sec-dash"></span></div>
+  <div class="sec-label reveal"><span class="sec-num" data-i18n="services.label">01 · Services</span><span class="sec-dash"></span></div>
   <h2 class="sec-title reveal" id="services-title"><span class="w-bold" data-i18n="services.title1">What I</span> <span class="w-italic" data-i18n="services.title2">deliver</span></h2>
-  <p class="sec-sub reveal" data-i18n="services.sub">Five focused service lines, built on tools I have already shipped to real businesses. No buzzwords — production-grade work only.</p>
+  <p class="sec-sub reveal" data-i18n="services.sub">Five focused service lines, built on tools I have already shipped to real businesses. No buzzwords, production-grade work only.</p>
 
-  <div class="svc-grid">
+  <div class="svc-grid" id="svc-grid">
     <div class="svc-card reveal rd1">
       <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3v17h17"/><path d="M8 16v-5"/><path d="M12 16v-9"/><path d="M16 16v-3"/><path d="M20 16V7"/></svg></div>
       <h3 class="svc-title" data-i18n="services.s1t">Data Analysis &amp; Dashboards</h3>
-      <p class="svc-desc" data-i18n="services.s1d">Excel/Power BI/Python analysis that ends in decisions: KPIs, trends, gap analysis — not just charts.</p>
+      <p class="svc-desc" data-i18n="services.s1d">Excel/Power BI/Python analysis that ends in decisions: KPIs, trends, gap analysis, not just charts.</p>
     </div>
     <div class="svc-card reveal rd2">
       <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M9 9v9"/><path d="M8 21h8"/></svg></div>
@@ -231,24 +207,23 @@
     <div class="svc-card reveal rd2">
       <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="17" r="2.5"/><circle cx="19" cy="17" r="2.5"/><path d="M12 7.5v5"/><path d="M12 12.5L6.8 15.2"/><path d="M12 12.5l5.2 2.7"/></svg></div>
       <h3 class="svc-title" data-i18n="services.s5t">Corporate Data &amp; BI Training</h3>
-      <p class="svc-desc" data-i18n="services.s5d">Hands-on training for teams — 100+ learners trained for OIF's D-CLIC program, plus corporate engagements.</p>
+      <p class="svc-desc" data-i18n="services.s5d">Hands-on training for teams, 100+ learners trained for OIF's D-CLIC program, plus corporate engagements.</p>
     </div>
-    <!-- TODO: CONFIRM WITH ELOM — service card 5 slot: keep grid balanced at 5 cards or add a 6th line (e.g. Statistical/Econometric Studies)? -->
-    <div class="svc-card reveal rd3" style="display:flex;align-items:center;justify-content:center;background:var(--gray-1);">
-      <p style="font-family:var(--mono);font-size:.6rem;color:var(--gray-4);letter-spacing:.12em;text-transform:uppercase;text-align:center;line-height:1.9">Elom Samuel Toublou<br>Lomé, Togo · Remote worldwide</p>
+    <div class="svc-card svc-foot reveal rd3">
+      <p>Elom Samuel Toublou<br>Lomé, Togo · Remote worldwide</p>
     </div>
   </div>
 
   <div class="how-wrap">
     <p class="how-title reveal" data-i18n="services.howTitle">How I work</p>
-    <div class="how-grid">
+    <div class="how-grid" id="how-grid">
       <div class="how-item reveal rd1">
         <h4 class="how-t" data-i18n="services.how1t">Production-grade, not academic</h4>
-        <p class="how-d" data-i18n="services.how1d">Every project in my portfolio runs in a real business today. I build tools people actually use — with licences, sync, error handling and support.</p>
+        <p class="how-d" data-i18n="services.how1d">Every project in my portfolio runs in a real business today. I build tools people actually use, with licences, sync, error handling and support.</p>
       </div>
       <div class="how-item reveal rd2">
         <h4 class="how-t" data-i18n="services.how2t">From raw data to decision</h4>
-        <p class="how-d" data-i18n="services.how2d">I handle the full chain: generation, cleaning, modeling, visualization, recommendation — then I stay until your team owns the tool.</p>
+        <p class="how-d" data-i18n="services.how2d">I handle the full chain: generation, cleaning, modeling, visualization, recommendation, then I stay until your team owns the tool.</p>
       </div>
       <div class="how-item reveal rd3">
         <h4 class="how-t" data-i18n="services.how3t">Clear communication</h4>
@@ -262,26 +237,27 @@
 <!-- ══ PROJETS ══ -->
 <section id="projects" aria-labelledby="projects-title">
 <div class="section">
-  <div class="sec-label reveal"><span class="sec-num" data-i18n="projects.label">02 — Selected work</span><span class="sec-dash"></span></div>
+  <div class="sec-label reveal"><span class="sec-num" data-i18n="projects.label">02 · Selected work</span><span class="sec-dash"></span></div>
   <h2 class="sec-title reveal" id="projects-title"><span class="w-bold" data-i18n="projects.title1">Projects</span> &amp; <span class="w-italic" data-i18n="projects.title2">results</span></h2>
   <p class="sec-sub reveal" data-i18n="projects.sub">Real tools, deployed, working in production. Not academic exercises.</p>
 
+  <div id="projects-list">
   <!-- TRANSPORT BI (new flagship) -->
   <div class="pf-card featured reveal">
     <div class="pf-visual">
       <div class="pf-car" id="car-transport" data-car-name="Transport Intelligence">
-        <div class="cs on"><img src="assets/images/projects/transport-1.webp" alt="Transport Intelligence — Executive Overview dashboard" loading="lazy" width="1918" height="912"></div>
-        <div class="cs"><img src="assets/images/projects/transport-2.webp" alt="Transport Intelligence — Commercial Performance page" loading="lazy" width="1917" height="917"></div>
-        <div class="cs"><img src="assets/images/projects/transport-3.webp" alt="Transport Intelligence — Operations page" loading="lazy" width="1920" height="921"></div>
-        <div class="cs"><img src="assets/images/projects/transport-4.webp" alt="Transport Intelligence — Financial Analysis page" loading="lazy" width="1920" height="910"></div>
-        <div class="cs"><img src="assets/images/projects/transport-5.webp" alt="Transport Intelligence — Customer Analytics page" loading="lazy" width="1920" height="913"></div>
+        <div class="cs on"><img src="assets/images/projects/transport-1.webp" alt="Transport Intelligence: Executive Overview dashboard" loading="lazy" width="1918" height="912"></div>
+        <div class="cs"><img src="assets/images/projects/transport-2.webp" alt="Transport Intelligence: Commercial Performance page" loading="lazy" width="1917" height="917"></div>
+        <div class="cs"><img src="assets/images/projects/transport-3.webp" alt="Transport Intelligence: Operations page" loading="lazy" width="1920" height="921"></div>
+        <div class="cs"><img src="assets/images/projects/transport-4.webp" alt="Transport Intelligence: Financial Analysis page" loading="lazy" width="1920" height="910"></div>
+        <div class="cs"><img src="assets/images/projects/transport-5.webp" alt="Transport Intelligence: Customer Analytics page" loading="lazy" width="1920" height="913"></div>
         <div class="cs-dots" role="tablist" aria-hidden="true"><span class="csdot on"></span><span class="csdot"></span><span class="csdot"></span><span class="csdot"></span><span class="csdot"></span></div>
       </div>
     </div>
     <div class="pf-info">
       <div class="pf-tag live" data-i18n="projects.transportTag">New · Live application</div>
-      <h3 class="pf-title" data-i18n="projects.transportTitle">Transport Intelligence — End-to-End BI Platform</h3>
-      <p class="pf-desc" data-i18n="projects.transportDesc">Complete business intelligence suite for a passenger transport company (Togo, Ghana, Benin, Côte d'Ivoire). I generated a realistic 21-table data warehouse (190,000+ records), cleaned it, and built a 6-page interactive dashboard — revenue, occupancy, punctuality, customer satisfaction — all computed dynamically, zero hard-coded values. Deployed and live.</p>
+      <h3 class="pf-title" data-i18n="projects.transportTitle">Transport Intelligence: End-to-End BI Platform</h3>
+      <p class="pf-desc" data-i18n="projects.transportDesc">Complete business intelligence suite for a passenger transport company (Togo, Ghana, Benin, Côte d'Ivoire). I generated a realistic 21-table data warehouse (190,000+ records), cleaned it, and built a 6-page interactive dashboard, revenue, occupancy, punctuality, customer satisfaction, all computed dynamically, zero hard-coded values. Deployed and live.</p>
       <div class="pf-metrics">
         <div><div class="mn" data-i18n="projects.transportM1">190K+</div><div class="ml" data-i18n="projects.transportM1l">Records analyzed</div></div>
         <div><div class="mn" data-i18n="projects.transportM2">21</div><div class="ml" data-i18n="projects.transportM2l">Relational tables</div></div>
@@ -307,12 +283,12 @@
     </div>
     <div class="pf-info">
       <div class="pf-tag" data-i18n="projects.boutiqueTag">Flagship · Deployable application</div>
-      <h3 class="pf-title" data-i18n="projects.boutiqueTitle">Boutique Manager — Complete Retail Management Platform</h3>
+      <h3 class="pf-title" data-i18n="projects.boutiqueTitle">Boutique Manager: Complete Retail Management Platform</h3>
       <p class="pf-desc" data-i18n="projects.boutiqueDesc">Multi-user Excel/VBA application with role-based authentication (sales, manager, cashier, admin, super-admin), sales, stock, customer and inventory management. Licence key activation system with remote updates and Google Drive synchronization.</p>
       <div class="pf-metrics">
         <div><div class="mn" data-i18n="projects.boutiqueM1">5</div><div class="ml" data-i18n="projects.boutiqueM1l">Access levels</div></div>
         <div><div class="mn" data-i18n="projects.boutiqueM2">100%</div><div class="ml" data-i18n="projects.boutiqueM2l">VBA from scratch</div></div>
-        <div><div class="mn" data-i18n="projects.boutiqueM3">∞</div><div class="ml" data-i18n="projects.boutiqueM3l">Deployable shops</div></div>
+        <div><div class="mn" data-i18n="projects.boutiqueM3">2</div><div class="ml" data-i18n="projects.boutiqueM3l">Shops in production</div></div>
       </div>
       <div class="pf-tags">
         <span class="tag">Excel VBA</span><span class="tag">Authentication</span><span class="tag">Drive Sync</span><span class="tag">Licences</span><span class="tag">UI/UX Forms</span>
@@ -328,7 +304,6 @@
 
     <!-- Inventaire -->
     <div class="proj-card reveal rd1">
-      <div class="proj-arr" aria-hidden="true">↗</div>
       <div class="proj-visual" data-car-name="Intelligent Inventory Platform">
         <div class="cs on"><img src="assets/images/projects/inventaire-1.webp" alt="Intelligent Inventory Platform" loading="lazy" width="946" height="584"></div>
         <div class="cs"><img src="assets/images/projects/inventaire-2.webp" alt="Intelligent Inventory Platform" loading="lazy" width="937" height="658"></div>
@@ -337,13 +312,12 @@
       </div>
       <div class="proj-type" data-i18n="projects.inventaireType">Automation · VBA</div>
       <h3 class="proj-title" data-i18n="projects.inventaireTitle">Intelligent Inventory Platform</h3>
-      <p class="proj-desc" data-i18n="projects.inventaireDesc">Excel/VBA system — 6 modules (Dashboard, Inventory, Location, Maintenance, Data), location and condition-based logging, automatic synthesis and integrated reporting.</p>
+      <p class="proj-desc" data-i18n="projects.inventaireDesc">Excel/VBA system, 6 modules (Dashboard, Inventory, Location, Maintenance, Data), location and condition-based logging, automatic synthesis and integrated reporting.</p>
       <div class="proj-tags"><span class="proj-tag">Excel VBA</span><span class="proj-tag">Macros</span><span class="proj-tag">Dashboard</span><span class="proj-tag">6 modules</span></div>
     </div>
 
     <!-- Générateur de messages -->
     <div class="proj-card reveal rd2">
-      <div class="proj-arr" aria-hidden="true">↗</div>
       <div class="proj-visual" data-car-name="Message Generator">
         <div class="cs on"><img src="assets/images/projects/message-1.webp" alt="Personalized Message Generator" loading="lazy" width="992" height="555"></div>
         <div class="cs"><img src="assets/images/projects/message-2.webp" alt="Personalized Message Generator" loading="lazy" width="1184" height="566"></div>
@@ -358,7 +332,6 @@
 
     <!-- OTR -->
     <div class="proj-card reveal rd3">
-      <div class="proj-arr" aria-hidden="true">↗</div>
       <div class="proj-visual" data-car-name="OTR Togo Analysis">
         <div class="cs on"><img src="assets/images/projects/otr-1.webp" alt="OTR Togo tax revenue analysis" loading="lazy" width="871" height="491"></div>
         <div class="cs"><img src="assets/images/projects/otr-2.webp" alt="OTR Togo tax revenue analysis" loading="lazy" width="1032" height="617"></div>
@@ -367,14 +340,14 @@
         <div class="cs-dots" aria-hidden="true"><span class="csdot on"></span><span class="csdot"></span><span class="csdot"></span><span class="csdot"></span></div>
       </div>
       <div class="proj-type" data-i18n="projects.otrType">Economic analysis · Python · Power BI</div>
-      <h3 class="proj-title" data-i18n="projects.otrTitle">Tax Revenue Analysis — OTR Togo</h3>
+      <h3 class="proj-title" data-i18n="projects.otrTitle">Tax Revenue Analysis: OTR Togo</h3>
       <p class="proj-desc" data-i18n="projects.otrDesc">Full quarterly report simulating OTR revenue analysis. Python generation (5,000+ rows), cleaning, dynamic Power BI dashboard. Personal initiative.</p>
       <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">pandas</span><span class="proj-tag">Power BI</span><span class="proj-tag">5,000+ rows</span></div>
     </div>
   </div>
 
   <!-- DATACO -->
-  <div class="pf-card reveal" style="margin-top:2px">
+  <div class="pf-card reveal">
     <div class="pf-visual">
       <div class="pf-car" id="car-dataco" data-car-name="DATACO Dashboards">
         <div class="cs on"><img src="assets/images/projects/dataco-1.webp" alt="DATACO challenge dashboard" loading="lazy" width="592" height="617"></div>
@@ -387,16 +360,17 @@
     <div class="pf-info">
       <div class="pf-tag" data-i18n="projects.datacoTag">Public challenges · Excel · Data visualization</div>
       <h3 class="pf-title" data-i18n="projects.datacoTitle">Sales Dashboards + DATACO Togo Challenges</h3>
-      <p class="pf-desc" data-i18n="projects.datacoDesc">Complete Excel sales dashboard (5,000+ rows) with KPIs, interactive map, top-5 customers and salespeople. Participant in the DATACO Togo challenges (October &amp; November 2025) on LinkedIn — analyzing provided datasets and competing on dashboard quality.</p>
+      <p class="pf-desc" data-i18n="projects.datacoDesc">Complete Excel sales dashboard (5,000+ rows) with KPIs, interactive map, top-5 customers and salespeople. Participant in the DATACO Togo challenges (October &amp; November 2025) on LinkedIn, analyzing provided datasets and competing on dashboard quality.</p>
       <div class="pf-tags">
         <span class="tag">Advanced Excel</span><span class="tag">Pivot tables</span><span class="tag">Interactive map</span><span class="tag">DATACO</span><span class="tag">Competition</span>
       </div>
       <div class="pf-links-group">
-        <button class="pf-link" data-modal="modal-demo3" data-i18n="projects.demoOct">▶ Dashboard demo — Oct. 2025 challenge</button>
-        <button class="pf-link" data-modal="modal-demo4" data-i18n="projects.demoNov">▶ Dashboard demo — Nov. 2025 challenge</button>
+        <button class="pf-link" data-modal="modal-demo3" data-i18n="projects.demoOct">▶ Dashboard demo, Oct. 2025 challenge</button>
+        <button class="pf-link" data-modal="modal-demo4" data-i18n="projects.demoNov">▶ Dashboard demo, Nov. 2025 challenge</button>
         <button class="pf-link" data-modal="modal-demo2" data-i18n="projects.demoSales">▶ Sales dashboard demo</button>
       </div>
     </div>
+  </div>
   </div>
 </div>
 </section>
@@ -404,18 +378,18 @@
 <!-- ══ FINANCIAL MODELING ══ -->
 <section id="finmodel" aria-labelledby="finmodel-title">
 <div class="section">
-  <div class="sec-label reveal"><span class="sec-num" data-i18n="finmodel.label">03 — Financial Engineering</span><span class="sec-dash"></span></div>
+  <div class="sec-label reveal"><span class="sec-num" data-i18n="finmodel.label">03 · Financial Engineering</span><span class="sec-dash"></span></div>
   <h2 class="sec-title reveal" id="finmodel-title"><span class="w-bold" data-i18n="finmodel.title1">Financial Modeling</span> <span class="w-italic" data-i18n="finmodel.title2">&amp; Corporate Finance</span></h2>
-  <p class="sec-sub reveal" data-i18n="finmodel.sub">A 3-statement-style model built in Excel — the same discipline I bring to every client engagement, and the foundation for my upcoming Master's in Financial Engineering.</p>
+  <p class="sec-sub reveal" data-i18n="finmodel.sub">A 3-statement-style model built in Excel, the same discipline I bring to every client engagement, and the foundation for my upcoming Master's in Financial Engineering.</p>
 
   <!-- plain-language framing -->
   <div class="fm-intro reveal">
-    <p class="fm-plain" data-i18n="finmodel.plain">In plain terms: this tool projects a company's revenue, costs and profitability several years ahead, starting from a handful of adjustable business assumptions — how fast sales grow, what costs eat into them, how the company is financed and taxed. It's the kind of model used for budgeting, fundraising and investment decisions.</p>
-    <p class="fm-plain" data-i18n="finmodel.plain2">Change one assumption — say, growth from 5% to 8% — and the entire forecast recalculates instantly.</p>
+    <p class="fm-plain" data-i18n="finmodel.plain">In plain terms: this tool projects a company's revenue, costs and profitability several years ahead, starting from a handful of adjustable business assumptions, how fast sales grow, what costs eat into them, how the company is financed and taxed. It's the kind of model used for budgeting, fundraising and investment decisions.</p>
+    <p class="fm-plain" data-i18n="finmodel.plain2">Change one assumption, say, growth from 5% to 8%, and the entire forecast recalculates instantly.</p>
   </div>
 
   <!-- stat callouts -->
-  <div class="fm-stats reveal rd1">
+  <div class="fm-stats reveal rd1" id="fm-stats">
     <div class="fm-stat"><div class="mn">5%/yr</div><div class="ml" data-i18n="finmodel.stat1l">Configurable revenue growth</div></div>
     <div class="fm-stat"><div class="mn">3</div><div class="ml" data-i18n="finmodel.stat2l">Linked statement blocks</div></div>
     <div class="fm-stat"><div class="mn">12+</div><div class="ml" data-i18n="finmodel.stat3l">Adjustable assumption drivers</div></div>
@@ -425,20 +399,19 @@
   <!-- rendered chart (model's own outputs) -->
   <figure class="fm-chart reveal rd2">
     <img src="assets/images/finmodel/finchart.svg" alt="Line chart: revenue grows from 3,150 to 3,829 and net income from 339 to 416 between 2022 and 2028, following the model's 5% growth assumptions" width="560" height="240">
-    <figcaption class="fm-caption" data-i18n="finmodel.chartCaption">Model output — revenue and net income trajectory at the model's own 5% growth assumption</figcaption>
+    <figcaption class="fm-caption" data-i18n="finmodel.chartCaption">Model output: revenue and net income trajectory at the model's own 5% growth assumption</figcaption>
   </figure>
 
   <div class="fm-grid">
     <div class="fm-copy">
       <p class="reveal" data-i18n="finmodel.p1">Every output is driven by a single, clearly documented Hypotheses tab: revenue growth, COGS as % of revenue, SG&amp;A as % of revenue, depreciation, interest on credit lines and borrowings, the effective tax rate, minority interests, and working-capital days (receivables, inventory, payables).</p>
-      <p class="reveal rd1" data-i18n="finmodel.p2">The model computes operating income, net income and forward projections — the numbers a lender, investor or budget owner actually makes decisions with.</p>
+      <p class="reveal rd1" data-i18n="finmodel.p2">The model computes operating income, net income and forward projections, the numbers a lender, investor or budget owner actually makes decisions with.</p>
 
-      <div class="fm-features">
+      <div class="fm-features" id="fm-features">
         <div class="fm-feat reveal"><div class="fm-feat-t" data-i18n="finmodel.f1t">Income Statement build</div><div class="fm-feat-d" data-i18n="finmodel.f1d">Full P&amp;L from revenue to net income, with minority interests and equity-method income.</div></div>
-        <div class="fm-feat reveal rd1"><div class="fm-feat-t" data-i18n="finmodel.f2t">Assumptions engine</div><div class="fm-feat-d" data-i18n="finmodel.f2d">Growth, margins, tax, working capital and financing drivers — all configurable in one tab.</div></div>
+        <div class="fm-feat reveal rd1"><div class="fm-feat-t" data-i18n="finmodel.f2t">Assumptions engine</div><div class="fm-feat-d" data-i18n="finmodel.f2d">Growth, margins, tax, working capital and financing drivers, all configurable in one tab.</div></div>
         <div class="fm-feat reveal rd2"><div class="fm-feat-t" data-i18n="finmodel.f3t">Multi-year forecast</div><div class="fm-feat-d" data-i18n="finmodel.f3d">Forward projections with period-over-period evolution of every line item.</div></div>
       </div>
-      <!-- TODO: CONFIRM WITH ELOM — the underlying .xlsx financial model is NOT downloadable from the site (screenshots only), as a protection default. Say the word if you want it downloadable. -->
     </div>
 
     <div class="fm-shot reveal rd1">
@@ -449,11 +422,11 @@
           <button class="fm-tab" data-fm="forecast" role="tab" aria-selected="false" data-i18n="finmodel.tab3">Forecast</button>
         </div>
         <div class="fm-anno-wrap">
-          <img id="fm-img" src="assets/images/finmodel/zoom-assumptions.webp" alt="Financial model — assumptions panel: growth rate, cost ratios, tax and working-capital drivers" width="1881" height="608" loading="lazy">
+          <img id="fm-img" src="assets/images/finmodel/zoom-assumptions.webp" alt="Financial model, assumptions panel: growth rate, cost ratios, tax and working-capital drivers" width="1881" height="608" loading="lazy">
           <div class="fm-callout" style="--cx:14%;--cy:20%" aria-hidden="true"><span data-i18n="finmodel.anno1">Growth &amp; margin assumptions</span></div>
           <div class="fm-callout fm-c2" style="--cx:14%;--cy:78%" aria-hidden="true"><span data-i18n="finmodel.anno2">Working-capital days</span></div>
         </div>
-        <p class="fm-caption" id="fm-cap" data-i18n="finmodel.capAssumptions">The Hypothèses tab — one place to steer the whole model</p>
+        <p class="fm-caption" id="fm-cap" data-i18n="finmodel.capAssumptions">The Hypothèses tab: one place to steer the whole model</p>
       </div>
     </div>
   </div>
@@ -463,24 +436,31 @@
 <!-- ══ SKILLS ══ -->
 <section id="skills" aria-labelledby="skills-title">
 <div class="section">
-  <div class="sec-label reveal"><span class="sec-num" data-i18n="skills.label">04 — Skills</span><span class="sec-dash"></span></div>
-  <h2 class="sec-title reveal" id="skills-title"><span class="w-bold" data-i18n="skills.title1">Skills</span> &amp; <span class="w-italic" data-i18n="skills.title2">mastery</span></h2>
+  <div class="sec-label reveal"><span class="sec-num" data-i18n="skills.label">04 · Skills</span><span class="sec-dash"></span></div>
+  <h2 class="sec-title reveal" id="skills-title"><span class="w-bold" data-i18n="skills.title1">Skills</span> &amp; <span class="w-italic" data-i18n="skills.title2">tools</span></h2>
   <p class="sec-sub reveal" data-i18n="skills.sub">Tools proven by projects in production.</p>
 
   <div class="skills-layout">
-    <div>
-      <p class="sk-title reveal" data-i18n="skills.mastery">Mastery level</p>
-      <div class="skill-row reveal"><span class="skill-nm" data-i18n="skills.s1">Excel / VBA</span><div class="skill-track"><div class="skill-fill" data-w="93"></div></div><span class="skill-pct">93%</span></div>
-      <div class="skill-row reveal rd1"><span class="skill-nm" data-i18n="skills.s2">Python (pandas, numpy, matplotlib)</span><div class="skill-track"><div class="skill-fill" data-w="78"></div></div><span class="skill-pct">78%</span></div>
-      <div class="skill-row reveal rd2"><span class="skill-nm" data-i18n="skills.s3">SQL</span><div class="skill-track"><div class="skill-fill" data-w="72"></div></div><span class="skill-pct">72%</span></div>
-      <div class="skill-row reveal rd3"><span class="skill-nm" data-i18n="skills.s4">Power BI</span><div class="skill-track"><div class="skill-fill" data-w="70"></div></div><span class="skill-pct">70%</span></div>
-      <div class="skill-row reveal"><span class="skill-nm" data-i18n="skills.s5">Economic &amp; fiscal analysis</span><div class="skill-track"><div class="skill-fill" data-w="85"></div></div><span class="skill-pct">85%</span></div>
-      <div class="skill-row reveal rd1"><span class="skill-nm" data-i18n="skills.s6">Data visualization</span><div class="skill-track"><div class="skill-fill" data-w="80"></div></div><span class="skill-pct">80%</span></div>
-      <div class="skill-row reveal rd2"><span class="skill-nm" data-i18n="skills.s7">Econometrics &amp; statistics</span><div class="skill-track"><div class="skill-fill" data-w="65"></div></div><span class="skill-pct">65%</span></div>
-      <div class="skill-row reveal rd3"><span class="skill-nm" data-i18n="skills.s8">R (base)</span><div class="skill-track"><div class="skill-fill" data-w="45"></div></div><span class="skill-pct">45%</span></div>
-      <div class="sk-extra reveal">
-        <div class="sk-extra-t" data-i18n="skills.extraTitle">Also working with</div>
-        <div class="sk-extra-v" data-i18n="skills.extra">Streamlit · DuckDB · Plotly · PowerPoint · Financial modeling (3-statement, DCF-ready)</div>
+    <div class="sk-group reveal">
+      <p class="sk-group-t" data-i18n="skills.coreTitle">Core expertise</p>
+      <div class="sk-items">
+        <div class="sk-item" data-i18n="skills.s1">Excel / VBA</div>
+        <div class="sk-item" data-i18n="skills.s2">Python (pandas, numpy, matplotlib)</div>
+        <div class="sk-item" data-i18n="skills.s5">Economic &amp; fiscal analysis</div>
+      </div>
+    </div>
+    <div class="sk-group reveal rd1">
+      <p class="sk-group-t" data-i18n="skills.techTitle">Technologies</p>
+      <div class="sk-items">
+        <div class="sk-item" data-i18n="skills.s3">SQL</div>
+        <div class="sk-item" data-i18n="skills.s4">Power BI</div>
+        <div class="sk-item" data-i18n="skills.s7">Econometrics &amp; statistics</div>
+      </div>
+    </div>
+    <div class="sk-group reveal rd2">
+      <p class="sk-group-t" data-i18n="skills.toolsTitle">Also working with</p>
+      <div class="sk-items">
+        <div class="sk-item" data-i18n="skills.extra">Streamlit · DuckDB · Plotly · PowerPoint · Financial modeling (3-statement, DCF-ready)</div>
       </div>
     </div>
   </div>
@@ -490,26 +470,26 @@
 <!-- ══ CERTIFICATIONS ══ -->
 <section id="certifications" aria-labelledby="certs-title">
 <div class="section">
-  <div class="sec-label reveal"><span class="sec-num" data-i18n="certifications.label">05 — Credentials</span><span class="sec-dash"></span></div>
+  <div class="sec-label reveal"><span class="sec-num" data-i18n="certifications.label">05 · Credentials</span><span class="sec-dash"></span></div>
   <h2 class="sec-title reveal" id="certs-title"><span class="w-bold" data-i18n="certifications.title1">Certifications</span> &amp; <span class="w-italic" data-i18n="certifications.title2">diplomas</span></h2>
   <p class="sec-sub reveal" data-i18n="certifications.sub">Every credential below is verified on file. Click to view the original certificate.</p>
 
-  <div class="cert-grid">
+  <div class="cert-grid" id="cert-grid">
     <button class="cert reveal" data-cert="diploma">
       <div class="cert-badge cb-blue" aria-hidden="true">UL</div>
       <div class="cert-info">
         <div class="cert-nm" data-i18n="certifications.c1">Licence (BA) in International Economics</div>
-        <div class="cert-org" data-i18n="certifications.c1o">Université de Lomé — 2025</div>
+        <div class="cert-org" data-i18n="certifications.c1o">Université de Lomé, 2025</div>
         <div class="cert-sub" data-i18n="certifications.c1d">GPA 13.28/20 · Ranked 11th of 61</div>
       </div>
       <span class="cpill cp-done" data-i18n="certifications.statusObtained">Obtained</span>
     </button>
 
-    <button class="cert reveal rd1" data-cert="google-dm">
+    <button class="cert reveal rd1" data-cert="coursera-1">
       <div class="cert-badge cb-blue" aria-hidden="true">G</div>
       <div class="cert-info">
         <div class="cert-nm" data-i18n="certifications.c2">Google Data Analytics</div>
-        <div class="cert-org" data-i18n="certifications.c2o">Google / Coursera — Sep 2025</div>
+        <div class="cert-org" data-i18n="certifications.c2o">Google / Coursera, Sep 2025</div>
         <div class="cert-sub" data-i18n="certifications.c2d">Professional certificate incl. R programming and data analysis courses</div>
       </div>
       <span class="cpill cp-done" data-i18n="certifications.statusObtained">Obtained</span>
@@ -518,9 +498,9 @@
     <button class="cert reveal rd2" data-cert="oif-dclic3">
       <div class="cert-badge cb-coral" aria-hidden="true">OIF</div>
       <div class="cert-info">
-        <div class="cert-nm" data-i18n="certifications.c3">Certified Trainer — D-CLIC Program</div>
-        <div class="cert-org" data-i18n="certifications.c3o">Organisation Internationale de la Francophonie — 2026</div>
-        <div class="cert-sub" data-i18n="certifications.c3d">Data Analyst &amp; Data Protection track — 100+ learners trained</div>
+        <div class="cert-nm" data-i18n="certifications.c3">Certified Trainer: D-CLIC Program</div>
+        <div class="cert-org" data-i18n="certifications.c3o">Organisation Internationale de la Francophonie, 2026</div>
+        <div class="cert-sub" data-i18n="certifications.c3d">Data Analyst &amp; Data Protection track, 100+ learners trained</div>
       </div>
       <span class="cpill cp-done" data-i18n="certifications.statusObtained">Obtained</span>
     </button>
@@ -529,7 +509,7 @@
       <div class="cert-badge cb-teal" aria-hidden="true">UN</div>
       <div class="cert-info">
         <div class="cert-nm" data-i18n="certifications.c4">Data Analysis Certification</div>
-        <div class="cert-org" data-i18n="certifications.c4o">UNICEF (Agora platform) — Aug 2026</div>
+        <div class="cert-org" data-i18n="certifications.c4o">UNICEF (Agora platform), Aug 2026</div>
         <div class="cert-sub" data-i18n="certifications.c4d">Harnessing the Power of Data to End Harmful Practices</div>
       </div>
       <span class="cpill cp-done" data-i18n="certifications.statusObtained">Obtained</span>
@@ -538,8 +518,8 @@
     <button class="cert reveal" data-cert="fcc-english">
       <div class="cert-badge cb-teal" aria-hidden="true">EN</div>
       <div class="cert-info">
-        <div class="cert-nm" data-i18n="certifications.c5">English — Level B1</div>
-        <div class="cert-org" data-i18n="certifications.c5o">freeCodeCamp — May 2026</div>
+        <div class="cert-nm" data-i18n="certifications.c5">English: Level B1</div>
+        <div class="cert-org" data-i18n="certifications.c5o">freeCodeCamp, May 2026</div>
         <div class="cert-sub" data-i18n="certifications.c5d">English for Developers certification</div>
       </div>
       <span class="cpill cp-done" data-i18n="certifications.statusObtained">Obtained</span>
@@ -549,7 +529,7 @@
       <div class="cert-badge cb-gold" aria-hidden="true">G</div>
       <div class="cert-info">
         <div class="cert-nm" data-i18n="certifications.c6">Digital Marketing Fundamentals</div>
-        <div class="cert-org" data-i18n="certifications.c6o">Google — Apr 2023</div>
+        <div class="cert-org" data-i18n="certifications.c6o">Google, Apr 2023</div>
         <div class="cert-sub" data-i18n="certifications.c6d">Fundamentals of Digital Marketing</div>
       </div>
       <span class="cpill cp-done" data-i18n="certifications.statusObtained">Obtained</span>
@@ -559,7 +539,7 @@
       <div class="cert-badge cb-coral" aria-hidden="true">OIF</div>
       <div class="cert-info">
         <div class="cert-nm" data-i18n="certifications.c7">Communication &amp; Digital Marketing</div>
-        <div class="cert-org" data-i18n="certifications.c7o">OIF D-CLIC Phase 2 — Apr 2025</div>
+        <div class="cert-org" data-i18n="certifications.c7o">OIF D-CLIC Phase 2, Apr 2025</div>
         <div class="cert-sub" data-i18n="certifications.c7d">Visual creation, public speaking, written &amp; oral expression</div>
       </div>
       <span class="cpill cp-done" data-i18n="certifications.statusObtained">Obtained</span>
@@ -568,60 +548,34 @@
     <button class="cert reveal rd3" data-cert="fcc-english">
       <div class="cert-badge cb-teal" aria-hidden="true">ELC</div>
       <div class="cert-info">
-        <div class="cert-nm" data-i18n="certifications.c8">English — Intermediate 1</div>
-        <div class="cert-org" data-i18n="certifications.c8o">English Language Center — Jun 2023</div>
+        <div class="cert-nm" data-i18n="certifications.c8">English: Intermediate 1</div>
+        <div class="cert-org" data-i18n="certifications.c8o">English Language Center, Jun 2023</div>
         <div class="cert-sub" data-i18n="certifications.c8d">Classroom certification</div>
       </div>
       <span class="cpill cp-done" data-i18n="certifications.statusObtained">Obtained</span>
     </button>
-
-    <button class="cert reveal" disabled>
-      <div class="cert-badge cb-blue" aria-hidden="true">PBI</div>
-      <div class="cert-info">
-        <div class="cert-nm" data-i18n="certifications.c9">Microsoft PL-300 — Power BI Analyst</div>
-        <div class="cert-org" data-i18n="certifications.c9o">Microsoft — target 2026</div>
-      </div>
-      <span class="cpill cp-plan" data-i18n="certifications.statusPlanned">Planned</span>
-    </button>
-
-    <button class="cert reveal rd1" disabled>
-      <div class="cert-badge cb-teal" aria-hidden="true">AI</div>
-      <div class="cert-info">
-        <div class="cert-nm" data-i18n="certifications.c10">CAIP — Certified AI Professional</div>
-        <div class="cert-org" data-i18n="certifications.c10o">PECB — target 2027</div>
-      </div>
-      <span class="cpill cp-plan" data-i18n="certifications.statusPlanned">Planned</span>
-    </button>
   </div>
-  <p class="cert-note" data-i18n="certifications.note">Certificates are viewable on-site only — not available for download.</p>
+  <p class="cert-note" data-i18n="certifications.note">Certificates are viewable on-site only, not available for download.</p>
 </div>
 </section>
 
 <!-- ══ ABOUT ══ -->
 <section id="about" aria-labelledby="about-title">
 <div class="section">
-  <div class="sec-label reveal"><span class="sec-num" data-i18n="about.label">06 — About</span><span class="sec-dash"></span></div>
+  <div class="sec-label reveal"><span class="sec-num" data-i18n="about.label">06 · About</span><span class="sec-dash"></span></div>
   <div class="about-layout">
     <div class="about-photo-wrap reveal">
       <div class="about-photo">
-        <img src="assets/images/projects/about.webp" alt="Elom Samuel Toublou" loading="lazy" width="864" height="1080">
+        <img src="assets/images/projects/about.webp" alt="Elom Samuel Toublou during a training session" loading="lazy" width="864" height="1080">
       </div>
       <div class="photo-deco"></div>
-      <div class="about-exp-bar">
-        <div class="exp-item"><div class="exp-n" data-i18n="about.exp1n">100+</div><div class="exp-l" data-i18n="about.exp1l">Learners trained</div></div>
-        <div class="exp-item"><div class="exp-n" data-i18n="about.exp2n">7</div><div class="exp-l" data-i18n="about.exp2l">Projects delivered</div></div>
-        <div class="exp-item"><div class="exp-n" data-i18n="about.exp3n">2+</div><div class="exp-l" data-i18n="about.exp3l">Years of exp.</div></div>
-      </div>
     </div>
     <div class="reveal rd2">
       <div class="about-tag">
-        <span style="width:16px;height:1.5px;background:var(--coral);display:inline-block" aria-hidden="true"></span>
         <span data-i18n="about.tag">About me</span>
       </div>
       <h3 class="about-heading" id="about-title">
-        <span class="w-bold" data-i18n="about.heading1">Economist.</span><br>
-        <span class="w-italic" data-i18n="about.heading2">Tool</span><br>
-        <span class="w-bold" data-i18n="about.heading3">builder.</span>
+        <span class="w-bold" data-i18n="about.heading1">Economist.</span> <span class="w-italic" data-i18n="about.heading3">Tool builder.</span>
       </h3>
       <p class="ap" data-i18n="about.p1">I am Elom Samuel Toublou, a data analyst and economist based in Lomé, Togo. I hold a Licence (BA) in International Economics from the Université de Lomé (GPA 13.28/20, ranked 11th of 61) and I have chosen a simple specialty: building analytical tools that work in production, not slide-deck toys.</p>
       <p class="ap" data-i18n="about.p2">I have delivered multi-user Excel/VBA platforms to local businesses, cleaned and analyzed 10,000+-row databases for SMEs, and automated reporting pipelines that cut processing time by up to 80%.</p>
@@ -629,22 +583,22 @@
 
       <div class="training-cards">
         <div class="training-card">
-          <div class="tc-tag" data-i18n="about.exp1l">Learners trained</div>
-          <h4 class="tc-title" data-i18n="about.train1t">OIF D-CLIC — 100+ learners</h4>
+          <div class="tc-tag" data-i18n="about.train1tag">Certified trainer · OIF</div>
+          <h4 class="tc-title" data-i18n="about.train1t">OIF D-CLIC: 100+ learners</h4>
           <p class="tc-desc" data-i18n="about.train1d">Certified trainer for the Francophonie's D-CLIC program (Data Analyst &amp; Data Protection track), delivered with Cube SAEI across Togo. Attestation of successful completion issued by the OIF, April 2026.</p>
         </div>
         <div class="training-card">
-          <div class="tc-tag" data-i18n="about.exp1l">Learners trained</div>
-          <h4 class="tc-title" data-i18n="about.train2t">ISM B Group &amp; Cube SAEI — Big Data &amp; Data Protection</h4>
-          <p class="tc-desc" data-i18n="about.train2d">Specialized training delivered to students in that track — a targeted, high-touch corporate teaching engagement, from course design through to their state-recognized certification.</p>
+          <div class="tc-tag" data-i18n="about.train2tag">Corporate training</div>
+          <h4 class="tc-title" data-i18n="about.train2t">ISM B Group &amp; Cube SAEI, Big Data &amp; Data Protection</h4>
+          <p class="tc-desc" data-i18n="about.train2d">Specialized training delivered to students in that track, a targeted, high-touch corporate teaching engagement, from course design through to their state-recognized certification.</p>
         </div>
       </div>
 
       <p class="about-goal" data-i18n="about.goal">My goal: become a world-class specialist in advanced economic and financial data analysis, at the intersection of AI, quantitative finance and global policy.</p>
 
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
+      <div class="about-actions">
         <a href="mailto:toublousamuel@gmail.com" class="btn btn-solid" data-i18n="contact.send">Start a conversation ↗</a>
-        <a href="https://www.linkedin.com/in/elom-samuel-toublou-056446346/" target="_blank" rel="noopener" class="btn btn-ghost" style="background:rgba(74,158,191,.1);color:var(--blue)!important;border-color:var(--blue);text-shadow:none;">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/elom-samuel-toublou-056446346/" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="contact.linkedin">LinkedIn</a>
       </div>
     </div>
   </div>
@@ -652,21 +606,25 @@
 </section>
 
 <!-- ══ CONTACT ══ -->
-<section id="contact" aria-labelledby="contact-title">
+<section id="contact">
 <div class="section">
   <div class="contact-wrap">
     <div class="reveal">
-      <div class="contact-big">
+      <div class="contact-big" id="contact-title">
         <span class="w-italic" data-i18n="contact.big1">Let's turn</span><br>
         <span class="w-bold" data-i18n="contact.big2">your data</span><br>
         <span class="w-coral" data-i18n="contact.big3">into results.</span>
       </div>
-      <p class="contact-sub" data-i18n="contact.sub">Available for freelance missions, contract data/BI work, financial analysis projects and training engagements — remote worldwide, on-site in West Africa.</p>
-      <div class="avail"><span class="avail-dot"></span><span class="avail-txt" data-i18n="contact.avail">Available — open to global opportunities</span></div>
+      <p class="contact-sub" data-i18n="contact.sub">Available for freelance missions, contract data/BI work, financial analysis projects and training engagements, remote worldwide, on-site in West Africa.</p>
+      <div class="avail"><span class="avail-dot"></span><span class="avail-txt" data-i18n="contact.avail">Available, open to global opportunities</span></div>
 
       <div class="cv-dl">
         <p class="cv-dl-title" data-i18n="contact.cvTitle">Download my CV</p>
         <div class="cv-dl-btns">
+          <a href="cv.html" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span data-i18n="contact.cvDynamic">Curriculum Vitae (Interactif &amp; PDF)</span>
+          </a>
           <a href="assets/documents/cv/Elom_Toublou_CV_Professional_EN.pdf" download>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span data-i18n="contact.cvPro">Professional CV (PDF)</span>
@@ -708,7 +666,7 @@
 </main>
 
 <footer>
-  <p data-i18n="footer.rights">© 2026 Elom Samuel Toublou — Lomé, Togo</p>
+  <p data-i18n="footer.rights">© 2026 Elom Samuel Toublou - Lomé, Togo</p>
   <div class="footer-links">
     <a href="#projects" data-i18n="nav.projects">Projects</a>
     <a href="#skills" data-i18n="nav.skills">Skills</a>
@@ -720,5 +678,19 @@
 <script src="js/i18n.js" defer></script>
 <script src="js/certs.js" defer></script>
 <script src="js/main.js" defer></script>
+<script src="js/cms.js" defer></script>
+<script>
+  /* Analytics propre — mesure anonyme des visites (production uniquement).
+   Envoi de la page + source vers /api/track : compteurs agrégés sans cookies
+   ni données personnelles (pas de bannière nécessaire). */
+  if (!/(localhost|127\.0\.0\.1)/.test(location.hostname)) {
+    fetch('/api/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ p: location.pathname, r: document.referrer }),
+      keepalive: true
+    }).catch(function () {});
+  }
+</script>
 </body>
 </html>

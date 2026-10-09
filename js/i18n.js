@@ -33,8 +33,10 @@
 
     apply() {
       document.querySelectorAll('[data-i18n]').forEach(el => {
-        const v = this.t(el.getAttribute('data-i18n'));
-        if (v != null) el.textContent = v;
+        const key = el.getAttribute('data-i18n');
+        const v = this.t(key);
+        if (v == null) return;
+        el.textContent = v;
       });
       document.querySelectorAll('[data-i18n-content]').forEach(el => {
         const v = this.t(el.getAttribute('data-i18n-content'));

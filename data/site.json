@@ -1,0 +1,888 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-22",
+  "profile": {
+    "firstName": "Elom",
+    "middleName": "Samuel",
+    "lastName": "TOUBLOU",
+    "location": "Lomé, Togo",
+    "email": "toublousamuel@gmail.com",
+    "phone": "+228 93 87 94 93",
+    "phoneLink": "tel:+22893879493",
+    "linkedin": "https://www.linkedin.com/in/elom-samuel-toublou-056446346/",
+    "linkedinLabel": "elom-samuel-toublou",
+    "github": "https://github.com/toublou-samuel",
+    "githubLabel": "github.com/toublou-samuel",
+    "photo": "assets/images/projects/profile.webp",
+    "photoAbout": "assets/images/projects/about.webp",
+    "cvPro": "assets/documents/cv/Elom_Toublou_CV_Professional_EN.pdf",
+    "cvAca": "assets/documents/cv/Elom_Toublou_CV_Academic_EN.pdf"
+  },
+  "hero": {
+    "eyebrow": {
+      "en": "Data Analyst · BI Developer · Financial Modeler",
+      "fr": "Data Analyst · Développeur BI · Modélisateur Financier"
+    },
+    "desc": {
+      "en": "I build analysis tools that run in production, Excel/VBA systems, Python dashboards and financial models for SMEs, startups and institutions.",
+      "fr": "Je construis des outils d'analyse qui tournent en production : systèmes Excel/VBA, dashboards Python et modèles financiers pour PME, startups et institutions."
+    },
+    "loc": {
+      "en": "Google-certified data analyst · Based in Lomé, Togo · Working worldwide",
+      "fr": "Analyste de données certifié Google · Basé à Lomé, Togo · Clients dans le monde entier"
+    },
+    "stats": [
+      {
+        "n": "100+",
+        "label_en": "Learners trained",
+        "label_fr": "Apprenants formés"
+      },
+      {
+        "n": "7",
+        "label_en": "Projects delivered",
+        "label_fr": "Projets livrés"
+      },
+      {
+        "n": "2+",
+        "label_en": "Years of experience",
+        "label_fr": "Ans d'expérience"
+      }
+    ],
+    "btnProjects": {
+      "en": "View my work",
+      "fr": "Voir mes réalisations"
+    },
+    "btnCv": {
+      "en": "Download CV",
+      "fr": "Télécharger le CV"
+    },
+    "btnContact": {
+      "en": "Hire me",
+      "fr": "Me recruter"
+    }
+  },
+  "services": {
+    "label": {
+      "en": "01 · Services",
+      "fr": "01 · Services"
+    },
+    "title1": {
+      "en": "What I",
+      "fr": "Ce que"
+    },
+    "title2": {
+      "en": "deliver",
+      "fr": "je livre"
+    },
+    "sub": {
+      "en": "Five focused service lines, built on tools I have already shipped to real businesses. No buzzwords, production-grade work only.",
+      "fr": "Cinq lignes de services ciblées, fondées sur des outils déjà livrés à de vraies entreprises. Pas de mots à la mode, du travail de niveau production uniquement."
+    },
+    "items": [
+      {
+        "id": "svc-data",
+        "icon": "chart",
+        "title_en": "Data Analysis & Dashboards",
+        "title_fr": "Analyse de données & Dashboards",
+        "desc_en": "Excel/Power BI/Python analysis that ends in decisions: KPIs, trends, gap analysis, not just charts.",
+        "desc_fr": "Analyse Excel/Power BI/Python qui se termine en décisions : KPIs, tendances, analyse d'écarts, pas seulement des graphiques."
+      },
+      {
+        "id": "svc-bi",
+        "icon": "monitor",
+        "title_en": "BI App Development",
+        "title_fr": "Développement d'applications BI",
+        "desc_en": "Multi-page interactive analytics apps in Streamlit, deployed and usable by non-technical teams.",
+        "desc_fr": "Applications analytiques interactives multi-pages en Streamlit, déployées et utilisables par des équipes non techniques."
+      },
+      {
+        "id": "svc-auto",
+        "icon": "nodes",
+        "title_en": "Process Automation",
+        "title_fr": "Automatisation de processus",
+        "desc_en": "Excel/VBA and Python automation that has cut reporting time by up to 80% for real businesses.",
+        "desc_fr": "Automatisation Excel/VBA et Python qui a réduit le temps de reporting jusqu'à 80 % pour de vraies entreprises."
+      },
+      {
+        "id": "svc-fin",
+        "icon": "table",
+        "title_en": "Financial Modeling & Forecasting",
+        "title_fr": "Modélisation financière & prévision",
+        "desc_en": "Assumption-driven 3-statement models: growth, margins, tax, working capital, financing scenarios.",
+        "desc_fr": "Modèles à 3 états financiers pilotés par hypothèses : croissance, marges, fiscalité, besoin en fonds de roulement, scénarios de financement."
+      },
+      {
+        "id": "svc-train",
+        "icon": "network",
+        "title_en": "Corporate Data & BI Training",
+        "title_fr": "Formation Data & BI en entreprise",
+        "desc_en": "Hands-on training for teams, 100+ learners trained for OIF's D-CLIC program, plus corporate engagements.",
+        "desc_fr": "Formations pratiques pour équipes, 100+ apprenants formés pour le programme D-CLIC de l'OIF, plus des missions en entreprise."
+      }
+    ],
+    "howTitle": {
+      "en": "How I work",
+      "fr": "Ma méthode"
+    },
+    "how": [
+      {
+        "t_en": "Production-grade, not academic",
+        "t_fr": "Niveau production, pas académique",
+        "d_en": "Every project in my portfolio runs in a real business today. I build tools people actually use, with licences, sync, error handling and support.",
+        "d_fr": "Chaque projet de mon portfolio tourne aujourd'hui dans une vraie entreprise. Je construis des outils que les gens utilisent vraiment, avec licences, synchronisation, gestion d'erreurs et support."
+      },
+      {
+        "t_en": "From raw data to decision",
+        "t_fr": "De la donnée brute à la décision",
+        "d_en": "I handle the full chain: generation, cleaning, modeling, visualization, recommendation, then I stay until your team owns the tool.",
+        "d_fr": "Je couvre toute la chaîne : génération, nettoyage, modélisation, visualisation, recommandation, puis j'accompagne votre équipe jusqu'à l'autonomie sur l'outil."
+      },
+      {
+        "t_en": "Clear communication",
+        "t_fr": "Communication claire",
+        "d_en": "Fluent French and English, comfortable presenting to executives and training end-users on the tools I deliver.",
+        "d_fr": "Français et anglais courants, à l'aise pour présenter à des directions et former les utilisateurs finaux sur les outils livrés."
+      }
+    ]
+  },
+  "projects": {
+    "label": {
+      "en": "02 · Selected work",
+      "fr": "02 · Réalisations"
+    },
+    "title1": {
+      "en": "Projects",
+      "fr": "Projets"
+    },
+    "title2": {
+      "en": "& results",
+      "fr": "& résultats"
+    },
+    "sub": {
+      "en": "Real tools, deployed, working in production. Not academic exercises.",
+      "fr": "Des outils réels, déployés, qui fonctionnent en production. Pas des exercices académiques."
+    },
+    "items": [
+      {
+        "id": "transport",
+        "layout": "featured",
+        "live": true,
+        "tag_en": "New · Live application",
+        "tag_fr": "Nouveau · Application en ligne",
+        "title_en": "Transport Intelligence: End-to-End BI Platform",
+        "title_fr": "Transport Intelligence: Plateforme BI de bout en bout",
+        "desc_en": "Complete business intelligence suite for a passenger transport company (Togo, Ghana, Benin, Côte d'Ivoire). I generated a realistic 21-table data warehouse (190,000+ records), cleaned it, and built a 6-page interactive dashboard, revenue, occupancy, punctuality, customer satisfaction, all computed dynamically, zero hard-coded values. Deployed and live.",
+        "desc_fr": "Suite complète de Business Intelligence pour une compagnie de transport de voyageurs (Togo, Ghana, Bénin, Côte d'Ivoire). J'ai généré un entrepôt de données réaliste de 21 tables (190 000+ enregistrements), nettoyé, puis construit un dashboard interactif de 6 pages, recettes, remplissage, ponctualité, satisfaction client, tout calculé dynamiquement, zéro valeur codée en dur. Déployée et en ligne.",
+        "metrics": [
+          {
+            "v": "190K+",
+            "l_en": "Records analyzed",
+            "l_fr": "Enregistrements analysés"
+          },
+          {
+            "v": "21",
+            "l_en": "Relational tables",
+            "l_fr": "Tables relationnelles"
+          },
+          {
+            "v": "6",
+            "l_en": "Dashboard pages",
+            "l_fr": "Pages de dashboard"
+          }
+        ],
+        "tags": [
+          "Python",
+          "Streamlit",
+          "pandas",
+          "DuckDB",
+          "Plotly",
+          "Deployment"
+        ],
+        "linkUrl": "https://transport-bi-app.streamlit.app/",
+        "linkLabel_en": "Open Live App ↗",
+        "linkLabel_fr": "Ouvrir l'app live ↗",
+        "images": [
+          "assets/images/projects/transport-1.webp",
+          "assets/images/projects/transport-2.webp",
+          "assets/images/projects/transport-3.webp",
+          "assets/images/projects/transport-4.webp",
+          "assets/images/projects/transport-5.webp"
+        ],
+        "videos": []
+      },
+      {
+        "id": "boutique",
+        "layout": "featured",
+        "live": false,
+        "tag_en": "Flagship · Deployable application",
+        "tag_fr": "Projet phare · Application déployable",
+        "title_en": "Boutique Manager: Complete Retail Management Platform",
+        "title_fr": "Boutique Manager: Plateforme de gestion commerciale complète",
+        "desc_en": "Multi-user Excel/VBA application with role-based authentication (sales, manager, cashier, admin, super-admin), sales, stock, customer and inventory management. Licence key activation system with remote updates and Google Drive synchronization.",
+        "desc_fr": "Application Excel/VBA multi-utilisateurs avec authentification par rôles (vendeur, gérant, caissier, administrateur, super-admin), gestion des ventes, stocks, clients et inventaire. Système de licence par clé d'activation, mises à jour à distance et synchronisation via Google Drive.",
+        "metrics": [
+          {
+            "v": "5",
+            "l_en": "Access levels",
+            "l_fr": "Niveaux d'accès"
+          },
+          {
+            "v": "100%",
+            "l_en": "VBA from scratch",
+            "l_fr": "Développé de zéro"
+          },
+          {
+            "v": "2",
+            "l_en": "Shops in production",
+            "l_fr": "Boutiques en production"
+          }
+        ],
+        "tags": [
+          "Excel VBA",
+          "Authentication",
+          "Drive Sync",
+          "Licences",
+          "UI/UX Forms"
+        ],
+        "linkUrl": "",
+        "linkLabel_en": "▶ Watch video demo",
+        "linkLabel_fr": "▶ Voir la démo vidéo",
+        "images": [
+          "assets/images/projects/boutique-1.webp",
+          "assets/images/projects/boutique-2.webp"
+        ],
+        "videos": [
+          {
+            "label_en": "▶ Watch video demo",
+            "label_fr": "▶ Voir la démo vidéo",
+            "src": "assets/videos/demo-1.mp4"
+          }
+        ]
+      },
+      {
+        "id": "inventaire",
+        "layout": "grid",
+        "live": false,
+        "tag_en": "Automation · VBA",
+        "tag_fr": "Automatisation · VBA",
+        "title_en": "Intelligent Inventory Platform",
+        "title_fr": "Plateforme d'Inventaire Intelligente",
+        "desc_en": "Excel/VBA system, 6 modules (Dashboard, Inventory, Location, Maintenance, Data), location and condition-based logging, automatic synthesis and integrated reporting.",
+        "desc_fr": "Système Excel/VBA, 6 modules (Dashboard, Inventaire, Localisation, Maintenance, Données), enregistrement par emplacement et état, synthèse automatique et tableau de bord intégré.",
+        "metrics": [],
+        "tags": [
+          "Excel VBA",
+          "Macros",
+          "Dashboard",
+          "6 modules"
+        ],
+        "linkUrl": "",
+        "linkLabel_en": "",
+        "linkLabel_fr": "",
+        "images": [
+          "assets/images/projects/inventaire-1.webp",
+          "assets/images/projects/inventaire-2.webp",
+          "assets/images/projects/inventaire-3.webp"
+        ],
+        "videos": []
+      },
+      {
+        "id": "message",
+        "layout": "grid",
+        "live": false,
+        "tag_en": "Automation · VBA",
+        "tag_fr": "Automatisation · VBA",
+        "title_en": "Personalized Message Generator",
+        "title_fr": "Générateur de Messages Personnalisés",
+        "desc_en": "VBA tool generating 100+ personalized messages in one click. Paste data → instant generation → automatic structuring on dedicated sheets.",
+        "desc_fr": "Outil VBA générant 100+ messages personnalisés en un clic. Données collées → génération instantanée → structuration automatique sur feuilles dédiées.",
+        "metrics": [],
+        "tags": [
+          "Excel VBA",
+          "100+ rows",
+          "Templates",
+          "Automation"
+        ],
+        "linkUrl": "",
+        "linkLabel_en": "",
+        "linkLabel_fr": "",
+        "images": [
+          "assets/images/projects/message-1.webp",
+          "assets/images/projects/message-2.webp",
+          "assets/images/projects/message-3.webp"
+        ],
+        "videos": []
+      },
+      {
+        "id": "otr",
+        "layout": "grid",
+        "live": false,
+        "tag_en": "Economic analysis · Python · Power BI",
+        "tag_fr": "Analyse économique · Python · Power BI",
+        "title_en": "Tax Revenue Analysis: OTR Togo",
+        "title_fr": "Analyse des Recettes Fiscales : OTR Togo",
+        "desc_en": "Full quarterly report simulating OTR revenue analysis. Python generation (5,000+ rows), cleaning, dynamic Power BI dashboard. Personal initiative.",
+        "desc_fr": "Rapport trimestriel complet simulant l'analyse des recettes de l'OTR. Génération Python (5 000+ lignes), nettoyage, tableau de bord Power BI dynamique. Initiative personnelle.",
+        "metrics": [],
+        "tags": [
+          "Python",
+          "pandas",
+          "Power BI",
+          "5,000+ rows"
+        ],
+        "linkUrl": "",
+        "linkLabel_en": "",
+        "linkLabel_fr": "",
+        "images": [
+          "assets/images/projects/otr-1.webp",
+          "assets/images/projects/otr-2.webp",
+          "assets/images/projects/otr-3.webp",
+          "assets/images/projects/otr-4.webp"
+        ],
+        "videos": []
+      },
+      {
+        "id": "dataco",
+        "layout": "featured",
+        "live": false,
+        "tag_en": "Public challenges · Excel · Data visualization",
+        "tag_fr": "Challenges publics · Excel · Data Visualisation",
+        "title_en": "Sales Dashboards + DATACO Togo Challenges",
+        "title_fr": "Tableaux de Bord Ventes + Challenges DATACO Togo",
+        "desc_en": "Complete Excel sales dashboard (5,000+ rows) with KPIs, interactive map, top-5 customers and salespeople. Participant in the DATACO Togo challenges (October & November 2025) on LinkedIn, analyzing provided datasets and competing on dashboard quality.",
+        "desc_fr": "Dashboard Excel complet d'analyse des ventes (5 000+ lignes) avec KPIs, carte interactive, top 5 clients et commerciaux. Participation aux challenges DATACO Togo (octobre & novembre 2025) sur LinkedIn, analyse de données fournies et dashboards en compétition.",
+        "metrics": [],
+        "tags": [
+          "Advanced Excel",
+          "Pivot tables",
+          "Interactive map",
+          "DATACO",
+          "Competition"
+        ],
+        "linkUrl": "",
+        "linkLabel_en": "",
+        "linkLabel_fr": "",
+        "images": [
+          "assets/images/projects/dataco-1.webp",
+          "assets/images/projects/dataco-2.webp",
+          "assets/images/projects/dataco-3.webp",
+          "assets/images/projects/dataco-4.webp"
+        ],
+        "videos": [
+          {
+            "label_en": "▶ Dashboard demo, Oct. 2025 challenge",
+            "label_fr": "▶ Démo Dashboard, Challenge Oct. 2025",
+            "src": "assets/videos/demo-3.mp4"
+          },
+          {
+            "label_en": "▶ Dashboard demo, Nov. 2025 challenge",
+            "label_fr": "▶ Démo Dashboard, Challenge Nov. 2025",
+            "src": "assets/videos/demo-4.mp4"
+          },
+          {
+            "label_en": "▶ Sales dashboard demo",
+            "label_fr": "▶ Démo Tableau de bord de vente",
+            "src": "assets/videos/demo-2.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  "finmodel": {
+    "label": {
+      "en": "03 · Financial Engineering",
+      "fr": "03 · Ingénierie Financière"
+    },
+    "title1": {
+      "en": "Financial Modeling",
+      "fr": "Modélisation Financière"
+    },
+    "title2": {
+      "en": "& Corporate Finance",
+      "fr": "& Finance d'Entreprise"
+    },
+    "sub": {
+      "en": "A 3-statement-style model built in Excel, the same discipline I bring to every client engagement, and the foundation for my upcoming Master's in Financial Engineering.",
+      "fr": "Un modèle à 3 états financiers construit sous Excel, la même rigueur que j'apporte à chaque mission client, et la base de mon futur Master en Ingénierie Financière."
+    },
+    "plain": {
+      "en": "In plain terms: this tool projects a company's revenue, costs and profitability several years ahead, starting from a handful of adjustable business assumptions, how fast sales grow, what costs eat into them, how the company is financed and taxed. It's the kind of model used for budgeting, fundraising and investment decisions.",
+      "fr": "En clair : cet outil projette le chiffre d'affaires, les coûts et la rentabilité d'une entreprise sur plusieurs années, à partir d'un petit nombre d'hypothèses ajustables, la vitesse de croissance des ventes, les coûts qui les pèsent, le financement et la fiscalité. C'est le type de modèle utilisé pour le budget, la levée de fonds et les décisions d'investissement."
+    },
+    "plain2": {
+      "en": "Change one assumption, say, growth from 5% to 8%, and the entire forecast recalculates instantly.",
+      "fr": "Changez une seule hypothèse, par exemple la croissance de 5 % à 8 %, et toute la prévision se recalcule instantanément."
+    },
+    "stats": [
+      {
+        "v": "5%/yr",
+        "l_en": "Configurable revenue growth",
+        "l_fr": "Croissance du CA paramétrable"
+      },
+      {
+        "v": "3",
+        "l_en": "Linked statement blocks",
+        "l_fr": "Blocs d'états liés"
+      },
+      {
+        "v": "12+",
+        "l_en": "Adjustable assumption drivers",
+        "l_fr": "Drivers d'hypothèses ajustables"
+      },
+      {
+        "v": "2028",
+        "l_en": "Forecast horizon",
+        "l_fr": "Horizon de prévision"
+      }
+    ],
+    "features": [
+      {
+        "t_en": "Income Statement build",
+        "t_fr": "Construction du Compte de Résultat",
+        "d_en": "Full P&L from revenue to net income, with minority interests and equity-method income.",
+        "d_fr": "P&L complet, du chiffre d'affaires au résultat net, avec intérêts minoritaires et quote-part des résultats des affiliés."
+      },
+      {
+        "t_en": "Assumptions engine",
+        "t_fr": "Moteur d'hypothèses",
+        "d_en": "Growth, margins, tax, working capital and financing drivers, all configurable in one tab.",
+        "d_fr": "Croissance, marges, fiscalité, fonds de roulement et financement, tout est paramétrable dans un seul onglet."
+      },
+      {
+        "t_en": "Multi-year forecast",
+        "t_fr": "Prévisions pluriannuelles",
+        "d_en": "Forward projections with period-over-period evolution of every line item.",
+        "d_fr": "Projections avec évolution période par période de chaque poste."
+      }
+    ]
+  },
+  "skills": {
+    "label": {
+      "en": "04 · Skills",
+      "fr": "04 · Compétences"
+    },
+    "title1": {
+      "en": "Skills",
+      "fr": "Compétences"
+    },
+    "title2": {
+      "en": "& tools",
+      "fr": "& outils"
+    },
+    "sub": {
+      "en": "Tools proven by projects in production.",
+      "fr": "Des outils maîtrisés, prouvés par des projets en production."
+    },
+    "coreTitle": {
+      "en": "Core expertise",
+      "fr": "Expertise principale"
+    },
+    "techTitle": {
+      "en": "Technologies",
+      "fr": "Technologies"
+    },
+    "toolsTitle": {
+      "en": "Also working with",
+      "fr": "Également à l'aise avec"
+    },
+    "items": [
+      {
+        "id": "excel",
+        "name_en": "Excel / VBA",
+        "name_fr": "Excel / VBA"
+      },
+      {
+        "id": "python",
+        "name_en": "Python (pandas, numpy, matplotlib)",
+        "name_fr": "Python (pandas, numpy, matplotlib)"
+      },
+      {
+        "id": "eco",
+        "name_en": "Economic & fiscal analysis",
+        "name_fr": "Analyse économique & fiscale"
+      },
+      {
+        "id": "sql",
+        "name_en": "SQL",
+        "name_fr": "SQL"
+      },
+      {
+        "id": "pbi",
+        "name_en": "Power BI",
+        "name_fr": "Power BI"
+      },
+      {
+        "id": "econometrics",
+        "name_en": "Econometrics & statistics",
+        "name_fr": "Économétrie & Statistiques"
+      }
+    ],
+    "extra": {
+      "en": "Streamlit · DuckDB · Plotly · PowerPoint · Financial modeling (3-statement, DCF-ready)",
+      "fr": "Streamlit · DuckDB · Plotly · PowerPoint · Modélisation financière (3 états, prête pour DCF)"
+    }
+  },
+  "certifications": {
+    "label": {
+      "en": "05 · Credentials",
+      "fr": "05 · Certifications"
+    },
+    "title1": {
+      "en": "Certifications",
+      "fr": "Certifications"
+    },
+    "title2": {
+      "en": "& diplomas",
+      "fr": "& diplômes"
+    },
+    "sub": {
+      "en": "Every credential below is verified on file. Click to view the original certificate.",
+      "fr": "Chaque justificatif ci-dessous est vérifié et disponible sur fichier. Cliquez pour voir le certificat original."
+    },
+    "note": {
+      "en": "Certificates are viewable on-site only, not available for download.",
+      "fr": "Les certificats sont consultables uniquement sur le site, non téléchargeables."
+    },
+    "items": [
+      {
+        "id": "c1",
+        "badge": "UL",
+        "color": "blue",
+        "title_en": "Licence (BA) in International Economics",
+        "title_fr": "Licence en Économie Internationale",
+        "org_en": "Université de Lomé, 2025",
+        "org_fr": "Université de Lomé, 2025",
+        "desc_en": "GPA 13.28/20 · Ranked 11th of 61",
+        "desc_fr": "Moyenne 13,28/20 · Classé 11e sur 61",
+        "status": "obtained",
+        "certKey": "diploma"
+      },
+      {
+        "id": "c2",
+        "badge": "G",
+        "color": "blue",
+        "title_en": "Google Data Analytics",
+        "title_fr": "Google Data Analytics",
+        "org_en": "Google / Coursera, Sep 2025",
+        "org_fr": "Google / Coursera, Sept 2025",
+        "desc_en": "Professional certificate incl. R programming and data analysis courses",
+        "desc_fr": "Certificat professionnel incluant R Programming et Analyse de données",
+        "status": "obtained",
+        "certKey": "coursera-1"
+      },
+      {
+        "id": "c3",
+        "badge": "OIF",
+        "color": "coral",
+        "title_en": "Certified Trainer: D-CLIC Program",
+        "title_fr": "Formateur Certifié : Programme D-CLIC",
+        "org_en": "Organisation Internationale de la Francophonie, 2026",
+        "org_fr": "Organisation Internationale de la Francophonie, 2026",
+        "desc_en": "Data Analyst & Data Protection track: 100+ learners trained",
+        "desc_fr": "Parcours Data Analyst & Protection des Données : 100+ apprenants formés",
+        "status": "obtained",
+        "certKey": "oif-dclic3"
+      },
+      {
+        "id": "c4",
+        "badge": "UN",
+        "color": "teal",
+        "title_en": "Data Analysis Certification",
+        "title_fr": "Certification en Analyse de Données",
+        "org_en": "UNICEF (Agora platform), Aug 2026",
+        "org_fr": "UNICEF (plateforme Agora), Août 2026",
+        "desc_en": "Harnessing the Power of Data to End Harmful Practices",
+        "desc_fr": "Harnessing the Power of Data to End Harmful Practices",
+        "status": "obtained",
+        "certKey": "unicef"
+      },
+      {
+        "id": "c5",
+        "badge": "EN",
+        "color": "teal",
+        "title_en": "English: Level B1",
+        "title_fr": "Anglais : Niveau B1",
+        "org_en": "freeCodeCamp, May 2026",
+        "org_fr": "freeCodeCamp, Mai 2026",
+        "desc_en": "English for Developers certification",
+        "desc_fr": "English for Developers",
+        "status": "obtained",
+        "certKey": "fcc-english"
+      },
+      {
+        "id": "c6",
+        "badge": "G",
+        "color": "gold",
+        "title_en": "Digital Marketing Fundamentals",
+        "title_fr": "Fondamentaux du Marketing Numérique",
+        "org_en": "Google, Apr 2023",
+        "org_fr": "Google, Avr 2023",
+        "desc_en": "Fundamentals of Digital Marketing",
+        "desc_fr": "Fundamentals of Digital Marketing",
+        "status": "obtained",
+        "certKey": "google-dm"
+      },
+      {
+        "id": "c7",
+        "badge": "OIF",
+        "color": "coral",
+        "title_en": "Communication & Digital Marketing",
+        "title_fr": "Communication & Marketing Digital",
+        "org_en": "OIF D-CLIC Phase 2, Apr 2025",
+        "org_fr": "OIF D-CLIC Phase 2, Avr 2025",
+        "desc_en": "Visual creation, public speaking, written & oral expression",
+        "desc_fr": "Création de visuels, prise de parole en public, expression écrite et orale",
+        "status": "obtained",
+        "certKey": "oif-dclic2"
+      },
+      {
+        "id": "c8",
+        "badge": "ELC",
+        "color": "teal",
+        "title_en": "English: Intermediate 1",
+        "title_fr": "Anglais : Intermédiaire 1",
+        "org_en": "English Language Center, Jun 2023",
+        "org_fr": "English Language Center, Juin 2023",
+        "desc_en": "Classroom certification",
+        "desc_fr": "Certification en cours présentiel",
+        "status": "obtained",
+        "certKey": "fcc-english"
+      }
+    ]
+  },
+  "about": {
+    "label": {
+      "en": "06 · About",
+      "fr": "06 · À propos"
+    },
+    "tag": {
+      "en": "About me",
+      "fr": "À propos"
+    },
+    "heading1": {
+      "en": "Economist.",
+      "fr": "Économiste."
+    },
+    "heading3": {
+      "en": "Tool builder.",
+      "fr": "Bâtisseur d'outils."
+    },
+    "p1": {
+      "en": "I am Elom Samuel Toublou, a data analyst and economist based in Lomé, Togo. I hold a Licence (BA) in International Economics from the Université de Lomé (GPA 13.28/20, ranked 11th of 61) and I have chosen a simple specialty: building analytical tools that work in production, not slide-deck toys.",
+      "fr": "Je suis TOUBLOU Elom Samuel, data analyst et économiste basé à Lomé, Togo. Titulaire d'une Licence en Économie Internationale de l'Université de Lomé (moyenne 13,28/20, classé 11e sur 61), je me suis spécialisé dans la construction d'outils analytiques réels, des systèmes qui fonctionnent en production, pas des maquettes de présentation."
+    },
+    "p2": {
+      "en": "I have delivered multi-user Excel/VBA platforms to local businesses, cleaned and analyzed 10,000+-row databases for SMEs, and automated reporting pipelines that cut processing time by up to 80%.",
+      "fr": "J'ai livré des plateformes Excel/VBA multi-utilisateurs à des commerces locaux, nettoyé et analysé des bases de 10 000+ lignes pour des PME, et automatisé des chaînes de reporting qui ont réduit le temps de traitement jusqu'à 80 %."
+    },
+    "p3": {
+      "en": "I train, too. Two distinct engagements, each honest in its scale:",
+      "fr": "Je forme aussi. Deux expériences distinctes, chacune honnête sur son échelle :"
+    },
+    "train1tag": {
+      "en": "Certified trainer · OIF",
+      "fr": "Formateur certifié · OIF"
+    },
+    "train1t": {
+      "en": "OIF D-CLIC: 100+ learners",
+      "fr": "OIF D-CLIC: 100+ apprenants"
+    },
+    "train1d": {
+      "en": "Certified trainer for the Francophonie's D-CLIC program (Data Analyst & Data Protection track), delivered with Cube SAEI across Togo. Attestation of successful completion issued by the OIF, April 2026.",
+      "fr": "Formateur certifié pour le programme D-CLIC de la Francophonie (parcours Data Analyst & Protection des Données), déployé avec Cube SAEI sur tout le Togo. Attestation de bonne fin délivrée par l'OIF, avril 2026."
+    },
+    "train2tag": {
+      "en": "Corporate training",
+      "fr": "Formation en entreprise"
+    },
+    "train2t": {
+      "en": "ISM B Group & Cube SAEI: Big Data & Data Protection",
+      "fr": "ISM B Group & Cube SAEI: Big Data & Protection des Données"
+    },
+    "train2d": {
+      "en": "Specialized training delivered to students in that track, a targeted, high-touch corporate teaching engagement, from course design through to their state-recognized certification.",
+      "fr": "Formation spécialisée dispensée aux étudiants de ce parcours, un enseignement ciblé et d'accompagnement rapproché, de la conception des cours jusqu'à leur certification reconnue par l'État."
+    },
+    "goal": {
+      "en": "My goal: become a world-class specialist in advanced economic and financial data analysis, at the intersection of AI, quantitative finance and global policy.",
+      "fr": "Objectif : devenir un spécialiste mondial de l'analyse avancée des données économiques et financières, à la frontière entre IA, finance quantitative et politiques mondiales."
+    }
+  },
+  "contact": {
+    "big1": {
+      "en": "Let's turn",
+      "fr": "Parlons"
+    },
+    "big2": {
+      "en": "your data",
+      "fr": "données"
+    },
+    "big3": {
+      "en": "into results.",
+      "fr": "ensemble."
+    },
+    "sub": {
+      "en": "Available for freelance missions, contract data/BI work, financial analysis projects and training engagements, remote worldwide, on-site in West Africa.",
+      "fr": "Disponible pour missions freelance, contrats data/BI, projets d'analyse financière et formations, à distance dans le monde entier, sur site en Afrique de l'Ouest."
+    },
+    "avail": {
+      "en": "Available, open to global opportunities",
+      "fr": "Disponible, ouvert aux opportunités mondiales"
+    },
+    "cvTitle": {
+      "en": "Download my CV",
+      "fr": "Télécharger mon CV"
+    }
+  },
+  "cv": {
+    "title": {
+      "fr": "Data Analyst · Développeur BI · Modélisateur Financier",
+      "en": "Data Analyst · BI Developer · Financial Modeler"
+    },
+    "summary": {
+      "fr": "Économiste de formation (Licence en Économie Internationale, Université de Lomé) et analyste de données, à l'aise aussi bien dans l'analyse quantitative que dans la restitution de recommandations claires à des décideurs. Expertise Excel avancée (modélisation, tableaux croisés dynamiques, automatisation) et Power BI, combinée à une certification en communication et marketing (création de supports visuels, prise de parole en public) et à une expérience réelle de formateur devant plus de 100 apprenants. Habitué à mener plusieurs missions en parallèle avec rigueur. Curieux et engagé dans l'apprentissage continu, comme en témoigne ma récente certification en analyse de données délivrée par l'UNICEF.",
+      "en": "Trained economist (BA in International Economics, Université de Lomé) and data analyst, equally proficient in quantitative analysis and translating complex findings into decision-ready recommendations for leadership. Advanced expertise in Excel (financial modeling, pivot tables, VBA automation) and Power BI (star schema, DAX), complemented by an OIF certification in communication & marketing (visual presentations, public speaking) and proven training experience with 100+ learners. Accustomed to managing multiple demanding engagements with rigor. Passionate about continuous learning, demonstrated by recent data analysis certification from UNICEF."
+    },
+    "keySkills": [
+      {
+        "fr": "Analyse quantitative et modélisation financière : Excel avancé (TCD, fonctions avancées, automatisation VBA), Power BI (modèle en étoile, mesures DAX)",
+        "en": "Quantitative analysis and financial modeling: Advanced Excel (pivot tables, advanced formulas, VBA automation), Power BI (star schema, DAX measures)"
+      },
+      {
+        "fr": "Conception de supports de présentation et de communication visuelle (PowerPoint) Certifié en communication et marketing par L’OIF",
+        "en": "Visual communication and presentation design (PowerPoint), certified in communication and marketing by OIF"
+      },
+      {
+        "fr": "Structuration et synthèse d'informations complexes en recommandations actionnables",
+        "en": "Structuring and synthesizing complex data into actionable business recommendations"
+      },
+      {
+        "fr": "Prise de parole en public et vulgarisation de sujets techniques (formateur certifié, 100+ apprenants)",
+        "en": "Public speaking and technical topic breakdown (certified trainer, 100+ learners)"
+      },
+      {
+        "fr": "Consolidation et analyse de données multi-sources (jusqu'à 10 000+ lignes) ; analyse d'écarts et de tendances",
+        "en": "Multi-source data consolidation (10,000+ rows); variance, variance-to-target and trend analysis"
+      },
+      {
+        "fr": "Python (pandas, numpy) et SQL pour le traitement de données",
+        "en": "Python (pandas, numpy) and SQL for data manipulation and pipeline querying"
+      },
+      {
+        "fr": "Organisation et gestion de missions multiples en parallèle",
+        "en": "Organization and concurrent management of multiple analytical missions"
+      },
+      {
+        "fr": "Français : langue maternelle • Anglais : niveau B1+ (certifié, progression active)",
+        "en": "French: Native • English: B1+ level (certified, active ongoing progression)"
+      }
+    ],
+    "experiences": [
+      {
+        "id": "exp-cube",
+        "company": "CUBE SAEI",
+        "location": "Lomé, Togo",
+        "period_fr": "Août 2025 – Août 2026",
+        "period_en": "Aug 2025 – Aug 2026",
+        "role_fr": "Data Analyst / Projets et outils internes",
+        "role_en": "Data Analyst / Internal projects and tools",
+        "bullets_fr": [
+          "Intervention sur plusieurs projets et outils internes de l'entreprise en tant qu'analyste de données",
+          "Formateur Programme D-CLIC Phase 3 (OIF), parcours Data Analyst & Protection des Données : formation de plus de 100 apprenants aux outils data (Excel, Python, SQL, Power BI) déployée par CUBE SAEI sur le territoire togolais pour le compte de l'OIF",
+          "Conception de supports pédagogiques et de présentation ; accompagnement individuel sur des projets réels"
+        ],
+        "bullets_en": [
+          "Data analyst on several company internal projects and quantitative tools",
+          "Trainer for D-CLIC Program Phase 3 (OIF), Data Analyst & Data Protection track: trained 100+ learners in Excel, Python, SQL, Power BI delivered by CUBE SAEI across Togo for OIF",
+          "Designed pedagogical slides and presentation materials; provided individual coaching on real client datasets"
+        ]
+      },
+      {
+        "id": "exp-freelance",
+        "company": "Analyste de Données Freelance",
+        "location": "Lomé, Togo",
+        "period_fr": "Nov. 2024 – Nov. 2025",
+        "period_en": "Nov 2024 – Nov 2025",
+        "role_fr": "Missions diverses, Lomé",
+        "role_en": "Various client engagements, Lomé",
+        "bullets_fr": [
+          "Nettoyage, structuration et analyse de bases de données complexes (10 000+ lignes) pour plusieurs PME locales",
+          "Création de tableaux de bord automatisés (Excel/VBA), réduisant le temps de traitement jusqu'à 80%",
+          "Production de recommandations à partir de l'analyse de tendances et d'écarts de performance"
+        ],
+        "bullets_en": [
+          "Cleaned, structured and analyzed complex databases (10,000+ rows) for multiple local SMEs",
+          "Engineered automated Excel/VBA dashboards, cutting manual reporting time by up to 80%",
+          "Delivered strategic recommendations derived from performance variance and trend diagnostics"
+        ]
+      },
+      {
+        "id": "exp-digicom",
+        "company": "DIGICOM TOGO",
+        "location": "Lomé, Togo",
+        "period_fr": "Mai 2024 – Nov. 2024",
+        "period_en": "May 2024 – Nov 2024",
+        "role_fr": "Commercial Terrain & Analyse de Ventes",
+        "role_en": "Field Sales & Commercial Data Reporting",
+        "bullets_fr": [
+          "Analyse des données de ventes ; reporting hebdomadaire des performances et KPIs commerciaux"
+        ],
+        "bullets_en": [
+          "Sales transaction data analysis; weekly KPI performance reporting and pipeline tracking"
+        ]
+      }
+    ],
+    "cvProjects": [
+      {
+        "title_fr": "Analyse des Recettes Fiscales OTR Togo",
+        "title_en": "Tax Revenue Analysis: OTR Togo",
+        "desc_fr": "Consolidation de 5 000+ lignes sur 4 tables relationnelles, dashboard Power BI, modélisation de croissance et de taux de recouvrement (étude benchmark/simulation de reporting).",
+        "desc_en": "Consolidation of 5,000+ rows across 4 relational tables, Power BI dashboard, revenue growth and recovery rate modeling (benchmark study / reporting simulation)."
+      },
+      {
+        "title_fr": "Analyse des Performances Commerciales, Power BI",
+        "title_en": "Commercial Performance Analysis, Power BI",
+        "desc_fr": "Rapport décisionnel sur 10 000+ transactions, analyses de marges et d'écarts de rentabilité.",
+        "desc_en": "Executive BI report on 10,000+ sales transactions, margin variance and profitability analysis."
+      },
+      {
+        "title_fr": "Transport Intelligence",
+        "title_en": "Transport Intelligence",
+        "desc_fr": "Tableau de bord BI complet (Python/Streamlit) pour le secteur du transport, de la génération de données à la restitution visuelle.",
+        "desc_en": "End-to-end transport BI platform (Python/Streamlit) covering data engineering, pipeline transformations and interactive KPI dashboard."
+      },
+      {
+        "title_fr": "Système de Gestion de Boutique Multi-Utilisateurs (VBA)",
+        "title_en": "Multi-User Retail Management System (VBA)",
+        "desc_fr": "Développé en entier avec Excel/VBA avec système de licences et de mises à jour à distance.",
+        "desc_en": "Built end-to-end with Excel/VBA featuring remote licensing, multi-user concurrency and automated version upgrades."
+      }
+    ],
+    "education": [
+      {
+        "id": "edu-licence",
+        "degree_fr": "Licence en Économie Internationale",
+        "degree_en": "Licence (BA) in International Economics",
+        "school_fr": "Université de Lomé",
+        "school_en": "Université de Lomé",
+        "year": "2025",
+        "details_fr": "Moyenne générale > 13/20",
+        "details_en": "GPA > 13/20"
+      }
+    ],
+    "references": [
+      {
+        "name": "Dr Kokou ESSIOMLE",
+        "title_fr": "Actuarial Analyst à la GTA Assurance Vie",
+        "title_en": "Actuarial Analyst at GTA Assurance Vie",
+        "phone": "+228 91 34 42 17"
+      },
+      {
+        "name": "M. KEDJI Sénamé",
+        "title_fr": "Consultant Data Indépendant",
+        "title_en": "Independent Data Consultant",
+        "phone": "+228 90 15 13 69"
+      }
+    ]
+  }
+}

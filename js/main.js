@@ -1,68 +1,35 @@
-/* ══ main.js — all v2 interactions preserved & enhanced ══
-   starfield, caret cursor, nav scroll, hamburger, video modals,
-   image lightbox, carousels, scroll reveal, skill bars, finmodel tabs */
+/* ══ main.js — interactions
+   nav scroll, scrollspy, hamburger, video modals,
+   image lightbox, carousels, scroll reveal */
 
 (function () {
   'use strict';
 
   document.addEventListener('DOMContentLoaded', () => {
 
-    /* ══ FOND ÉTOILÉ ══ */
-    (function () {
-      const canvas = document.getElementById('starfield');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let W, H, stars = [];
-      const mouse = { x: -1000, y: -1000 };
-      const STAR_COUNT = 150;
-      const COLORS = ['#4A9EBF', '#2BBFA0', '#F06240', '#ffffff', '#D0EBF5'];
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    /* ══ NAV SCROLL + SCROLLSPY ══ */
+    const nav = document.getElementById('nav');
+    const navAnchors = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'))
+      .filter(a => a.hash && a.hash.length > 1);
+    const spySections = navAnchors
+      .map(a => document.querySelector(a.hash))
+      .filter(Boolean);
 
-      function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-      function createStars() {
-        stars = [];
-        for (let i = 0; i < STAR_COUNT; i++) {
-          stars.push({
-            x: Math.random() * W, y: Math.random() * H,
-            ox: 0, oy: 0, r: Math.random() * 1.5 + .5,
-            vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3,
-            alpha: Math.random(), color: COLORS[Math.floor(Math.random() * COLORS.length)]
-          });
-          stars[i].ox = stars[i].x; stars[i].oy = stars[i].y;
-        }
-      }
-      function draw() {
-        ctx.clearRect(0, 0, W, H);
-        stars.forEach(s => {
-          s.ox += s.vx; s.oy += s.vy;
-          let dx = mouse.x - s.ox, dy = mouse.y - s.oy, dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 100) { let f = (100 - dist) / 100; s.x = s.ox - (dx / dist) * f * 50; s.y = s.oy - (dy / dist) * f * 50; }
-          else { s.x = s.ox; s.y = s.oy; }
-          if (s.ox < 0) s.ox = W; if (s.ox > W) s.ox = 0; if (s.oy < 0) s.oy = H; if (s.oy > H) s.oy = 0;
-          ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-          ctx.fillStyle = s.color; ctx.globalAlpha = Math.max(.2, Math.min(1, s.alpha)); ctx.fill();
-        });
-        if (!reduced) requestAnimationFrame(draw);
-      }
-      window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-      window.addEventListener('resize', () => { resize(); createStars(); });
-      resize(); createStars(); draw();
-    })();
-
-    /* ══ CURSEUR ══ */
-    const caret = document.getElementById('caret');
-    if (caret) {
-      document.addEventListener('mousemove', e => { caret.style.left = e.clientX + 'px'; caret.style.top = e.clientY + 'px'; });
-      document.querySelectorAll('a, button, .proj-card, .pf-card, .cert').forEach(el => {
-        el.addEventListener('mouseenter', () => document.body.classList.add('on-link'));
-        el.addEventListener('mouseleave', () => document.body.classList.remove('on-link'));
-      });
-    }
-
-    /* ══ NAV SCROLL ══ */
     window.addEventListener('scroll', () => {
-      document.getElementById('nav')?.classList.toggle('scrolled', scrollY > 60);
-    });
+      nav?.classList.toggle('scrolled', scrollY > 60);
+      /* scroll progress bar */
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - innerHeight;
+      document.querySelector('.scroll-progress')?.style
+        .setProperty('transform', 'scaleX(' + (max > 0 ? Math.min(scrollY / max, 1) : 0) + ')');
+      if (!navAnchors.length) return;
+      const pos = scrollY + 140;
+      let current = null;
+      spySections.forEach(sec => {
+        if (sec.offsetTop <= pos) current = sec.id;
+      });
+      navAnchors.forEach(a => a.classList.toggle('active', !!current && a.hash === '#' + current));
+    }, { passive: true });
 
     /* ══ HAMBURGER ══ */
     const hamburger = document.getElementById('nav-hamburger');
@@ -73,15 +40,21 @@
       mobileMenu.classList.add('open'); hamburger.classList.add('open');
       hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
+      mobileClose?.focus();
     }
     function closeMobileMenu() {
       mobileMenu.classList.remove('open'); hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
-    hamburger?.addEventListener('click', openMobileMenu);
+    hamburger?.addEventListener('click', () => {
+      if (mobileMenu?.classList.contains('open')) closeMobileMenu(); else openMobileMenu();
+    });
     mobileClose?.addEventListener('click', closeMobileMenu);
     document.querySelectorAll('.nav-mobile-link').forEach(link => link.addEventListener('click', closeMobileMenu));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu?.classList.contains('open')) closeMobileMenu();
+    });
 
     /* ══ MODALS VIDÉO ══ */
     document.querySelectorAll('[data-modal]').forEach(btn => {
@@ -144,7 +117,7 @@
 
     function attachLightbox(container, projectName) {
       const slides = Array.from(container.querySelectorAll('.cs'));
-      slides.forEach((slide, i) => {
+      slides.forEach((slide) => {
         const img = slide.querySelector('img');
         if (!img) return;
         img.addEventListener('click', () => {
@@ -161,7 +134,7 @@
       const slides = Array.from(container.querySelectorAll('.cs'));
       const dots = Array.from(container.querySelectorAll('.csdot'));
       const name = container.dataset.carName || 'Project';
-      let loaded = 0, checked = 0;
+      let loaded = 0, checked = 0, cur = 0, timer = null;
       const vis = [];
 
       function onCheck() {
@@ -186,18 +159,24 @@
         }
       });
 
-      let cur = 0;
       function startRotation() {
         const vdot = dots.slice(0, vis.length);
         if (vis.length <= 1) { vdot.forEach(d => d.style.display = 'none'); return; }
         vis.forEach((s, i) => s.classList.toggle('on', i === 0));
         vdot.forEach((d, i) => d.classList.toggle('on', i === 0));
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        setInterval(() => {
-          vis[cur].classList.remove('on'); vdot[cur]?.classList.remove('on');
-          cur = (cur + 1) % vis.length;
-          vis[cur].classList.add('on'); vdot[cur]?.classList.add('on');
-        }, ms);
+        /* pause on hover — reading time, no autoplay fight */
+        container.addEventListener('mouseenter', () => { if (timer) { clearInterval(timer); timer = null; } });
+        container.addEventListener('mouseleave', start);
+        function start() {
+          if (timer) return;
+          timer = setInterval(() => {
+            vis[cur].classList.remove('on'); vdot[cur]?.classList.remove('on');
+            cur = (cur + 1) % vis.length;
+            vis[cur].classList.add('on'); vdot[cur]?.classList.add('on');
+          }, ms);
+        }
+        start();
       }
     }
     document.querySelectorAll('.pf-car').forEach(c => initCar(c, 3800));
@@ -209,58 +188,42 @@
     }, { threshold: .08, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    /* ══ SKILL BARS ══ */
-    const skObs = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        document.querySelectorAll('.skill-fill').forEach(f => f.style.width = f.dataset.w + '%');
-        skObs.disconnect();
-      }
-    }, { threshold: .2 });
-    const sk = document.getElementById('skills');
-    if (sk) skObs.observe(sk);
-
-    /* ══ FIN MODEL TABS ══ */
-    const fmImg = document.getElementById('fm-img');
-    const fmCap = document.getElementById('fm-cap');
-    if (fmImg) {
-      const FM_TABS = {
-        'assumptions': {
-          src: 'assets/images/finmodel/zoom-assumptions.webp',
-          alt: 'Financial model — assumptions panel: growth rate, cost ratios, tax and working-capital drivers',
-          cap: 'finmodel.capAssumptions'
-        },
-        'pnl': {
-          src: 'assets/images/finmodel/zoom-pnl.webp',
-          alt: 'Financial model — income statement: from revenue to net income',
-          cap: 'finmodel.capPnl'
-        },
-        'forecast': {
-          src: 'assets/images/finmodel/zoom-forecast.webp',
-          alt: 'Financial model — forecast: income statement and cash-flow projections',
-          cap: 'finmodel.capForecast'
+    /* ══ COUNT-UP on visible numbers ══
+       only numeric-leading values (100+, 7, 2+…); text metrics untouched.
+       exposed globally so cms.js can re-init after re-rendering nodes */
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const numObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        numObs.unobserve(e.target);
+        const el = e.target;
+        const raw = el.textContent.trim();
+        const m = raw.match(/^(\d[\d,\s.]*)(.*)$/);
+        if (!m || prefersReduced) return;
+        const end = parseInt(m[1].replace(/[\s,]/g, ''), 10);
+        if (!isFinite(end) || end <= 0 || end > 100000) return;
+        if (end >= 1900 && end <= 2100) return; /* years stay static */
+        const suffix = m[2] || '';
+        const dur = 900, t0 = performance.now();
+        function tick(t) {
+          const p = Math.min((t - t0) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(end * eased) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
         }
-      };
-      document.querySelectorAll('.fm-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-          document.querySelectorAll('.fm-tab').forEach(t => {
-            t.classList.toggle('on', t === tab);
-            t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
-          });
-          const cfg = FM_TABS[tab.dataset.fm];
-          if (!cfg) return;
-          fmImg.src = cfg.src;
-          fmImg.alt = cfg.alt;
-          if (fmCap && window.I18N) fmCap.textContent = window.I18N.t(cfg.cap);
-        });
+        el.textContent = '0' + suffix;
+        requestAnimationFrame(tick);
       });
-      // re-apply caption if language changes while a non-default tab is open
-      document.addEventListener('i18n:changed', () => {
-        const on = document.querySelector('.fm-tab.on');
-        if (on && fmCap) {
-          const cfg = FM_TABS[on.dataset.fm];
-          if (cfg && window.I18N) fmCap.textContent = window.I18N.t(cfg.cap);
-        }
+    }, { threshold: .5 });
+    function initCounters() {
+      const nums = document.querySelectorAll('.stat-n, .fm-stat .mn, .pf-metrics .mn');
+      nums.forEach(el => {
+        if (el.dataset.counted) return;
+        el.dataset.counted = '1';
+        numObs.observe(el);
       });
     }
+    window.initCounters = initCounters;
+    initCounters();
   });
 })();

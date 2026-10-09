@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Back-office, Portfolio Elom Samuel Toublou</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='6' fill='%230F1F2E'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='13' fill='white'>BO</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen" class="login-screen" hidden>
+  <div class="login-split">
+    <div class="login-brand">
+      <div class="login-mark">E</div>
+      <h1>Back-office<br>Portfolio</h1>
+      <p class="login-who">Elom Samuel Toublou, Lomé (Togo)</p>
+      <ul class="login-feats">
+        <li><b>Contenu bilingue</b><span>Chaque texte en FR et EN, aperçu instantané</span></li>
+        <li><b>Brouillon local</b><span>Rien n'est publié sans export volontaire</span></li>
+        <li><b>Publication guidée</b><span>3 fichiers à remplacer, Vercel redéploie</span></li>
+      </ul>
+      <p class="login-ver">v2 · statique · sans base de données</p>
+    </div>
+    <div class="login-form-wrap">
+      <h2>Connexion</h2>
+      <p class="login-sub">Accès réservé à l'administrateur du site.</p>
+      <form id="login-form" autocomplete="off">
+        <label class="fld">
+          <span>Mot de passe</span>
+          <span class="pass-wrap">
+            <input type="password" id="login-pass" placeholder="Votre mot de passe" autofocus>
+            <button type="button" class="pass-eye" id="login-toggle" aria-label="Afficher le mot de passe">Afficher</button>
+          </span>
+        </label>
+        <p class="login-hint" id="login-hint">Par défaut : <code>admin123</code>, changez-le dans Réglages.</p>
+        <p class="login-err" id="login-err" hidden>Mauvais mot de passe, réessayez.</p>
+        <button type="submit" class="btn-primary btn-block">Se connecter</button>
+      </form>
+      <a class="login-back" href="../index.html">Retour au site</a>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" class="app" hidden>
+  <div class="side-overlay" id="side-overlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="side-brand">
+      <div class="side-mark">E</div>
+      <div class="side-id">
+        <div class="side-name">Portfolio · BO</div>
+        <div class="side-status"><span class="dot" id="side-dot"></span><span id="draft-status">Chargement…</span></div>
+      </div>
+    </div>
+    <nav class="side-nav" id="side-nav">
+      <p class="nav-group">Pilotage</p>
+      <button data-view="dashboard" class="on"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></span>Tableau de bord</button>
+      <p class="nav-group">Contenu</p>
+      <button data-view="hero"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg></span>Hero</button>
+      <button data-view="services"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></span>Services<span class="count" id="count-services"></span></button>
+      <button data-view="projects"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/><path d="M8 10v4"/><path d="M12 10v2"/><path d="M16 10v6"/></svg></span>Projets<span class="count" id="count-projects"></span></button>
+      <button data-view="finmodel"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg></span>Modélisation</button>
+      <button data-view="skills"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></span>Compétences<span class="count" id="count-skills"></span></button>
+      <button data-view="certs"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span>Certifications<span class="count" id="count-certs"></span></button>
+      <button data-view="cv"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>CV &amp; Expériences<span class="count" id="count-cv"></span></button>
+      <button data-view="about"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>À propos</button>
+      <button data-view="contact"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>Contact et profil</button>
+      <p class="nav-group">Publication</p>
+      <button data-view="media"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></span>Médias</button>
+      <button data-view="seo"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>SEO</button>
+      <button data-view="audience"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16v-3"/><path d="M12 16V8"/><path d="M17 16v-5"/></svg></span>Audience</button>
+      <button data-view="activity"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Journal</button>
+      <button data-view="settings"><span class="ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></span>Réglages et export<span class="dot-warn" id="dot-unpublished" hidden></span></button>
+    </nav>
+    <div class="side-foot">
+      <button id="btn-preview-toggle" class="side-link"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg><span>Aperçu du site</span></button>
+      <a href="../index.html" target="_blank" rel="noopener" class="side-link"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><span>Voir le site</span></a>
+      <button id="btn-logout" class="side-link"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" x2="12" y1="2" y2="12"/></svg><span>Déconnexion</span></button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="crumb">
+        <button class="hamburger" id="btn-menu" aria-label="Menu"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></button>
+        <div>
+          <h2 id="view-title">Tableau de bord</h2>
+          <p id="view-sub">Vue d'ensemble du contenu.</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="cmdk-trigger" id="btn-cmdk" type="button"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span>Rechercher</span><kbd>Ctrl K</kbd></button>
+        <div class="seg" role="group" aria-label="Langue de l'aperçu">
+          <span class="seg-lbl">Aperçu</span>
+          <button id="tab-fr" class="on">FR</button><button id="tab-en">EN</button>
+        </div>
+        <span class="save-pill" id="save-state"><span class="dot"></span><span id="save-state-txt">Enregistré</span></span>
+        <button id="btn-save" class="btn-primary">Enregistrer</button>
+        <button id="btn-export" class="btn-dark">Exporter</button>
+      </div>
+    </header>
+
+    <div class="preview-bar" id="preview-bar" hidden>
+      <div class="preview-tools">
+        <div class="seg seg-dark" role="group" aria-label="Format d'aperçu">
+          <button id="preview-desktop" class="on"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>Desktop</button><button id="preview-mobile"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>Mobile</button>
+        </div>
+        <span class="preview-url">../index.html · brouillon local</span>
+        <span class="preview-sp"></span>
+        <button id="btn-preview-reload" class="tool-btn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>Recharger</button>
+        <a href="../index.html" target="_blank" rel="noopener" class="tool-btn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>Ouvrir</a>
+        <button id="btn-preview-close" class="tool-btn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>Fermer</button>
+      </div>
+      <div class="preview-frame-wrap">
+        <iframe id="preview-frame" src="../index.html" title="Aperçu du site"></iframe>
+      </div>
+    </div>
+
+    <main id="view" class="view"></main>
+    <footer class="app-foot">Back-office portfolio · brouillon stocké dans ce navigateur · mot de passe : dissuasion locale, pas une sécurité serveur.</footer>
+  </div>
+</div>
+
+<div id="cmdk" class="cmdk" hidden>
+  <div class="cmdk-box">
+    <div class="cmdk-input-wrap"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input id="cmdk-input" placeholder="Rechercher un contenu, une section…" autocomplete="off"></div>
+    <div class="cmdk-results" id="cmdk-results"></div>
+    <div class="cmdk-foot"><span><kbd>flèches</kbd> naviguer</span><span><kbd>Entrée</kbd> ouvrir</span><span><kbd>Échap</kbd> fermer</span></div>
+  </div>
+</div>
+
+<div id="toasts" class="toasts" aria-live="polite"></div>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-box">
+    <div class="modal-ico" id="modal-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
+    <div>
+      <h3 id="modal-title">Confirmer</h3>
+      <p id="modal-text"></p>
+      <div class="modal-actions">
+        <button id="modal-cancel" class="btn-ghost">Annuler</button>
+        <button id="modal-ok" class="btn-danger">Supprimer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
